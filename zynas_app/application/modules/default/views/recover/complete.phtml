@@ -1,0 +1,31 @@
+<title><?php echo $this->pageTitle = 'メール送信 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'; // ページタイトル ?>
+</title>
+<?php $this->isNotHeader = true; ?>
+
+<div id="header">
+	<h1>
+		<a href="http://www.disco.co.jp"><img src="/resources/image/logo.jpg"
+			alt="DISCO" width="205" height="48" border="0"> </a>
+	</h1>
+</div>
+
+<div id="gnavi02"></div>
+
+<div id="contents" class="pwcomp morefooterspace text03m">
+	<p class="outline">
+		入力されたE-Mailアドレスにメールを送信しました。<br> メールに記載されたパスワードで、システムにログインして下さい。
+	</p>
+	<div class="companyadress">
+		<p>
+			株式会社ディスコ<br> 品質保証部・輸出管理担当
+		</p>
+		<p>TEL：03-4590-1064</p>
+	</div>
+	<br /> <br /> <br /> <br /> <br /> <br />
+	<ul>
+		<!-- <li class="btn_short"><a href="01.html">ログイン画面へ</a></li> -->
+		<li><?php echo $this->formButtonTo(null, 'ログイン画面へ', '/auth/login', array('class' => 'zbtn_short')); ?>
+		</li>
+	</ul>
+</div>
+

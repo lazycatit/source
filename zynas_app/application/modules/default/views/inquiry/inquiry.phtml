@@ -1,0 +1,29 @@
+<title><?php echo $this->pageTitle = 'お問い合わせ ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'; ?>
+</title>
+<div id="contents" class="inquiry morefooterspace text03m">
+	<div class="inquirycontents">
+		<form id="inquiry" method="post">
+			<h2>メールでお問い合わせ</h2>
+			<p>
+			<?php echo $this->formButton('btContact', 'お問い合わせ専用フォームを開く', array('class' => 'zbtn_short1', 'onclick'=> 'onClickForm();')); ?>
+			</p>
+		</form>
+	</div>
+	<div class="inquirycontents">
+		<h2>電話でお問い合わせ</h2>
+		<div class="address">
+			<p>
+				株式会社ディスコ<br> 品質保証部・輸出管理担当
+			</p>
+			<p>TEL：03-4590-1064</p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+    function onClickForm() {
+        var inquiry = document.getElementById('inquiry');
+        inquiry.action ='/inquiry/form';
+        inquiry.target ='_blank';
+        inquiry.submit();
+    }
+</script>

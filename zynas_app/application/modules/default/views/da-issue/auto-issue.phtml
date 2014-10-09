@@ -1,0 +1,27 @@
+<div id="contents" class="judgstep03_2 text03m">
+    <div class="judgstep03_2contents ml20">
+        <h2>該非判定書発行依頼</h2>
+        <ul>
+            <li><img src="/resources/image/judg_step01off_02off.gif" width="238" height="33" alt="依頼内容の入力">
+            </li>
+            <li><img src="/resources/image/judg_step02off_03on.gif" width="238" height="33" alt="入力内容の確認">
+            </li>
+            <li><img src="/resources/image/judg_step03on.gif" width="238" height="33" alt="判定書作成">
+            </li>
+        </ul>
+        <div class="outlines">
+                <p>該非判定書が出来上がりました。<br>
+                以下のボタンを右クリックし「対象をファイルに保存」で保存して下さい。</p>
+                <p><a href="/eu-issue/download?filename=<?php echo $this->escape($this->row->sysmtem_parameter_sheet);?>&controlnumber=<?php echo $this->row->control_number;?> " target="_blank">該非判定書を開く</a></p>
+                <p>尚作成した判定書は、「発行履歴」よりご確認頂けます。</p>
+                <?php if(count($this->rowPaper) > 0):?>
+                <p>また、ご依頼頂いた原紙の方は、ご依頼内容をメールにてお送りしておりますので<br>
+                ご確認ください。</p>
+                <?php endif;?>
+            </div>
+
+        <div class="companyadress">
+            <?php echo Zynas_Registry::getConfig()->constants->contact_disco?>
+        </div>
+    </div>
+</div>

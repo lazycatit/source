@@ -1,0 +1,32 @@
+#AuthType Basic
+#AuthName "restricted area"
+#AuthUserFile /var/www/.htpasswd
+#require valid-user
+
+php_value upload_max_filesize 1000M
+php_value max_execution_time 10000
+php_value post_max_size 1000M
+php_value max_input_time 50000
+
+php_flag magic_quotes_gpc off
+php_flag register_globals off
+php_value error_reporting 2047
+
+SetEnv APPLICATION_ENV development
+SetEnv FRAMEWORK_PATH "C:\xampp\htdocs\source\zynas_fw"
+SetEnv APPLICATION_PATH "C:\xampp\htdocs\source\zynas_app\application"
+
+RewriteEngine On
+RewriteBase /
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{HTTP_USER_AGENT} ^.*(DoCoMo|KDDI|DDIPOKET|UP.Browser|J-PHONE|Vodafone|SoftBank|Googlebot-Mobile).*$
+#RewriteRule .* mobile.php
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]
+
+ErrorDocument 403 /error

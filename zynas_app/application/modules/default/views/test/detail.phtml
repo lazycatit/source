@@ -1,0 +1,57 @@
+<title><?php echo $this->pageTitle = 'インフォメーション詳細 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'; // ページタイトル ?>
+</title>
+<?php $this->isNotHeader = true; ?>
+<div id="header">
+	<h1>
+		<a href="http://www.disco.co.jp"><img src="/resources/image/logo.jpg"
+			alt="DISCO" width="205" height="48" border="0"> </a>
+	</h1>
+</div>
+
+<div id="gnavi02"></div>
+
+<div id="contents" class="infodetail text03m">
+	<div class="infodetailcontents">
+		<h2>Test</h2>
+		<div class="infodetailtable">
+			<table border="0" cellpadding="0" cellspacing="0"
+				style="text-align: left;">
+				<tbody>
+					<tr>
+						<th class="infodetailtablebb">text</th>
+						<td class="infodetailtablebb"><?php echo $this->infDetail->name; ?>
+						</td>
+					</tr>
+					<tr>
+						<th class="infodetailtablebb">create date</th>
+						<td class="infodetailtablebb"><?php echo $this->dateFormat($this->infDetail->create_date,'Y/m/d'); ?>
+						</td>
+					</tr>
+					<tr>
+						<th class="infodetailtablebb">gender</th>
+						<td class="infodetailtablebb"><?php echo $this->infDetail->gender == 1 ? 'male' : 'female'  ?></td>
+					</tr>
+					<tr>
+						<th class="infodetailtablebb">birthday</th>
+						<td class="infodetailtablebb"><?php echo $this->dateFormat($this->infDetail->birthday,'Y/m/d'); ?></td>
+					</tr>
+					<tr>
+						<th style="width: 182px !important">Option</th>
+						<td>
+						
+						<select disabled='disabled'>
+							<option value='1' <?php echo $this->infDetail->option == 1 ? 'selected' : '' ?>>A</option>
+							<option value='2' <?php echo $this->infDetail->option == 2 ? 'selected' : '' ?>>B</option>
+							<option value='3' <?php echo $this->infDetail->option == 3 ? 'selected' : '' ?>>C</option>
+						</select>
+						</td>
+						
+					</tr>
+				</tbody>
+			</table>
+			<ul>
+				<li class="cancell"><a href="/test/list">閉じる</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,311 @@
+<div style="color: red;">
+    <?php echo $this->dumpFlashMessages(); ?>
+    </div>
+<div id="contents" class="faqdetail formdlud judgstep01 text03m">
+    <div
+    class="faqdetailcontents formdludcontents judgstep01_2contents ml20">
+        <h2>該非判定書発行依頼</h2>
+        <ul class="stepnum">
+            <li><img src="/resources/image/judg_step01off_02on.gif" width="238" height="33"
+                alt="依頼内容の入力">
+            </li>
+            <li><img src="/resources/image/judg_step02on_03off.gif" width="238" height="33"
+                alt="入力内容の確認">
+            </li>
+            <li><img src="/resources/image/judg_step03off.gif" width="238" height="33"
+                alt="判定書作成">
+            </li>
+        </ul>
+        <p class="outline">
+            <span class="formabsolute">必須</span>のついている項目は必ずご入力ください。
+        </p>
+        <form id="frm_submit" action="/eu-issue/confirm-next" method="post">
+            <?php echo $this->formHidden('id_cc',!empty($this->request->mailcc)?count($this->request->mailcc): '1')?>
+            <?php echo $this->formHidden('no_cc',!empty($this->request->mailcc)?count($this->request->mailcc)+1: '1')?>            
+            <div class="faqdetailtable formdludtable">
+                <table border="0" cellpadding="0" cellspacing="0"  style="text-align:left">
+                    <tbody>
+                        <tr>
+                            <th class="faqdetailtablebb">提出方法</th>
+                            <td colspan="2" class="faqdetailtablebb">
+                            <?php if(strcmp($this->issue_request->ckPdf, '1') === 0 ):
+                            ?>
+                            PDF                            
+                            <?php endif; ?>
+                            <?php if(strcmp($this->issue_request->ckPaper, '1') === 0 ):
+                            ?>
+                            <br>                            原紙
+                            <?php echo $this->formHidden('publish_type_paper', '1')?>
+                            <?php else : ?> 
+                            <?php echo $this->formHidden('publish_type_paper', '0')?>                            
+                            <?php endif; ?>
+                            </td>
+                        </tr>                        
+                        <tr>
+                        <th valign="top" class="faqdetailtablebb">指定フォーマット</th>
+                        <td colspan="2" class="faqdetailtablebb">
+                        <?php foreach($this->issue_request->customerFile as $customerFile):
+                        ?>
+                        <?php echo $customerFile['fileName']?><br>
+                        <?php endforeach; ?>
+                        </td>
+                        </tr>
+                        <?php if(strcmp($this->issue_request->ckPaper, '1') === 0):?>
+                        <tr>
+                        <th rowspan="8" valign="top" class="faqdetailtablebb">書類送付先</th>
+                        <td class="tableintable presentationinput"><span
+                        class="formabsolute">必須</span>郵便番号</td>
+                        <?php echo $this->formHidden('customer_code',(!empty($this->customer))?$this->customer->customer_code:'')?>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('postal_code',(!empty($this->customer))?$this->customer->postal_code:'', array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('postal_code') ?></div></ul>                            
+                        </td>
+                        </tr>                        
+                        <tr>
+                        <td class="tableintable"><span class="formabsolute">必須</span>住所</td>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('customer_address',(!empty($this->customer))?$this->customer->address1.' '.$this->customer->address2.' '.$this->customer->address3.' '.$this->customer->address4:'', array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('customer_address') ?></div></ul>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="tableintable"><span class="formabsolute">必須</span>会社名</td>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('customer_name',(!empty($this->customer))?$this->customer->customer_name:'', array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('customer_name') ?></div></ul>                            
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="tableintable"><span class="formabsolute">必須</span>部署名</td>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('unit_name',$this->user->unit_name, array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('unit_name') ?></div></ul>                              
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="tableintable"><span class="formabsolute">必須</span>氏名</td>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('user_name',$this->user->name_jp, array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('user_name') ?></div></ul>                             
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="tableintable"><span class="formabsolute">必須</span>お電話番号</td>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('customer_tel',(!empty($this->customer))?$this->customer->tel:'', array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('customer_tel') ?></div></ul>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="tableintable"><span class="formabsolute">必須</span>E-mailアドレス</td>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('user_mail',$this->user->email, array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('user_mail') ?></div></ul>                            
+                        </td>
+                        </tr>                        
+                        <tr class="mailcc">
+                            <td valign="top" class="tableintable faqdetailtablebb">CCに含める
+                            <br>
+                            アドレス </td>
+                            <td class="tableintable faqdetailtablebb">
+                                <ul><div style="color: red;"><?php echo $this->formError('text_email_cc') ?></div></ul>
+                                <ul>
+                            <?php if(!empty($this->request->mailcc)):?>
+                            <?php foreach($this->request->mailcc as $key=>$emailIndex):?>
+                                <div id="deletecc<?php echo $emailIndex ?>"><p class="deletecc" >
+                                    <?php echo $this->formHidden('mailcc[]', $emailIndex)?>
+                                    <?php echo $this->formText('text_email_cc'.$emailIndex, $this->request->getParam('text_email_cc'.$emailIndex), array('class'=> 'w250')) ?>
+                                    <a onclick="onClickDeleteCc(<?php echo $emailIndex?>)">削除</a>                                                                        
+                                </p></div>
+                                <p><div style="color: red;"><?php echo $this->formError('text_email_cc'.$emailIndex)?></div></p>                                
+                            <?php endforeach; ?>
+                            <?php endif; ?>
+                            <div id="anchor_cc"> </div>
+                            </ul>
+                            <p class="addmailcc" >
+                                <a id="addMailCc">CCを追加</a>
+                            </p>                            
+                            </td>
+                        </tr>
+                        <?php elseif(strcmp($this->issue_request->ckPdf, '1') === 0 && (!empty($this->issue_request->customerFile)  || !($this->auto_issue))): ?>
+                        <tr>
+                        <th rowspan="7" valign="top" class="faqdetailtablebb">書類送付先</th>
+                        
+                        <?php echo $this->formHidden('customer_code',(!empty($this->customer))?$this->customer->customer_code:'')?>                     
+                        
+                        
+                        </tr>
+                        <tr>
+                        <td class="tableintable"><span class="formabsolute">必須</span>会社名</td>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('customer_name',(!empty($this->customer))?$this->customer->customer_name:'', array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('customer_name') ?></div></ul>                            
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="tableintable"><span class="formabsolute">必須</span>部署名</td>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('unit_name',$this->user->unit_name, array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('unit_name') ?></div></ul>                              
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="tableintable"><span class="formabsolute">必須</span>氏名</td>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('user_name',$this->user->name_jp, array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('user_name') ?></div></ul>                             
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="tableintable"><span class="formabsolute">必須</span>お電話番号</td>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('customer_tel',(!empty($this->customer))?$this->customer->tel:'', array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('customer_tel') ?></div></ul>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="tableintable"><span class="formabsolute">必須</span>E-mailアドレス</td>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('user_mail',$this->user->email, array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('user_mail') ?></div></ul>                            
+                        </td>
+                        </tr>                        
+                        <tr class="mailcc">
+                            <td valign="top" class="tableintable faqdetailtablebb">CCに含める
+                            <br>
+                            アドレス </td>
+                            <td class="tableintable faqdetailtablebb">
+                                <ul><div style="color: red;"><?php echo $this->formError('text_email_cc') ?></div></ul>
+                                <ul>
+                            <?php if(!empty($this->request->mailcc)):?>
+                            <?php foreach($this->request->mailcc as $key=>$emailIndex):?>
+                                <div id="deletecc<?php echo $emailIndex ?>"><p class="deletecc" >
+                                    <?php echo $this->formHidden('mailcc[]', $emailIndex)?>
+                                    <?php echo $this->formText('text_email_cc'.$emailIndex, $this->request->getParam('text_email_cc'.$emailIndex), array('class'=> 'w250')) ?>
+                                    <a onclick="onClickDeleteCc(<?php echo $emailIndex?>)">削除</a>                                                                        
+                                </p></div>
+                                <p><div style="color: red;"><?php echo $this->formError('text_email_cc'.$emailIndex)?></div></p>                                
+                            <?php endforeach; ?>
+                            <?php endif; ?>
+                            <div id="anchor_cc"> </div>
+                            </ul>
+                            <p class="addmailcc" >
+                                <a id="addMailCc">CCを追加</a>
+                            </p>                            
+                            </td>        
+                        </tr>
+                        <?php else: ?>
+                        <tr>
+                        <th rowspan="3" valign="top" class="faqdetailtablebb">書類送付先</th>
+                        
+                        <?php echo $this->formHidden('customer_code',(!empty($this->customer))?$this->customer->customer_code:'')?>                     
+                        
+                        
+                        </tr>
+                        <tr>
+                        <td class="tableintable"><span class="formabsolute">必須</span>E-mailアドレス</td>
+                        <td class="tableintable">
+                            <ul><?php echo $this->formText('user_mail',$this->user->email, array('class'=>"w300")) ?></ul>
+                            <ul><div style="color: red;"><?php echo $this->formError('user_mail') ?></div></ul>                            
+                        </td>
+                        </tr>                        
+                        <tr class="mailcc">
+                            <td valign="top" class="tableintable faqdetailtablebb">CCに含める
+                            <br>
+                            アドレス </td>
+                            <td class="tableintable faqdetailtablebb">
+                                <ul><div style="color: red;"><?php echo $this->formError('text_email_cc') ?></div></ul>
+                                <ul>
+                            <?php if(!empty($this->request->mailcc)):?>
+                            <?php foreach($this->request->mailcc as $key=>$emailIndex):?>
+                                <div id="deletecc<?php echo $emailIndex ?>"><p class="deletecc" >
+                                    <?php echo $this->formHidden('mailcc[]', $emailIndex)?>
+                                    <?php echo $this->formText('text_email_cc'.$emailIndex, $this->request->getParam('text_email_cc'.$emailIndex), array('class'=> 'w250')) ?>
+                                    <a onclick="onClickDeleteCc(<?php echo $emailIndex?>)">削除</a>                                                                        
+                                </p></div>
+                                <p><div style="color: red;"><?php echo $this->formError('text_email_cc'.$emailIndex)?></div></p>                                
+                            <?php endforeach; ?>
+                            <?php endif; ?>
+                            <div id="anchor_cc"> </div>
+                            </ul>
+                            <p class="addmailcc" >
+                                <a id="addMailCc">CCを追加</a>
+                            </p>                            
+                            </td>        
+                        </tr>                                
+                        <?php endif; ?>    
+                        <?php $first = true; ?>
+                        <?php foreach ($this->issue_request->arrayIssueProducts as $product):
+                        ?>
+                        <tr>
+                        <?php if($first):
+                        ?>
+                        <th rowspan="<?php echo count($this->issue_request->arrayIssueProducts)?>" valign="top">発行する該非判定書</th>
+                        <?php $first = false; ?>
+                        <?php endif; ?>
+                        <td class="tableintable"><?php echo $product->confirmIssueCategoryName?></td>
+                        <td class="tableintable"><?php echo $product->confirmIssueDisplayName?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="judgstep02btns">
+                <ul>
+                    <li class="cancell">
+                        <a href="/eu-issue/request">戻る</a>
+                    </li>
+                    <li class="btn_short">
+                        <a id="bt_submit">発行依頼する</a>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+        var idCc = $("#id_cc").val();
+        var noCc = $("#no_cc").val();
+        $("#addMailCc").click(function() {
+            ajaxAddCc();
+        });
+        $("#bt_submit").click(function() {
+            $('#frm_submit').submit();
+        });
+
+    });
+    
+    function onClickDeleteCc(index) {
+        var noCc = $("#no_cc").val();        
+        $('#deletecc'+index).remove();
+        $('#no_cc').val(--noCc);
+    }
+
+    function ajaxAddCc() {
+        var noCc = $("#no_cc").val();
+        var idCc = $("#id_cc").val();
+        noCc = $("#no_cc").val();    
+        if(noCc > <?php echo Zynas_Registry::getConfig()->constants->max_cc_mail?>){
+            alert('<?php echo E044V?>');
+        }
+        else {
+            $.ajax({
+            type: "POST",
+            url: "<?php echo $this->url(array('action' => 'newmailcc', 'format' => 'html')); ?>",
+            data: "index=" + idCc ,
+            beforeSend: function (xhr) {
+                $("#no_cc").val(++noCc);
+                $("#id_cc").val(++idCc);
+            },
+            success: function(newElement) {
+                // Insert new element before the Add button
+                $("#anchor_cc").before(newElement);
+                // Increment and store id
+            }
+            });
+        }
+    }
+</script>

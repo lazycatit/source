@@ -1,0 +1,65 @@
+<title><?php echo $this->pageTitle = 'お問い合わせ ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'; ?>
+</title>
+<?php $this->isNotHeader = true; ?>
+<div id="header">
+	<h1>
+		<a href="http://www.disco.co.jp"><img src="/resources/image/logo.jpg"
+			alt="DISCO" width="205" height="48" border="0"> </a>
+	</h1>
+</div>
+
+<div id="gnavi02"></div>
+
+<div id="contents" class="inquiry text03m">
+	<div class="inquirycontents">
+		<h2>お問い合わせ</h2>
+		<p class="outline">&nbsp;ご連絡先・お問い合わせ内容をご記入の上、送信ボタンを押してください。</p>
+		<p class="outline"><span class="formabsolute">必須</span>のついている項目は必ずご入力ください。</p>
+
+		<div class="inquirytable">
+		    <form action="/inquiry/confirm-form" method="post" name="submitForm">
+			<?php echo $this->arrayToHtmlInputHidden($this->request->getPost()); ?>
+			<table border="0" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<th  align="left" class="inquirytablebb"><span class="formabsolute">必須</span>&nbsp;ご連絡先メールアドレス</th>
+							<td  align="left" class="inquirytablebb"><?php echo $this->formText('email', $this->request->email, array('class' => 'w300'));?>
+							    <div style="color: red; padding-top: 5px;"><?php echo $this->formError('email');?></div>
+							</td>
+					</tr>
+					<tr>
+						<th class="inquirytablebb"><span class="formabsolute">必須</span>&nbsp;ご連絡先電話番号</th>
+							<td  align="left" class="inquirytablebb"><?php echo $this->formText('phone', $this->request->phone, array('class' => 'w100'));?>
+							<div style="color: red; padding-top: 5px;"><?php echo $this->formError('phone');?></div>
+							</td>
+					</tr>
+					<tr>
+						<th class="inquirytablebb"><span class="formabsolute">必須</span>&nbsp;所属・お名前</th>
+							<td  align="left" class="inquirytablebb"><?php echo $this->formText('department', $this->request->department, array('class' => 'w300'));?>
+							<div style="color: red; padding-top: 5px;"><?php echo $this->formError('department');?></div>
+							</td>
+					</tr>
+					<tr>
+						<th valign="top"><span class="formabsolute">必須</span>&nbsp;お問い合わせ内容</th>
+							<td  align="left" class="inquirytabletextarea" style="line-height: 0px"><?php echo $this->formTextarea('content', $this->request->content, array('width' => '360px', 'height' => '50px'));?>
+							<div style="color: red; padding-top: 10px;"><?php echo $this->formError('content');?></div>
+							</td>
+					</tr>
+				</tbody>
+			</table>
+			<ul>
+				<li class="cancell"><a href="#" onClick="window.close(); return false;">閉じる</a></li>
+				<li><?php echo $this->formSubmit(null, '送信', array('class' => 'zbtn_short')); ?></li>
+			</ul>
+			</form>
+		</div>
+	</div>
+</div>
+
+<style>
+<!--
+.inquiry .inquirytable .formabsolute{
+    margin-left: 1px !important;
+}
+-->
+</style>

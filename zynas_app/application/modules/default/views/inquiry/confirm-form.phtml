@@ -1,0 +1,49 @@
+<title><?php echo $this->pageTitle = 'お問い合わせ送信完了 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'; ?>
+</title>
+<?php $this->isNotHeader = true; ?>
+<div id="header">
+	<h1>
+		<a href="http://www.disco.co.jp"><img src="/resources/image/logo.jpg"
+			alt="DISCO" width="205" height="48" border="0"> </a>
+	</h1>
+</div>
+
+<div id="gnavi02"></div>
+
+<div id="contents" class="inquiry text03m">
+	<div class="inquirycontents">
+		<h2>お問い合わせ送信完了</h2>
+		<p class="outline">下記のお問い合わせを承りました。</p>
+		<p class="outline">お問い合わせ内容について確認後、ご連絡先へ回答いたします。</p>
+		<div class="inquirytable">
+			<table border="0" cellpadding="0" cellspacing="0">
+				<tbody align="left">
+					<tr>
+						<th class="inquirytablebb">ご連絡先メールアドレス</th>
+						<td class="inquirytablebb"><?php echo $this->escape($this->request->email); ?>
+						</td>
+					</tr>
+					<tr>
+						<th class="inquirytablebb">ご連絡先電話番号</th>
+						<td class="inquirytablebb"><?php echo $this->escape($this->request->phone); ?>
+						</td>
+					</tr>
+					<tr>
+						<th class="inquirytablebb">所属・お名前</th>
+						<td class="inquirytablebb"><?php echo $this->escape($this->request->department); ?>
+						</td>
+					</tr>
+					<tr>
+						<th class="inquirytablebb">お問い合わせ内容</th>
+						<td class="inquirytablebb"><?php echo nl2br($this->request->content); ?>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<ul class="closeonly">
+				<li class="cancell"><a href="#"
+					onClick="window.close(); return false;">閉じる</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

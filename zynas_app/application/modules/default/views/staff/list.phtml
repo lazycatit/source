@@ -1,0 +1,53 @@
+<title><?php echo $this->pageTitle ="List Staff";?></title>
+<div id="z_layout_box_main" align="center">
+	<div style="color: red;">
+	<?php echo $this->dumpFlashMessages(); ?>
+	</div>
+	<div id="contents" class="info text03m">
+		<div class="infocontents">
+			<h2>繧､繝ｳ繝輔か繝｡繝ｼ繧ｷ繝ｧ繝ｳ荳�ｦｧ</h2>
+			
+			<div class="inputbox">
+				<form action="/staff/list" method="post">
+					<p class="freetext">
+						繧ｿ繧､繝医Ν(驛ｨ蛻�ｸ��)
+						<?php echo $this->formText('name', $this->request->name, array('class' => 'w400'));?>
+						<div style="color: red; text-align: left; padding-left: 200px;"><?php echo $this->formError('name'); ?></div>
+					</p>
+					<?php echo $this->formSubmit('search', '讀懃ｴ｢', array('class' => 'zbtn_short')); ?>
+				</form>
+				<!-- end form search -->
+			</div>
+			
+			<!-- Form data info -->
+			<form action="/staff/list" method="post">
+				<div class="infotableset">
+				
+					<div class="pager">
+					<p>
+					<a href="/test/add">譁ｰ隕丈ｽ懈�</a>
+					</p>
+					<?php echo $this->paginator; ?>
+					</div>
+					<table border="0" cellpadding="0" cellspacing="0"
+						class="infotable02" id="tablecontent">
+						<tbody>
+							<tr>
+								<th class="thleft">Name</th>
+								<th class="thcenter" width="120px !important;">Create Date</th>
+										
+							</tr>
+							
+						</tbody>
+					</table>
+					<!-- padding -->
+					<div class="pager">
+					<?php echo $this->paginator; ?>
+					</div>
+					<!-- end padding -->
+				</div>
+			</form>
+			<!-- End form data info -->
+		</div>
+	</div>
+</div>

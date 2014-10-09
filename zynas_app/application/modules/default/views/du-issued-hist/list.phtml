@@ -1,0 +1,237 @@
+<title><?php echo $this->pageTitle = '発行履歴 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'; ?>
+</title>
+<?php $this->useDatePicker = true;
+    // DatePicker使用
+ ?>
+<div id="contents" class="issuehistory text03m">
+	<div class="issuehistorycontents">
+		<h2>発行履歴</h2>
+		<div class="inputbox">
+			<form action="/du-issued-hist/list" method="post">
+			    <?php echo $this->formText('customer_code', isset($this->request->customer_code)?$this->request->customer_code:'', array('name'=> 'customer_code', 'class'=>'hidden'))?>
+			    <?php echo $this->formHidden('customer_name_hidden', $this->customer_name_hidden);?>
+				<div class="categorytext">
+					<p class="categoryitem">管理番号</p>
+					<div class="freetext">
+						<p>
+						<?php echo $this->formText('control_number', $this->request->control_number, array('class' => 'w300')); ?>
+						<div style="color: red;">
+						<?php echo $this->formError('control_number'); ?>
+						</div>
+						</p>
+					</div>
+				</div>
+				<div class="pulldowns">
+					<p class="creattime">作成日</p>
+					<div class="selecttime">
+						<ul>
+							<li><?php echo $this->formDate('create_from', $this->request->create_from); ?>
+							</li>
+							<li><div style="color: red;"><?php echo $this->formError('create_from'); ?></div>
+							</li>
+							<li>〜</li>
+							<li><?php echo $this->formDate('create_to', $this->request->create_to); ?>
+							</li>
+							<li><div style="color: red;"><?php echo $this->formError('create_to'); ?></div></li>
+						</ul>
+					</div>
+				</div>
+				<p>
+				<?php echo $this->formSubmit('search', '検索', array('class' => 'zbtn_short')); ?>
+				</p>
+				<ul class="notesred">
+					<li class="notesreditem">※</li>
+					<li class="notesredans">該非判定書内容について&hellip;<br>
+						該非判定書は発行日当日の施行政省令に基づき判定した結果となります。<br>
+						現在の施行政省令に基づき判定した場合、判定結果が異なる場合がありますのでご注意ください。</li>
+				</ul>
+			</form>
+		</div>
+		<div class="issuehistorybox02">
+			<table border="0" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<th>
+						    <a href="#" onclick="onClickSearchCustomer();">お客様名</a>
+						</th>						
+						<td>
+						<div id="customer_name"><?php echo isset($this->customer->customer_name)?$this->customer->customer_name:'' ?></div>
+						</td>
+						<td align="right"><a id="delete" style="display: none;">クリア</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="issuehistorytableset">
+			<div class="pager">
+			<?php echo $this->paginator; ?>
+			</div>
+			<table border="0" cellpadding="0" cellspacing="0"
+				class="issuehistorytable02" id="tablecontent">
+				<tbody>
+					<tr>
+						<th class="thleft">管理番号</th>
+						<th class="thleft02">依頼日時</th>
+						<th class="thleft03">提出方法</th>
+						<th class="thleft04">顧客名</th>
+						<th class="thleft05">製品</th>
+						<th class="thleft08">ステータス</th>
+						<th class="thleft09">ダウンロード</th>
+					</tr>
+					<?php if(!empty($this->paginator)):?>
+					<?php $itemIndex=0?>
+					<?php foreach($this->paginator as $item): ?>					
+					<?php $itemIndex++?>
+					<tr style="text-align: left" class="<?php echo $itemIndex%2?>">
+					<?php $same = false; ?>
+					<?php $index = 0?>
+					<?php foreach($item->getProducts() as $product):?>
+					<?php if(!$same):?>
+						<td valign="top"
+							rowspan="<?php echo $this->escape($item->number_of_col); ?>"><?php echo $this->escape($item->control_number); ?>
+						</td>
+						<td valign="top"
+							rowspan="<?php echo $this->escape($item->number_of_col); ?>"><?php echo $this->dateFormat($this->escape($item->create_date), 'Y/m/d');
+                            echo "&nbsp;" . $this->dateFormat($this->escape($item->create_date), 'H:i');
+							?>
+						</td>						
+						<td valign="top"
+							rowspan="<?php echo $this->escape($item->number_of_col); ?>">
+							<?php if ($this->escape($item->publish_type) == $this->pdf):?>
+							    <label>PDF</label>
+						    <?php elseif ($this->escape($item->publish_type) == $this->paper): ?>
+						        <label>原紙</label>
+						    <?php endif;?>
+						</td>
+						<td valign="top"
+							rowspan="<?php echo $this->escape($item->number_of_col); ?>"><?php echo $this->escape($item->customer_name); ?>
+						</td>
+						<?php endif; ?>
+						<?php if(!$same):?>
+						<td align="left" class="pdv<?php echo $itemIndex?>"><?php echo $this->escape($product->product_name_view); ?>
+						<?php if ($item->number_of_col <= $this->max_display):?> <a
+							href="#" class="view_more" id="view_more" style="display: none">もっと見る</a>
+							<?php endif; ?>
+						</td>
+						<?php elseif($same && $index == $this->max_display): ?>
+					<tr class="<?php echo $itemIndex%2?>">
+						<td align="left" class="pdv<?php echo $itemIndex?>"><a href="#"
+							class="view_more" id="view_more">もっと見る</a>
+							<div class="hidden<?php echo $itemIndex?>" style="display: none">
+							<?php echo $this->escape($product->product_name_view); ?>
+							</div>
+						</td>
+					</tr>
+					<?php elseif($same && $index < $this->max_display): ?>
+					<tr class="<?php echo $itemIndex%2?>">
+						<td align="left" class="pdv<?php echo $itemIndex?>"><?php echo $this->escape($product->product_name_view); ?>
+						</td>
+					</tr>
+					<?php elseif($same && $index > $this->max_display): ?>
+					<tr class="<?php echo $itemIndex%2?>">
+						<td align="left" style="display: none"
+							class="hidden<?php echo $itemIndex?>"
+							class="pdv<?php echo $itemIndex?>"><?php echo $this->escape($product->product_name_view); ?>
+						</td>
+					</tr>
+					<?php endif; ?>
+					<?php if(!$same):?>
+					<td valign="top"
+						rowspan="<?php echo $this->escape($item->number_of_col); ?>">
+						<?php if ($item->status == $this->not_issue): ?>
+						    <label>発行中</label>
+					    <?php elseif ($item->status == $this->complete_issue): ?>
+					        <label>完了</label>
+				        <?php endif;?> 
+					</td>
+					<td class="issuehistorytable02_tdbtn" valign="top" rowspan="<?php echo $this->escape($item->number_of_col); ?>" style="padding: 10px">
+					    <!-- Display button download PDF if (publish_type = PDF and is_coustomer_format = 0 and is_coustomer_designation = 0) or (publish_type = pdf and status = complete issue)-->
+					    <?php if (strcmp($item->publish_type, $this->pdf) === 0 && strcmp($item->status, $this->complete_issue) === 0):?>
+				            <a href="/du-issued-hist/download?filename=<?php echo $this->escape($item->sysmtem_parameter_sheet); ?>&id=<?php echo $item->control_number; ?>" target="_blank">判定書を開く</a>
+						<?php elseif (strcmp($item->status, $this->complete_issue) === 0 && strcmp($item->publish_type, $this->pdf) === 0 && strcmp($item->is_coustomer_designation, '0') === 0 && strcmp($item->is_coustomer_format, '0') === 0): ?>
+						    <a href="/du-issued-hist/download?filename=<?php echo $this->escape($item->sysmtem_parameter_sheet); ?>&id=<?php echo $item->control_number; ?>" target="_blank">判定書を開く</a>
+						<?php endif; ?>
+					</td>
+					</tr>
+					<?php endif; ?>
+					<?php $same = true; ?>
+					<?php $index++; ?>
+					<?php endforeach; ?>
+					<?php endforeach; ?>
+					<?php endif; ?>
+				</tbody>
+			</table>
+			<div class="pager">
+			<?php echo $this->paginator; ?>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+var interval;
+$(document).ready(function() {
+	if ($("#customer_code").val() === '') {
+		$('#delete').hide();
+	} else {
+		$('#delete').show();
+	}
+
+    if($("#customer_name_hidden").val()!==''){
+        $("#customer_name").text($("#customer_name_hidden").val());
+    }	
+	
+    // 偶数行にのみクラスを指定	   
+    $('tr.0').addClass('bglightgray'); 	
+
+	//Handle Delete button  
+    $('#delete').click(function() {
+        $('#customer_name').text('');
+        $("#customer_name_hidden").val('');
+        document.getElementById('customer_code').setAttribute('value', '');
+        $('#delete').hide();
+    });
+
+	//Handle View more button    
+    $("#view_more").live("click", function() {
+        var ind = $("a.view_more").index(this)+1;        
+        $('.hidden'+ind).show();
+        $('a.view_more:eq('+(parseInt(ind)-1)+')').hide();
+    });  
+});
+
+function onClickSearchCustomer() {
+    interval = setInterval(ajaxGetCustomer, 500);
+    window.open("/disco-search-customer/list?target=2");
+}
+function ajaxGetCustomer() {
+    $.ajax(
+    {
+    type: "POST",
+    url: "<?php echo $this->url(array('action' => 'getcustomer')); ?>
+        ",
+        beforeSend: function (xhr) {
+        },
+        success: function(newElement) {
+            if(newElement != '') {
+                var obj = jQuery.parseJSON(newElement);
+                document.getElementById('customer_code').setAttribute('value', obj.customer_code);
+                $("#customer_name").text(obj.customer_name);
+                $("#customer_name_hidden").val(obj.customer_name);
+                if ($("#customer_code").val() !== '') {
+                    $('#delete').show();
+                }
+                window.clearInterval(interval);
+            }
+        }
+    });
+}
+
+</script>
+<style>
+#btDownloadPdf {
+    width: 80px;
+    height: 20px;
+    font-size: 90%;
+}
+</style>
+

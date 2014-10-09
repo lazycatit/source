@@ -1,0 +1,83 @@
+<title><?php echo $this->pageTitle = 'Day la trang dung de list';?></title>
+<div style="color: red;">
+	<?php echo $this->dumpFlashMessages(); ?>
+	</div>
+<div id="contents" class="infoud text03m">
+	<div>
+		<form action="/testing/search" name="searchForm" id="searchForm"
+			method="post">
+				<?php echo $this->formText('search', $this->request->search, array('class'=>'w4000'));?>
+				<?php echo $this->formSubmit('searchbtn', 'Search');?>
+			</form>
+	</div>
+	<div id="wrap-search">
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Username</th>
+				<th>Full name</th>
+				<th>Delete Account</th>
+			</tr>
+			<?php  foreach ($this->paginator as $item): ?>
+			<tr>
+				<td><?php echo $this->escape($item->id); ?></td>
+				<td><?php echo $this->escape($item->username); ?></td>
+				<td><a
+					href="/testing/edit?id=<?php echo $this->escape($item->id); ?>">
+					<?php echo $this->escape($item->fullname); ?></a></td>
+				<td><?php echo $this->formButton('deleteButton','Delete', array('onclick'=>'onDelete('.$item->id.')')); ?></td>
+			</tr>
+			<?php endforeach;?>
+		</table>
+	</div>
+	<a href="/testing/add">Them moi nguoi dung</a>
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Position</th>
+			<th>Company</th>
+			<th>Address</th>
+		</tr>
+			<?php  foreach ($this->paginator1 as $item): ?>
+			<tr>
+			<td><?php echo $this->escape($item->id); ?></td>
+			<td><?php echo $this->escape($item->position); ?></td>
+			<td><?php echo $this->escape($item->company); ?></td>
+			<td><?php echo $this->escape($item->address); ?></td>
+		</tr>
+			<?php endforeach;?>
+		</table>
+	<form action="/testing/delete" name="deleteAccount" id="deleteAccount"
+		method="post">
+		<input type="hidden" name="deleteid" id="deleteid" />
+	</form>
+</div>
+<script type="text/javascript">
+	function onDelete(id)
+	{
+		var r = confirm("Do you want to delete this account?");
+		if (r == true) {
+			$("#deleteid").val(id);
+			$("#deleteAccount").submit();
+		}
+	}
+	
+	$(function(){
+		$("#searchbtn").click(function(){
+			var mydata = $("#searchForm").serialize();
+			$.ajax({
+		        type: "POST",
+		        url: "/testing/search",
+		        data: mydata,
+		        success: function(response, textStatus, xhr) {
+			        $("#wrap-search").html(response);
+		        },
+		        error: function(xhr, textStatus, errorThrown) {
+		            alert("error");
+		        }
+		    });
+			return false;
+		});
+	});
+</script>

@@ -1,0 +1,45 @@
+<script type="text/JavaScript">
+window.onerror = function(){return true;}
+$(function() {
+	
+    var fqdn = $('#fqdn').val();
+    var url = window.location.href.substr(window.location.href.indexOf("/")+1);
+
+      var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
+     $("#gnavi .dropdown li a").each(function(){
+         if(url.indexOf('/'+fqdn+'/top/list') !== -1){
+             $('li.gnavi01').addClass('gnavi01' + ' ' +'gnavi01_on');
+        }else if(url.indexOf('/'+fqdn+'/da-issue/request')!== -1){
+            $('li.gnavi02').addClass('gnavi02' + ' ' +'gnavi02_on');
+        }else if(url.indexOf('/'+fqdn+'/da-issued-hist/list')!==-1){
+            $('li.gnavi03').addClass('gnavi03' + ' ' +'gnavi03_on');
+        }else if(url.indexOf('/'+fqdn+'/inquiry/inquiry')!==-1){
+            $('li.gnavi04').addClass('gnavi04' + ' ' +'gnavi04_on');
+        }else if(url.indexOf('/'+fqdn+'/admin-unissue-hist/')!==-1 || url.indexOf('/'+fqdn+'/admin-log/')!==-1 
+	            || url.indexOf('/'+fqdn+'/admin-information/')!==-1 || url.indexOf('/'+fqdn+'/admin-faq/')!==-1){
+            $('li.gnavi05').addClass('gnavi05' + ' ' +'gnavi05_on');
+        }
+     });
+});
+</script>
+
+	<div id="gnavi">
+		<ul class="dropdown">
+			<li class="gnavi01"><a href="/top/list">TOP</a></li>
+			<li class="gnavi02"><a href="/da-issue/request" class="issuerequest">発行依頼</a>				
+			</li>
+			<li class="gnavi03"><a href="/da-issued-hist/list">発行履歴一覧</a></li>
+			<li class="gnavi04"><a href="/inquiry/inquiry">お問い合わせ</a></li>
+			<li class="gnavi05"><p class="management">管理</p>
+				<ul class="sub_menu">
+					<li><a href="/admin-unissue-hist/list">未対応一覧</a></li>
+					<li><a href="/admin-log/list">該非判定書発行ログ一覧</a></li>
+					<li><a href="/admin-information/list">インフォメーション一覧</a></li>
+					<li><a href="/admin-faq/list">FAQ一覧</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<?php echo $this->formHidden('fqdn', Zynas_Registry::getConfig()->system->fqdn);?>
+
+

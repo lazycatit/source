@@ -1,0 +1,135 @@
+<title><?php echo $this->pageTitle='インフォメーション登録・更新 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'?>
+</title>
+<div id="contents" class="infoud text03m">
+	<div class="infoudcontents">
+		<h2>Add Test</h2>
+		<div class="infoudtable">
+			<form action="/test/confirm-edit" method="post"
+				id="submitForm" name="submitForm">
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<th class="infoudtablebb">Name<span class="formabsolute">必須</span>
+							</th>
+							<td class="infoudtablebb">
+								<?php echo $this->formText('name', $this->request->name, array('class' => 'w300', 'style' => 'margin-left: -170px'));?>
+								<br>
+								<div style="color: red; text-align: left;">
+								<?php echo $this->formError('name'); ?>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="infoudtablebb">Gender<span class="formabsolute">必須</span>
+							</th>
+							<td class="infoudtablebb">
+								<?php				
+			    					echo $this->FormRadioForDesign('rbt_gender',$this->request->gender,array('name'=>'rbt_gender','id'=>'rbt_gender'),array('1'=>'Male'));
+			    					echo $this->FormRadioForDesign('rbt_gender',$this->request->gender,array('name'=>'rbt_gender','id'=>'rbt_gender'),array('2'=>'Female'));		
+			        			?>
+								<br>
+								<div style="color: red; text-align: left;">
+								<?php echo $this->formError('rbt_gender'); ?>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="infoudtablebb">Birthday<span class="formabsolute">必須</span>
+							</th>
+							<td class="infoudtablebb">
+								<?php echo $this->formText('birthday', $this->request->birthday, array('class' => 'w300', 'style' => 'margin-left: -170px'));?>
+								<br>
+								<div style="color: red; text-align: left;">
+								<?php echo $this->formError('birthday'); ?>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="infoudtablebb">Option<span class="formabsolute">必須</span>
+							</th>
+							<td class="infoudtablebb">
+								<?php echo $this->formSelect(null, $this->request->option,array('name'=>'option','id'=>'option'),array('1'=>'A','2'=>'B','3'=>'C'));?>
+								<br>
+								<div style="color: red; text-align: left;">
+								<?php echo $this->formError('option'); ?>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="ztable_horizontal"
+					style="padding-left: 18% !important">
+					<tr>
+						<td><?php echo $this->formButtonTo(null, '戻る', '/test/list', array('class' => 'zbtn_back')); ?>
+						</td>
+						<td><?php echo $this->formButton('btSave', '登録', array('class' => 'zbtn_short','onclick'=> 'onSubmit();')); ?>
+						</td>
+					</tr>
+				</table>
+				<?php echo $this->formHidden('token', $this->token);?>
+				<?php echo $this->formHidden('id', $this->request->id); ?>
+			</form>
+		</div>
+	</div>
+</div>
+
+        <!-- yes/no dialog -->
+        <div class="modal" id="yesno" title="確認">
+            <p>登録します。よろしいですか？</p>
+        </div>
+
+<script type="text/javascript">
+// 	function onClickPreview() {
+// 		var submitForm = document.getElementById('submitForm');
+// 		submitForm.action ='/admin-information/addpreview';
+// 		submitForm.target ='_blank';
+// 		submitForm.submit();
+// 	}
+
+	function onClickSubmit(){
+		var submitForm = document.getElementById('submitForm');
+		submitForm.action ='/test/confirm-edit';
+		submitForm.target ='_self';
+		submitForm.submit();
+	}
+
+
+	$(document).ready(function(){
+	    var triggers = $(".modalInput").overlay({
+	        mask: {
+	            color: '#000',
+	            loadSpeed: 200,
+	            opacity: 0.5
+	        },
+	        closeOnClick: false
+	    });
+	    var buttons = $("#yesno button").click(function(e) {
+	        var yes = buttons.index(this) === 0;
+	        if (yes==true) {
+	            $("#deleteForm").submit();
+	        }
+	    });
+	   
+	});
+
+
+	function onSubmit() {
+	    $("#yesno" ).dialog({
+	     resizable: false,
+	     height:140,
+	     modal: true,
+	     buttons: {
+	         "はい": function() {
+    	        var submitForm = document.getElementById('submitForm');
+    	        submitForm.action ='/test/confirm-edit';
+    	        submitForm.target ='_self';
+	           $("#submitForm").submit();
+	         },
+	         "キャンセル": function() {
+	             $( this ).dialog( "close" );
+	         }
+	     }
+	 });
+	}
+	
+</script>

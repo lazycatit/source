@@ -1,0 +1,133 @@
+<title><?php echo $this->pageTitle='インフォメーション一覧 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'?>
+</title>
+<?php $this->useDatePicker = true; // DatePicker使用 ?>
+<div id="z_layout_box_main" align="center">
+	<div style="color: red;">
+	<?php echo $this->dumpFlashMessages(); ?>
+	</div>
+	<div id="contents" class="info text03m">
+	
+		<div class="infocontents">
+			<h2>インフォメーション一覧</h2>
+			<div class="inputbox">
+				<form action="/admin-information/list" method="post">
+					<div class="pulldowns">
+						<p class="creattime">作成日</p>
+						<div class="selecttime">
+							<ul>
+								<li><?php echo $this->formDate('create_from', $this->request->create_from); ?>
+								</li>
+								<li><div style="color: red;"><?php echo $this->formError('create_from'); ?></div>
+								</li>
+								<li>〜</li>
+
+								<li><?php echo $this->formDate('create_to', $this->request->create_to); ?>
+								</li>
+								<li><div style="color: red;"><?php echo $this->formError('create_to'); ?></div></li>
+							</ul>
+						</div>
+					</div>
+					<p class="freetext">
+						タイトル(部分一致)
+						<?php echo $this->formText('title', $this->request->title, array('class' => 'w400'));?>
+						<div style="color: red; text-align: left; padding-left: 200px;"><?php echo $this->formError('title'); ?></div>
+					</p>
+					<?php echo $this->formSubmit('search', '検索', array('class' => 'zbtn_short')); ?>
+				</form>
+				<!-- end form search -->
+			</div>
+			<!-- Form data info -->
+			<form action="/admin-information/list" method="post">
+				<div class="infotableset">
+					<div class="pager">
+						<p>
+							<a href="/admin-information/add">新規作成</a>
+						</p>
+						<?php echo $this->paginator; ?>
+					</div>
+					<table border="0" cellpadding="0" cellspacing="0"
+						class="infotable02" id="tablecontent">
+						<tbody>
+							<tr>
+								<th class="thleft">作成日</th>
+								<th>タイトル</th>
+								<th class="thright">操作</th>
+							</tr>
+							<?php foreach ($this->paginator as $item): ?>
+							<tr>
+								<td style="text-align: left"><?php echo $this->dateFormat($this->escape($item->create_date),'Y/m/d'); ?>
+								</td>
+								<td style="text-align: left"><?php echo $this->escape($this->escape($item->title)); ?>
+								</td>
+								<td><?php echo $this->formButtonTo('edit_info','編集','/admin-information/edit?id='.$item->id .'&isReturn',array( 'class' => 'button'));?>
+								<?php echo $this->formButton(null,'削除', array('onclick' => 'onClickDelete('. $item->id. ')' ,'class' => 'modalInput','rel' => '#yesno'))?>
+								</td>
+							</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+					<!-- padding -->
+					<div class="pager">
+					<?php echo $this->paginator; ?>
+					</div>
+					<!-- end padding -->
+				</div>
+			</form>
+			<!-- End form data info -->
+		</div>
+
+		<!-- yes/no dialog -->
+		<div class="modal" id="yesno" title="確認">
+			<p>削除します。よろしいですか？</p>
+		</div>
+
+		<form id="deleteForm" name="deleteForm"
+			action="/admin-information/delete" method="post">
+			<input type="hidden" name="id" value="" />
+		</form>
+
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	  // 偶数行にのみクラスを指定
+	  $('#tablecontent tr:even').addClass('bglightgray');
+	});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    
+    var buttons = $("#yesno button").click(function(e) {
+        var yes = buttons.index(this) === 0;
+        if (yes==true) {
+            $("#deleteForm").submit();
+        }
+    });
+   
+});
+
+
+function onClickDelete(id) {
+    $("#yesno" ).dialog({
+     resizable: false,
+     height:140,
+     modal: true,
+     buttons: {
+         "はい": function() {        
+           document.deleteForm.id.value = id;
+           $("#deleteForm").submit();              
+         },
+         "キャンセル": function() {
+             $( this ).dialog( "close" );
+         }
+     }
+ });
+    
+}
+
+function deleteInfo(){
+	alert(document.deleteForm.id.value);	
+	document.deleteForm.submit();
+}
+</script>

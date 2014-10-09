@@ -1,0 +1,56 @@
+<title><?php echo $this->pageTitle = 'インフォメーション一覧'; // ページタイトル ?></title>
+<?php $this->useDatePicker = true; // DatePicker使用 ?>
+<div id="z_layout_box_main" align="center">
+	<div style="color: red;">
+	<?php echo $this->dumpFlashMessages(); ?>
+	</div>
+	<div id="contents" class="info text03m">
+		<div class="infocontents">
+			<h2>インフォメーション一覧</h2>
+
+			<!-- Form data info -->
+			<form action="/information/list" method="post">
+				<div class="infotableset">
+					<div class="pager">
+					<?php echo $this->paginator; ?>
+					</div>
+					<table border="0" cellpadding="0" cellspacing="0"
+						class="infotable02" id="tablecontent">
+						<tbody>
+							<tr>
+								<th class="thleft">作成日</th>
+								<th class="thcenter" width="226px;">タイトル</th>
+								<th>インフォメーション内容</th>
+							</tr>
+							<?php  foreach ($this->paginator as $item): ?>
+							<tr>
+								<td style="text-align: left"><?php echo $this->dateFormat($this->escape($item->create_date),'Y/m/d'); ?>
+								</td>
+								<td style="text-align: left"><a
+									href="/information/detail?id=<?php echo $this->escape($item->id) ?>"
+									target="_blank"><?php echo StringUtil::getViewSubString($this->escape($item->title),$this->max_display_char); ?> </a>
+								</td>
+								<td style="text-align: left !important;"><?php echo StringUtil::getViewSubString($this->escape($item->detail),$this->max_display_char); ?>
+								</td>
+							</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+					<!-- padding -->
+					<div class="pager">
+					<?php echo $this->paginator; ?>
+					</div>
+					<!-- end padding -->
+				</div>
+			</form>
+			<!-- End form data info -->
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	  // 偶数行にのみクラスを指定
+	  $('#tablecontent tr:even').addClass('bglightgray');
+	});
+</script>

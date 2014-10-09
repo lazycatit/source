@@ -1,0 +1,33 @@
+<?php
+if (isset($_GET['page'])) unset($_GET['page']);
+//TODO 使っていないので必要なければ削除！
+$queryString = '?' . http_build_query($_GET);
+?>
+<?php if (true): ?>
+<ul class="pagination">
+	<li class="previous-off">（全<?php echo $this->escape($this->totalItemCount); ?>件）</li>
+	<?php if (isset($this->previous)): ?>
+	<li class="previous"><a
+		href="<?php echo $this->url() . $queryString . '&page=' . $this->previous; ?>">≪前へ</a>
+	</li>
+	<?php else: ?>
+	<li class="previous-off">≪前へ</li>
+	<?php endif; ?>
+	<?php foreach ($this->pagesInRange as $page): ?>
+	<?php if ($this->current == $page): ?>
+	<li class="active"><?php echo $page; ?></li>
+	<?php else: ?>
+	<li><a
+		href="<?php echo $this->url() . $queryString . '&page=' . $page; ?>"><?php echo $page?>
+	</a></li>
+	<?php endif; ?>
+	<?php endforeach; ?>
+	<?php if (isset($this->next)): ?>
+	<li class="next"><a
+		href="<?php echo $this->url() . $queryString . '&page=' . $this->next; ?>">次へ
+			≫</a></li>
+			<?php else:?>
+	<li class="next-off">次へ ≫</li>
+	<?php endif; ?>
+</ul>
+	<?php endif; ?>

@@ -1,0 +1,114 @@
+<title><?php echo $this->pageTitle='インフォメーション登録・更新 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'?>
+</title>
+<div id="contents" class="infoud text03m">
+	<div class="infoudcontents">
+		<h2>インフォメーション登録・更新</h2>
+		<p class="outline">
+			<span class="formabsolute">必須</span>のついている項目は必ずご入力ください。
+		</p>
+		<div class="infoudtable">
+			<form action="/admin-information/confirm-add" method="post"
+				id="submitForm" name="submitForm">
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<th class="infoudtablebb">タイトル<span class="formabsolute">必須</span>
+							</th>
+							<td class="infoudtablebb"><?php echo $this->formText('title', $this->request->title, array('class' => 'w300', 'style' => 'margin-left: -45px'));?>(全角半角●文字以内入力)
+								<br>
+								<div style="color: red; text-align: left;">
+								<?php echo $this->formError('title'); ?>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="infoudtablebb" valign="top"
+								style="border-bottom: none;">詳細(HTML入力可)<span
+								class="formabsolute">必須</span></th>
+							<td class="infoudtabletextarea" style="text-align: left"><?php echo $this->formTextarea('detail', $this->request->detail, array('maxlength' => '5000', 'size' => '5','class' => 'w300'));?>(全角・半角入力)
+								<br>
+								<div style="color: red;">
+								<?php echo $this->formError('detail'); ?>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="ztable_horizontal"
+					style="padding-left: 18% !important">
+					<tr>
+						<td><?php echo $this->formButton('btPreview', 'プレビュー', array('class' => 'zbtn_back', 'onclick'=> 'onClickPreview();')); ?>
+						</td>
+						<td><?php echo $this->formButtonTo(null, '戻る', '/admin-information/list', array('class' => 'zbtn_back')); ?>
+						</td>
+						<td><?php echo $this->formButton('btSave', '登録', array('class' => 'zbtn_short','onclick'=> 'onSubmit();')); ?>
+						</td>
+					</tr>
+				</table>
+				<?php echo $this->formHidden('token', $this->token);?>
+			</form>
+		</div>
+	</div>
+</div>
+
+        <!-- yes/no dialog -->
+        <div class="modal" id="yesno" title="確認">
+            <p>登録します。よろしいですか？</p>
+        </div>
+
+<script type="text/javascript">
+	function onClickPreview() {
+		var submitForm = document.getElementById('submitForm');
+		submitForm.action ='/admin-information/addpreview';
+		submitForm.target ='_blank';
+		submitForm.submit();
+	}
+
+	function onClickSubmit(){
+		var submitForm = document.getElementById('submitForm');
+		submitForm.action ='/admin-information/confirm-add';
+		submitForm.target ='_self';
+		submitForm.submit();
+	}
+
+
+	$(document).ready(function(){
+	    var triggers = $(".modalInput").overlay({
+	        mask: {
+	            color: '#000',
+	            loadSpeed: 200,
+	            opacity: 0.5
+	        },
+	        closeOnClick: false
+	    });
+	    var buttons = $("#yesno button").click(function(e) {
+	        var yes = buttons.index(this) === 0;
+	        if (yes==true) {
+	            $("#deleteForm").submit();
+	        }
+	    });
+	   
+	});
+
+
+	function onSubmit() {
+	    $("#yesno" ).dialog({
+	     resizable: false,
+	     height:140,
+	     modal: true,
+	     buttons: {
+	         "はい": function() {
+    	        var submitForm = document.getElementById('submitForm');
+    	        submitForm.action ='/admin-information/confirm-add';
+    	        submitForm.target ='_self';
+	           $("#submitForm").submit();
+	         },
+	         "キャンセル": function() {
+	             $( this ).dialog( "close" );
+	         }
+	     }
+	 });
+	}
+	
+</script>

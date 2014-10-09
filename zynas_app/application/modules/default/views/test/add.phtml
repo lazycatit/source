@@ -1,0 +1,137 @@
+<title><?php echo $this->pageTitle='繧､繝ｳ繝輔か繝｡繝ｼ繧ｷ繝ｧ繝ｳ逋ｻ骭ｲ繝ｻ譖ｴ譁ｰ ��隧ｲ髱槫愛螳啗EB繧ｷ繧ｹ繝�Β ��譬ｪ蠑丈ｼ夂､ｾ繝�ぅ繧ｹ繧ｳ'?>
+</title>
+<div id="contents" class="infoud text03m">
+	<div class="infoudcontents">
+		<h2>Add Test</h2>
+		<div class="infoudtable">
+			<form action="/test/confirm-add" method="post"
+				id="submitForm" name="submitForm">
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<th class="infoudtablebb">Name<span class="formabsolute">蠢��</span>
+					 		</th>
+							<td class="infoudtablebb">
+								<?php echo $this->formText('name', $this->request->
+										name, array('class' => 'w300', 'style' => 'margin-left: -170px'));?>
+								<br>
+								<div style="color: red; text-align: left;">
+								<?php echo $this->formError('name'); ?>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="infoudtablebb">Gender<span class="formabsolute">蠢��</span>
+							</th>
+							<td class="infoudtablebb">
+								<?php				
+			    					echo $this->FormRadioForDesign('rbt_gender',null,array('name'=>'rbt_gender','id'=>'rbt_gender'),array('1'=>'Male'));
+			    					echo $this->FormRadioForDesign('rbt_gender',null,array('name'=>'rbt_gender','id'=>'rbt_gender'),array('2'=>'Female'));		
+			        			?>
+								<br>
+								<div style="color: red; text-align: left;">
+								<?php echo $this->formError('rbt_gender'); ?>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="infoudtablebb">Birthday<span class="formabsolute">蠢��</span>
+							</th>
+							<td class="infoudtablebb">
+								<?php echo $this->formText('birthday', $this->request->birthday, array('class' => 'w300', 'style' => 'margin-left: -170px'));?>
+								<br>
+								<div style="color: red; text-align: left;">
+								<?php echo $this->formError('birthday'); ?>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="infoudtablebb">Option<span class="formabsolute">蠢��</span>
+							</th>
+							<td class="infoudtablebb">
+								<?php echo $this->formSelect(null, null,array('name'=>'option','id'=>'option'),array('1'=>'A','2'=>'B','3'=>'C'));?>
+								<br>
+								<div style="color: red; text-align: left;">
+								<?php echo $this->formError('option'); ?>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>   
+				<table class="ztable_horizontal"
+					style="padding-left: 18% !important">
+					<tr>
+						<td><?php echo $this->formButtonTo(null, '謌ｻ繧�', '/test/list', array('class' => 'zbtn_back')); ?>
+						</td>
+						<td><?php echo $this->formButton('btSave', '逋ｻ骭ｲ', array('class' => 'zbtn_short','onclick'=> 'onSubmit();')); ?>
+						</td>
+					</tr>
+				</table>
+				<?php echo $this->formHidden('lstposition', $this->lstposition);?>
+				<?php echo $this->formHidden('token', $this->token);?>   
+			</form>
+		</div>
+	</div>
+</div>
+
+        <!-- yes/no dialog -->
+        <div class="modal" id="yesno" title="遒ｺ隱�>
+            <p>逋ｻ骭ｲ縺励∪縺吶�繧医ｍ縺励＞縺ｧ縺吶°��/p>
+        </div>
+
+<script type="text/javascript">
+// 	function onClickPreview() {
+// 		var submitForm = document.getElementById('submitForm');
+// 		submitForm.action ='/admin-information/addpreview';
+// 		submitForm.target ='_blank';
+// 		submitForm.submit();
+// 	}
+
+	function onClickSubmit(){
+		var submitForm = document.getElementById('submitForm');
+		submitForm.action ='/test/confirm-add';
+		submitForm.target ='_self';
+		submitForm.submit();
+	}
+
+
+	$(document).ready(function(){
+	    var triggers = $(".modalInput").overlay({
+	        mask: {
+	            color: '#000',
+	            loadSpeed: 200,
+	            opacity: 0.5
+	        },
+	        closeOnClick: false
+	    });
+	    var buttons = $("#yesno button").click(function(e) {
+	        var yes = buttons.index(this) === 0;
+	        if (yes==true) {
+	            $("#deleteForm").submit();
+	        }
+	    });
+	   
+	});
+
+
+	function onSubmit() {
+	    $("#yesno" ).dialog({
+	     resizable: false,
+	     height:140,
+	     modal: true,
+	     buttons: {
+	         "縺ｯ縺�": function() {
+    	        var submitForm = document.getElementById('submitForm');
+    	        submitForm.action ='/test/confirm-add';
+    	        
+    	        submitForm.target ='_self';
+	           $("#submitForm").submit();
+	         },
+	         "繧ｭ繝｣繝ｳ繧ｻ繝ｫ": function() {
+	             $( this ).dialog( "close" );
+	         }
+	     }
+	 });
+	}
+	
+</script>

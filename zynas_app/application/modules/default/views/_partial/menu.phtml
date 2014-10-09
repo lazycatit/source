@@ -1,0 +1,51 @@
+<script type="text/javascript">
+<!--
+// メニューにtitle付け
+//-->
+
+window.onerror = function(){return true;}
+$(document).ready(function() {
+	
+    var fqdn = $('#fqdn').val();
+    var url = window.location.href.substr(window.location.href.indexOf("/")+1);
+    
+      var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
+     $("#gnavi .dropdown li a").each(function(){
+    	 if(url=="/"+fqdn+'/inquiry/inquiry'){
+             $('li.gnavi04').addClass('gnavi04' + ' ' +'gnavi04_on');
+        }else if(url=="/"+fqdn+'/eu-issue/request'){
+        	$('li.gnavi02').addClass('gnavi02' + ' ' +'gnavi02_on');
+        }else if(url=="/"+fqdn+'/du-issue/request'){
+            $('li.gnavi02').addClass('gnavi02' + ' ' +'gnavi02_on');
+        }else if(url=="/"+fqdn+'/top/list'){
+            $('li.gnavi01').addClass('gnavi01' + ' ' +'gnavi01_on');
+        }else if(url=="/"+fqdn+'/eu-issued-hist/list'){
+            $('li.gnavi03').addClass('gnavi03' + ' ' +'gnavi03_on');
+        }else if(url=="/"+fqdn+'/du-issued-hist/list'){
+            $('li.gnavi03').addClass('gnavi03' + ' ' +'gnavi03_on');
+        }
+     });
+})
+</script>
+
+
+<?php
+if(Auth_Info::isLoggedUser())
+$this->role = Auth_Info::getUser()->user_type;
+?>
+
+<div id="gnavi">
+	<ul class="dropdown">
+		<li class="gnavi01"><a href="/top/list">TOP</a></li>
+		<?php if(strcmp($this->role,MUsers::DISCO_USER) === 0 ):?>
+		      <li class="gnavi02"><a href="/du-issue/request" class="issuerequest">発行依頼</a></li>
+		      <li class="gnavi03"><a href="/du-issued-hist/list">発行履歴一覧</a></li>
+		<?php elseif (strcmp($this->role,MUsers::END_USER) === 0 ):?>
+		      <li class="gnavi02"><a href="/eu-issue/request" class="issuerequest">発行依頼</a></li>
+		      <li class="gnavi03"><a href="/eu-issued-hist/list">発行履歴一覧</a></li>
+		<?php endif;?>
+        <li class="gnavi04"><a href="/inquiry/inquiry">お問い合わせ</a>
+        </li>
+	</ul>
+</div>
+<?php echo $this->formHidden('fqdn', Zynas_Registry::getConfig()->system->fqdn);?>

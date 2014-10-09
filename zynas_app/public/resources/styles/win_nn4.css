@@ -1,0 +1,209 @@
+h1 {
+	font-size: 160%;
+	position: relative;
+	margin: 14px 0px 0px;
+}
+
+/* �e�L�X�g���x�� */
+.level1 {
+	font-size: 140%;
+	position: relative;
+	padding: 0px;
+	top: 5px;
+}
+
+.level1b {
+	font-size: 140%;
+	position: relative;
+	top: 10px;
+	left: 15px;
+}
+
+.level1c {
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	position: relative;
+	margin: 0px 15px 0px;
+}
+
+.level2 {
+	font-size: 115%;
+	padding: 0px;
+}
+
+.level3 {
+	font-size: 110%;
+}
+
+.level4 {
+	font-size: 110%;
+}
+
+.level5 {
+	font-size: 110%;
+}
+
+/* �T�C�g�}�b�v�p */
+.sitemap01 {
+	font-size: 160%;
+	position: relative;
+	margin: 0px 0px 0px;
+}
+
+.sitemap02 {
+	font-size: 140%;
+	position: relative;
+	top: 4px;
+	left: 15px;
+}
+
+/* �{���p */
+.text05l {
+	font-size: 150%;
+	line-height: 150%;
+}
+
+.text04l {
+	font-size: 120%;
+	line-height: 150%;
+}
+
+.text03l {
+	font-size: 100%;
+	line-height: 150%;
+}
+
+.text02l {
+	font-size: 90%;
+	line-height: 150%;
+}
+
+.text01l {
+	font-size: 70%;
+	line-height: 150%;
+}
+
+/* �L���v�V�����p */
+.text06m {
+	font-size: 75%;
+	line-height: 140%;
+}
+
+.text05m {
+	font-size: 150%;
+	line-height: 125%;
+}
+
+.text04m {
+	font-size: 120%;
+	line-height: 125%;
+}
+
+.text03m {
+	font-size: 100%;
+	line-height: 125%;
+}
+
+.text02m {
+	font-size: 90%;
+	line-height: 125%;
+}
+
+.text01m {
+	font-size: 70%;
+	line-height: 125%;
+}
+
+/* �s�Ԏw��Ȃ� */
+.text05s {
+	font-size: 150%;
+}
+
+.text04s {
+	font-size: 120%;
+}
+
+.text03s {
+	font-size: 100%;
+}
+
+.text02s {
+	font-size: 90%;
+}
+
+.text01s {
+	font-size: 70%;
+}
+
+/* �{���p */
+.fixtext05l {
+	font-size: 19px;
+	line-height: 150%;
+}
+
+.fixtext04l {
+	font-size: 14px;
+	line-height: 150%;
+}
+
+.fixtext03l {
+	font-size: 12px;
+	line-height: 150%;
+}
+
+.fixtext02l {
+	font-size: 11px;
+	line-height: 150%;
+}
+
+.fixtext01l {
+	font-size: 9px;
+	line-height: 150%;
+}
+
+/* �L���v�V�����p */
+.fixtext05m {
+	font-size: 19px;
+	line-height: 125%;
+}
+
+.fixtext04m {
+	font-size: 14px;
+	line-height: 125%;
+}
+
+.fixtext03m {
+	font-size: 12px;
+	line-height: 125%;
+}
+
+.fixtext02m {
+	font-size: 11px;
+	line-height: 125%;
+}
+
+.fixtext01m {
+	font-size: 9px;
+	line-height: 125%;
+}
+
+/* �s�Ԏw��Ȃ� */
+.fixtext05s {
+	font-size: 19px;
+}
+
+.fixtext04s {
+	font-size: 14px;
+}
+
+.fixtext03s {
+	font-size: 12px;
+}
+
+.fixtext02s {
+	font-size: 11px;
+}
+
+.fixtext01s {
+	font-size: 9px;
+}

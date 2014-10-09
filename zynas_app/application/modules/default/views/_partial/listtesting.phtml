@@ -1,0 +1,21 @@
+<?php if(sizeof($this->paginator) > 0){?>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Username</th>
+		<th>Full name</th>
+		<th>Delete Account</th>
+	</tr>
+	<?php  foreach ($this->paginator as $item): ?>
+	<tr>
+		<td><?php echo $this->escape($item->id); ?></td>
+		<td><?php echo $this->escape($item->username); ?></td>
+		<td><a href="/testing/edit?id=<?php echo $this->escape($item->id); ?>">
+			<?php echo $this->escape($item->fullname); ?></a></td>
+		<td><?php echo $this->formButton('deleteButton','Delete', array('onclick'=>'onDelete('.$item->id.')')); ?></td>
+	</tr>
+	<?php endforeach;?>
+</table>
+<?php } else {?>
+<label>Khong tim thay ket qua</label>
+<?php }?>

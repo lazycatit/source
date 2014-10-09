@@ -1,0 +1,107 @@
+<div style="color: red;">
+    <?php echo $this->dumpFlashMessages(); ?>
+    </div>
+<div id="contents" class="faqdetail judgstep01 text03m">
+    <div
+    class="faqdetailcontents ml20">
+        <h2>該非判定書発行依頼</h2>
+        <ul class="stepnum">
+            <li><img src="/resources/image/judg_step01off_02on.gif" width="238" height="33"
+                alt="依頼内容の入力">
+            </li>
+            <li><img src="/resources/image/judg_step02on_03off.gif" width="238" height="33"
+                alt="入力内容の確認">
+            </li>
+            <li><img src="/resources/image/judg_step03off.gif" width="238" height="33"
+                alt="判定書作成">
+            </li>
+        </ul>
+        <form id="frm_submit" action="/du-issue/confirm-next" method="post">
+        <div class="faqdetailtable formdludtable">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <th class="faqdetailtablebb">提出方法</th>
+                                <td colspan="2" class="faqdetailtablebb" align="left">
+                                    <?php if(strcmp($this->issue_request->ckPdf, '1') === 0 ):?>
+                                    PDF
+                                    <?php endif; ?>
+                                    <?php if(strcmp($this->issue_request->ckPaper, '1') === 0 ):?>
+                                    <br>                            原紙
+                                    <?php echo $this->formHidden('publish_type_paper', '1')?>
+                                    <?php else : ?>
+                                    <?php echo $this->formHidden('publish_type_paper', '0')?>
+                                    <?php endif; ?>
+                                </td>
+                        </tr>
+                        <?php if(strcmp($this->issue_request->ckPaper, '1') === 0 ):?>
+                        <tr>
+                            <th class="faqdetailtablebb">社内便郵送先部署</th>
+                                <td colspan="2" class="faqdetailtablebb" align="left"><?php echo ($this->issue_request->postalInfo['postal_unit'])?></td>
+                        </tr>
+                        <tr>
+                            <th class="faqdetailtablebb">社内便郵送先氏名</th>
+                                <td colspan="2" class="faqdetailtablebb" align="left"><?php echo ($this->issue_request->postalInfo['postal_name'])?></td>
+                        </tr>
+                        <?php endif;?>
+                        <tr>
+                            <th valign="top" class="faqdetailtablebb">お客様指示内容</th>
+                                <td colspan="2" class="faqdetailtablebb" align="left"><?php echo ($this->issue_request->getCustomerDesignationText())?></td>
+                        </tr>
+                        <tr>
+                            <th valign="top" class="faqdetailtablebb">輸出業者</th>
+                                <td colspan="2" class="faqdetailtablebb" align="left">
+                                    <?php if($this->issue_request->isCustomerFormat()):?>
+                                                                            お客様
+                                    <?php else:?>
+                                                                            ディスコ
+                                    <?php endif;?>
+                                </td>
+                        </tr>
+                        <tr>
+                            <th valign="top" class="faqdetailtablebb">指定フォーマット</th>
+                            <td colspan="2" class="faqdetailtablebb" align="left">
+                                <?php foreach($this->issue_request->customerFile as $customerFile): ?>
+                                <?php echo $customerFile['fileName']?><br>
+                                <?php endforeach; ?>
+                            </td>
+                        </tr>
+                        <?php $first = true; ?>
+                        <?php foreach ($this->issue_request->arrayIssueProducts as $product): ?>
+                        <tr>
+                        <?php if($first):
+                        ?>
+                        <th rowspan="<?php echo count($this->issue_request->arrayIssueProducts)?>" valign="top">発行する該非判定書</th>
+                        <?php $first = false; ?>
+                        <?php endif; ?>
+                        <td class="tableintable" align="left"><?php echo $product->confirmIssueCategoryName?></td>
+                        <td class="tableintable" align="left"><?php echo $product->confirmIssueDisplayName?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="judgstep02btns">
+                <ul>
+                    <li class="cancell">
+                        <a href="/du-issue/request">戻る</a>
+                    </li>
+                    <li class="btn_short">
+                        <a id="bt_submit">発行依頼する</a>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        $("#bt_submit").click(function() {
+            $('#frm_submit').submit();
+        });
+
+    });
+</script>

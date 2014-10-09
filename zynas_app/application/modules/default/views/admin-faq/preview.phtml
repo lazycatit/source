@@ -1,0 +1,33 @@
+<title><?php echo $this->pageTitle='FAQ一覧 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'?></title>
+<div id="gnavi02"></div>
+
+<div id="contents" class="faqdetail morefooterspace text03m">
+	<div class="faqdetailcontents">
+		<h2>インフォメーション詳細</h2>
+		<div class="faqdetailtable">
+			<table border="0" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<th class="faqdetailtablebb">タイトル</th>
+						<td class="faqdetailtablebb"><?php echo $this->escape($this->request->title); ?>
+						</td>
+					</tr>
+					<tr>
+						<th class="faqdetailtablebb">作成年月日</th>
+						<td class="faqdetailtablebb"><?php echo $this->dateFormat($this->escape($this->request->create_date),'Y年m月d日'); ?>
+						</td>
+					</tr>
+					<tr>
+						<th>詳細情報</th>
+						<td><?php echo nl2br($this->escape($this->request->question)); ?></td>
+						<td><?php echo nl2br($this->escape($this->request->answer)); ?></td>
+					</tr>
+				</tbody>
+			</table>
+			<ul>
+				<li class="cancell"><a href="#"
+					onClick="window.close(); return false;">閉じる</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

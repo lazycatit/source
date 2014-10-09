@@ -1,0 +1,190 @@
+    <title><?php echo $this->pageTitle = '発行依頼 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ';?></title>
+    <div id="contents" class="faqdetail judgstep01 text03m">
+    <form action="" method="post">
+        <div class="faqdetailcontents ml20">
+            <h2>該非判定書発行依頼</h2>
+            <ul class="stepnum">
+                <li><img src="/resources/image/judg_step01off_02on.gif" width="238" height="33" alt="依頼内容の入力"></li>
+                <li><img src="/resources/image/judg_step02on_03off.gif" width="238" height="33" alt="入力内容の確認"></li>
+                <li><img src="/resources/image/judg_step03off.gif" width="238" height="33" alt="判定書作成"></li>
+            </ul>
+            <div class="faqdetailtable formdludtable">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <th class="faqdetailtablebb" style="text-align: left">提出方法</th>
+                                <td colspan="2" class="faqdetailtablebb" style="text-align: left">
+                            <?php
+                                if(strcmp($this->pdf, 1) === 0):
+                                echo "PDF"."<br/>";
+                                endif;
+                                
+                                $dipslayInfo = 'none';
+                                if(strcmp($this->paper, 1) === 0):
+                                echo "原紙"."<br/>";
+                                $dipslayInfo = '';
+                                endif;
+                            ?>
+                                </td>
+                        </tr>
+                        <tr>
+                            <th class="faqdetailtablebb" style="text-align: left;display:<?php echo $dipslayInfo?>">社内便郵送先部署</th>
+                                <td colspan="2" class="faqdetailtablebb" style="text-align: left;display:<?php echo $dipslayInfo?>">
+                                <?php echo $this->txtDivisionName;?>
+                                </td>
+                        </tr>
+                        <tr>
+                            <th class="faqdetailtablebb" style="text-align: left;display:<?php echo $dipslayInfo?>">社内便郵送先氏名</th>
+                                <td colspan="2" class="faqdetailtablebb" style="text-align: left;display:<?php echo $dipslayInfo?>">
+                                <?php echo $this->txtStaffName;?>
+                                </td>
+                        </tr>
+                        <tr>
+                            <th valign="top" class="faqdetailtablebb" style="text-align: left">お客様指示内容</th>
+                                <td colspan="2" class="faqdetailtablebb" style="text-align: left">
+                                <?php echo $this->txtCustomerDesignation ?>
+                                </td>
+                        </tr>
+                        <tr>
+                            <th valign="top" class="faqdetailtablebb" style="text-align: left">輸出業者</th>
+                                <td colspan="2" class="faqdetailtablebb" style="text-align: left">
+                                <?php 
+                                    if(strcmp($this->export_person, 1)):
+                                        echo "ディスコ";
+                                    elseif (strcmp($this->export_person, 2)):
+                                        echo "お客様";
+                                    endif;
+                                 ?>
+                                </td>
+                        </tr>
+                        <tr>
+                            <th valign="top" class="faqdetailtablebb" style="text-align: left;">指定フォーマット</th>
+                            <td colspan="2" class="faqdetailtablebb" style="text-align: left;">
+                                <!-- Get file upload --> 
+                                <?php if(!empty($this->arr_file_upload)):
+                                foreach ($this->arr_file_upload as $file): {
+                                    echo $file."<br/>";
+                                }
+                                endforeach;
+                                endif;
+                                ?>
+                             </td>
+                        </tr>
+                        <?php
+                        /**
+                         * Init rowspan value to GUI display product issue form
+                         * <pre>
+                         * @get $rowspan1 = number issuer type issue 装置
+                         * @get $rowspan2 = number issuer type issue 部品/ソフト
+                         * @get $rowspan3 = number issuer type issue ブレード/ホイール/Pad
+                         *
+                         * @get Total rowspan = $rowspan1 + $rowspan2 + $rowspan3
+                         * </pre>
+                         * */
+                        $rowspan = 1;
+                        if(!empty($this->issueDevices)):
+                        $rowspan = $rowspan + count($this->issueDevices);
+                        endif;
+
+                        if(!empty($this->issueSubDevices)):
+                        $rowspan = $rowspan + count($this->issueSubDevices);
+                        endif;
+
+                        if(!empty($this->issuePWPs)):
+                        $rowspan = $rowspan + count($this->issuePWPs);
+                        endif;
+
+                        ?>
+                        <tr>
+                            <th rowspan="<?php echo $rowspan?>" valign="top" style="text-align: left">発行する該非判定書</th>
+                                <td class="tableintable"></td>
+                                <td class="tableintable"></td>
+                        </tr>
+                                      <!-- Proccess display product issue -->
+                        <?php
+                        /**
+                         * Display issue request product type 装置
+                         * <pre>
+                         * @get issueDevices array() issue 装置
+                         * </pre>
+                         * */
+                        if(!empty($this->issueDevices)):
+                        $issueDevices = $this->issueDevices;
+                        for($row=0;$row<count($issueDevices);$row++){
+                            echo "<tr>";
+                            echo "<td class=\"tableintable\" style=\"text-align:left\">装置</td>";
+                            echo "<td class=\"tableintable\" style=\"text-align:left\">";
+                            for($col=1;$col<3;$col++){
+                                echo $issueDevices[$row][$col]." ";
+                            }
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+                        endif;
+
+                        /**
+                         * Display issue request product type 部品/ソフト
+                         * <pre>
+                         * @get issueSubDevices array() issue 部品/ソフト
+                         * </pre>
+                         * */
+                        if(!empty($this->issueSubDevices)):
+                        $issueSubDevices = $this->issueSubDevices;
+                        for($row=0;$row<count($issueSubDevices);$row++){
+                            echo "<tr>";
+                            echo "<td class=\"tableintable\" style=\"text-align:left\">部品/ソフト</td>";
+                            echo "<td class=\"tableintable\" style=\"text-align:left\">";
+                            for($col=1;$col<2;$col++){
+                                echo $issueSubDevices[$row][$col];
+                            }
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+                        endif;
+
+                        /**
+                         * Display issue request product type ブレード/ホイール/Pad
+                         * <pre>
+                         * @get issuePWPs array() issue ブレード/ホイール/Pad
+                         * </pre>
+                         * */
+                        if(!empty($this->issuePWPs)):
+                        $issuePWPs = $this->issuePWPs;
+                        for($row=0;$row<count($issuePWPs);$row++){
+                            echo "<tr>";
+                            echo "<td class=\"tableintable\" style=\"text-align:left\">ブレード/ホイール/Pad</td>";
+                            echo "<td class=\"tableintable\" style=\"text-align:left\">";
+                            for($col=1;$col<3;$col++){
+                                echo $issuePWPs[$row][$col];
+                            }
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+                        endif;
+                        
+                        ?>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <table class="ztable_horizontal">
+                <tr>
+                    <td align="right"><?php echo $this->formButtonTo(null, '戻る', '/admin-issue/request', array('class' => 'zbtn_back')); ?></td>
+                    <td><?php echo $this->formSubmit(null, '発行依頼する', array('class' => 'zbtn_short')); ?></td>
+                </tr>
+            </table>
+            <?php
+            /**
+             * Get hidden value if need this form submit
+             * Proccess submit this form
+             * <pre>
+             *
+             * </pre>
+             * */
+            echo $this->formHidden('pdf', $this->pdf);
+            echo $this->formHidden('paper', $this->paper);
+            echo $this->formHidden('token', $this->token)
+            ?>
+        </div>
+    </form>
+    </div>

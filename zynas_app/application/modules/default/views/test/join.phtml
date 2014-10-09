@@ -1,0 +1,135 @@
+<title><?php echo $this->pageTitle = 'インフォメーション一覧'; // ページタイトル ?></title>
+<div id="z_layout_box_main" align="center">
+	<div style="color: red;">
+	<?php echo $this->dumpFlashMessages(); ?>
+	</div>
+	<div id="contents" class="info text03m">
+		<div class="infocontents">
+			<h2>インフォメーション一覧</h2>
+			
+			<div class="inputbox">
+				<form action="/test/list" method="post">
+					<p class="freetext">
+						タイトル(部分一致)
+						<?php echo $this->formText('name', $this->request->name, array('class' => 'w400'));?>
+						<div style="color: red; text-align: left; padding-left: 200px;"><?php echo $this->formError('name'); ?></div>
+					</p>
+					<?php echo $this->formSubmit('search', '検索', array('class' => 'zbtn_short')); ?>
+				</form>
+				<!-- end form search -->
+			</div>
+			
+			<!-- Form data info -->
+			<form action="/test/list" method="post">
+				<div class="infotableset">
+				
+					<div class="pager">
+					<p>
+					<a href="/test/add">新規作成</a>
+					</p>
+					<?php echo $this->paginator; ?>
+					</div>
+					<table border="0" cellpadding="0" cellspacing="0"
+						class="infotable02" id="tablecontent">
+						<tbody>
+							<tr>
+								<th class="thleft">Name</th>
+								<th class="thcenter" width="120px !important;">Create Date</th>
+								<th width="30px;">編集</th>
+								<th width=30px;">削除</th>				
+							</tr>
+							
+							<?php 
+							
+							echo "<pre>";
+							print_r($this->data);
+							echo "</pre>";
+							
+							?>
+							
+							<?php echo var_dump($this->data) ?>
+							<?php  foreach ($this->data as $item): ?>
+							<tr>
+								<td style="text-align: left">
+									<a href="/test/detail?id=<?php echo $this->escape($item->id) ?>">
+										<?php echo StringUtil::getViewSubString($this->escape($item->name),$this->max_display_char); ?> 
+									</a>
+								</td>
+								<td style="text-align: left"><?php echo $this->dateFormat($this->escape($item->create_date),'Y/m/d'); ?>
+								</td>
+								<td>
+									<?php echo $this->formButtonTo('edit','編集','/test/edit?id='.$item->id .'&isReturn',array( 'class' => 'button'));?>
+								</td>
+								<td>
+									<?php echo $this->formButton(null,'削除', array('onclick' => 'onClickDelete('. $item->id. ')' ,'class' => 'modalInput','rel' => '#yesno'))?>
+								</td>
+								
+							</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+					<!-- padding -->
+					<div class="pager">
+					<?php echo $this->paginator; ?>
+					</div>
+					<!-- end padding -->
+				</div>
+			</form>
+			<!-- End form data info -->
+		</div>
+	</div>
+</div>
+
+<!-- yes/no dialog -->
+<div class="modal" id="yesno" title="確認">
+	<p>削除します。よろしいですか？</p>
+</div>
+
+<form id="deleteForm" name="deleteForm"
+	action="/test/delete" method="post">
+	<input type="hidden" name="id" value="" />
+</form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    
+    var buttons = $("#yesno button").click(function(e) {
+        var yes = buttons.index(this) === 0;
+        if (yes==true) {
+            $("#deleteForm").submit();
+        }
+    });
+   
+});
+
+
+function onClickDelete(id) {
+    $("#yesno" ).dialog({
+     resizable: false,
+     height:140,
+     modal: true,
+     buttons: {
+         "はい": function() {        
+           document.deleteForm.id.value = id;
+           $("#deleteForm").submit();              
+         },
+         "キャンセル": function() {
+             $( this ).dialog( "close" );
+         }
+     }
+ });
+    
+}
+
+function deleteInfo(){
+	alert(document.deleteForm.id.value);	
+	document.deleteForm.submit();
+}
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	  // 偶数行にのみクラスを指定
+	  $('#tablecontent tr:even').addClass('bglightgray');
+	});
+</script>

@@ -1,0 +1,41 @@
+<title><?php echo $this->pageTitle = 'FAQ詳細 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'; // ページタイトル ?>
+</title>
+<?php $this->isNotHeader = true; ?>
+<div id="header">
+	<h1>
+		<a href="http://www.disco.co.jp"><img src="/resources/image/logo.jpg"
+			alt="DISCO" width="205" height="48" border="0"> </a>
+	</h1>
+</div>
+
+<div id="gnavi02"></div>
+
+<div id="contents" class="faqdetail morefooterspace text03m">
+	<div class="faqdetailcontents">
+		<h2>
+			<span class="faqnum"></span>
+			<?php echo $this->escape($this->faqDetail->title); ?>
+		</h2>
+		<div class="faqdetailtable">
+			<table border="0" cellpadding="0" cellspacing="0"
+				style="text-align: left">
+				<tbody>
+					<tr>
+						<th class="faqdetailtablebb">ご質問内容</th>
+						<td class="faqdetailtablebb"><?php echo nl2br($this->faqDetail->question); ?>
+						</td>
+					</tr>
+					<tr>
+						<th valign="top">回答</th>
+						<td valign="top" class="faqdetailtableanswer"><?php echo nl2br($this->faqDetail->answer); ?>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<ul>
+				<li class="cancell"><a href="#"
+					onClick="window.close(); return false;">閉じる</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//library/Zynas/Validate/Ccnum.php=UTF-8
+encoding//library/Zynas/Validate/DatetimeFuture.php=UTF-8
+encoding//library/Zynas/Validate/DatetimePast.php=UTF-8
+encoding//library/Zynas/Validate/EmailAddress.php=UTF-8
+encoding//library/Zynas/Validate/File/ImageSize.php=UTF-8
+encoding//library/Zynas/Validate/File/MimeType.php=UTF-8
+encoding//library/Zynas/Validate/GreaterThan.php=UTF-8
+encoding//library/Zynas/Validate/Identical.php=UTF-8
+encoding//library/Zynas/Validate/StringEquals.php=UTF-8
+encoding//library/Zynas/Validate/StringLength.php=UTF-8

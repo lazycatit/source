@@ -1,0 +1,469 @@
+<title><?php echo $this->pageTitle = 'フォームダウンロード・アップロード ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'; // ページタイトル ?>
+</title>
+    <div id="contents" class="formdlud text03m">
+    <form id="formuldl" action="/up-down/confirm-request" method="post" enctype="multipart/form-data">
+		<div class="formdludcontents">
+		<div style="color: red;">
+    	    <?php echo $this->dumpFlashMessages(); ?>
+    	</div>
+			<h2>フォームダウンロード・アップロード</h2>
+			<div class="formdludtabs">
+				<div class="formdludtab_left">
+					<h3><img src="/resources/image/formuldl_tabdl.gif" width="342" height="27" alt="ダウンロード"></h3>
+					<div class="formdltabbox">
+						<p><img src="/resources/image/formuldl_icondl.gif" width="14" height="12" alt="">&nbsp;<a id="pdf_file" href="/up-down/download?filename=<?php echo $this->escape($this->issue->sysmtem_parameter_sheet);?>&id=<?php echo $this->control_number;?> " target="_blank"><?php echo $this->issue->sysmtem_parameter_sheet;?></a></p>
+						<ul>
+							<li><img src="/resources/image/formuldl_icondl.gif" width="14" height="12" alt="">&nbsp;<a href="/up-down/download?filename=<?php echo $this->escape($this->issue->coustomer_format1);?>&id=<?php echo $this->control_number;?>"><?php echo $this->issue->coustomer_format1;?></a></li>
+							<li><img src="/resources/image/formuldl_icondl.gif" width="14" height="12" alt="">&nbsp;<a href="/up-down/download?filename=<?php echo $this->escape($this->issue->coustomer_format2);?>&id=<?php echo $this->control_number;?>"><?php echo $this->issue->coustomer_format2;?></a></li>
+							<li><img src="/resources/image/formuldl_icondl.gif" width="14" height="12" alt="">&nbsp;<a href="/up-down/download?filename=<?php echo $this->escape($this->issue->coustomer_format3);?>&id=<?php echo $this->control_number;?>"><?php echo $this->issue->coustomer_format3;?></a></li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="formdludtab_right" id="div_choosefiles">
+					<h3><img src="/resources/image/formuldl_tabul.gif" width="339" height="27" alt="アップロード"></h3>
+					<div class="formultabbox">
+						<p>作成した該非判定書をアップロードします</p>
+						<p class="reference">
+							<a id="chooser">参照</a>
+						</p>
+						<div id="referencefiles" style="display: none">
+							<ul style="text-align: left;">
+								<li style="text-align: left;width: 70%;">	
+								    <?php echo $this->formFile('file_upload', array('size' => '36'));?>
+								</li>
+								<li class="filedelet" style="text-align: left; margin: 10px 0 0 195px !important;width: 30%;"><a id="clearmyfile" onclick="clearMyFile();">削除</a></li>								
+							</ul>
+						</div>
+					</div>
+					<!-- Display error when upload file is not pdf -->
+					<div style="color: red; text-align: left;">
+					    <?php echo $this->formError('file_upload_error');?>
+					</div>
+				</div>
+			</div><?php echo $this->error;?>
+			<div class="formdludtable">
+				<table id="tablecontent" border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<th class="faqdetailtablebb">管理番号</th>
+								<td class="faqdetailtablebb formdludtabletd tableintable"><?php echo $this->control_number; ?></td>								
+							<th class="faqdetailtablebb">顧客名</th>
+								<td class="faqdetailtablebb formdludtabletd tableintable"><?php echo $this->issue->customer_name;?></td>
+						</tr>
+						<?php $row_no = count($this->issue->getProducts());?>
+						<?php $first = true;?>
+						<?php foreach ($this->issue->getProducts() as $product):?>
+						    <?php if($first):?>						
+                            <tr>
+                                <th class="faqdetailtablebb" rowspan="<?php echo $row_no;?>">製品</th>
+                                <td class="faqdetailtablebb tableintable"><?php echo $product->name1;?></td>
+                                <td class="faqdetailtablebb tableintable" colspan="2"><?php echo $product->product_name_view;?></td>
+                            </tr>
+                            <?php $first = false;?>
+                            <?php else:?>
+                            <tr>                                
+                                <td class="faqdetailtablebb tableintable"><?php echo $product->name1;?></td>
+                                <td colspan="2" class="faqdetailtablebb tableintable"><?php echo $product->product_name_view;?></td>
+                            </tr>
+                            <?php endif;?>
+						<?php endforeach;?>
+						<tr>						
+							<th class="faqdetailtablebb">フォーマット</th>
+								<td class="faqdetailtablebb tableintable">
+    								<!-- DA request himself/herself -->
+    								<?php if (strcmp($this->issue->is_coustomer_format, $this->not_cust_form) === 0 && strcmp($this->m_user->user_type, $this->disco_admin) === 0 && strcmp($this->m_user->customer_code, $this->issue->customer_code) === 0):?>								
+    								    <label>ディスコフォーマット</label>
+								    <!-- DU/DA helping request -->
+    								<?php elseif (strcmp($this->m_user->user_type, $this->disco_user) === 0 || strcmp($this->m_user->user_type, $this->disco_admin) === 0):?>    
+    								    <?php if (strcmp($this->issue->is_coustomer_format, $this->not_cust_form) === 0):?>
+    								        <label>ディスコフォーマット（お客様用）</label>
+    								    <?php elseif (strcmp($this->issue->is_coustomer_format, $this->cust_form) === 0):?>    
+    								        <label>お客様フォーマット</label>
+								        <?php endif;?>
+    						        <?php endif;?>
+    							    <!-- EU request -->
+    							    <?php if (strcmp($this->m_user->user_type, $this->end_user) === 0):?>							        
+    							        <?php if (strcmp($this->issue->is_coustomer_format, $this->not_cust_form) === 0):?>
+    							            <label>ディスコフォーマット（お客様用）</label>
+    						            <?php elseif (strcmp($this->issue->is_coustomer_format, $this->cust_form) === 0):?>
+    								        <label>お客様フォーマット</label>
+								        <?php endif;?>
+    							    <?php endif;?>    							    
+								</td>
+							<th class="faqdetailtablebb">発行方法</th>
+								<td class="faqdetailtablebb tableintable">
+								    <?php if (strcmp($this->issue->publish_type, $this->pdf) === 0):?>
+								        <label class="">PDF</label>
+								    <?php elseif (strcmp($this->issue->publish_type, $this->paper) === 0):?>
+								        <label class="">原紙</label>    											
+								    <?php endif;?>				
+    								<?php echo $this->formHidden('publish_type', $this->issue->publish_type);?>
+								</td>
+						</tr>
+						<tr>
+							<th class="faqdetailtablebb" width="110px !important">客先指示事項</th>
+								<td colspan="3" class="faqdetailtablebb tableintable" style="word-break: break-all"><?php echo $this->escape($this->issue->coustomer_designation);?></td>
+						</tr>
+						<tr>
+							<th class="faqdetailtablebb">ステータス</th>
+							<td colspan="3" class="faqdetailtablebb">
+							     <?php echo $this->formSelect('status', $this->issue->status, array('class'=>'sel_stat'), array(1 => '発行中', 2 => '完了')); ?>
+							     &nbsp;<span style="color: red"><?php echo $this->formError('status_error');?></span>
+							</td>							
+						</tr>
+						<tr>
+							<th rowspan="4" valign="top" class="faqdetailtablebb">対応項目</th>
+							<td colspan="3" class="tableintable">
+							    <?php if (strcmp($this->issue->do_option, '') === 0):?>
+				                    <span class="formdludcheck" style="display: none"><?php echo $this->formCheckbox('ck_do_option', '', array('class' => '', 'style'=>'display:none'), array('disableLoadDefaultDecorators' => true));?>&nbsp;未判定対応</span>
+						        <?php elseif (strcmp($this->issue->do_option, 0) === 0): ?>				                   
+				                    <span class="formdludcheck"><?php echo $this->formCheckbox('ck_do_option', 0, array(), array(1, 0));?>&nbsp;未判定対応</span>
+					            <?php elseif (strcmp($this->issue->do_option, 1) === 0): ?>	
+					                <span class="formdludcheck"><?php echo $this->formCheckbox('ck_do_option', 1, array(), array(1, 0));?>&nbsp;未判定対応</span>
+					            <?php endif;?>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3" class="tableintable">
+    							<?php if (strcmp($this->issue->do_coustomer_designation, '') === 0):?>
+						            <span class="formdludcheck" style="display: none"><?php echo $this->formCheckbox('ck_do_customer_designation', 'aaa', array('class' => '', 'style'=>'display:none'), array('disableLoadDefaultDecorators' => true));?>&nbsp;客先指示事項対応</span></td> 
+							    <?php elseif (strcmp($this->issue->do_coustomer_designation, 0) === 0):?>					              
+			                        <span class="formdludcheck"><?php echo $this->formCheckbox('ck_do_customer_designation', 0, array(), array(1, 0));?>&nbsp;客先指示事項対応</span></td>
+							    <?php elseif (strcmp($this->issue->do_coustomer_designation, 1) === 0):?>
+							        <span class="formdludcheck"><?php echo $this->formCheckbox('ck_do_customer_designation', 1, array(), array(1, 0));?>&nbsp;客先指示事項対応</span></td>
+							    <?php endif;?>
+						</tr>
+						<tr>
+							<td colspan="3" class="tableintable">
+							    <?php if (strcmp($this->issue->do_coustomer_format, '') === 0):?>
+						            <span class="formdludcheck" style="display: none"><?php echo $this->formCheckbox('ck_do_customer_format', '', array('class' => '',  'style'=>'display:none'), array('disableLoadDefaultDecorators' => true));?>&nbsp;客先フォーム対応</span></td>
+							    <?php elseif (strcmp($this->issue->do_coustomer_format, 0) === 0): ?>
+					                <span class="formdludcheck"><?php echo $this->formCheckbox('ck_do_customer_format', 0, array(), array(1, 0));?>&nbsp;客先フォーム対応</span></td>
+    							<?php elseif (strcmp($this->issue->do_coustomer_format, 1) === 0): ?>
+    							    <span class="formdludcheck"><?php echo $this->formCheckbox('ck_do_customer_format', 1, array(), array(1, 0));?>&nbsp;客先フォーム対応</span></td>
+    							<?php endif;?>
+						</tr>
+						<tr>
+							<td colspan="3" class="faqdetailtablebb tableintable">
+							    <?php if (strcmp($this->issue->do_base_paper, '') === 0):?>
+						            <span class="formdludcheck" style="display: none"><?php echo $this->formCheckbox('ck_do_base_paper', '', array('class' => '', 'style'=>'display:none'), array('disableLoadDefaultDecorators' => true));?>&nbsp;原紙対応</span></td>
+						        <?php elseif (strcmp($this->issue->do_base_paper, 0) === 0): ?>					                
+				                    <span class="formdludcheck"><?php echo $this->formCheckbox('ck_do_base_paper', 0, array(), array(1, 0));?>&nbsp;原紙対応</span></td>
+			                    <?php elseif (strcmp($this->issue->do_base_paper, 1) === 0): ?>
+			                        <span class="formdludcheck"><?php echo $this->formCheckbox('ck_do_base_paper', 1, array(), array(1, 0));?>&nbsp;原紙対応</span></td>
+			                    <?php endif;?>							
+						</tr>
+						<!-- Display when user type = EU -->
+						<?php if (strcmp($this->m_user->user_type, $this->end_user) === 0): ?>
+						<!-- Display postal code and address if publish type is not pdf -->
+    						<?php if (strcmp($this->issue->publish_type, $this->pdf) !== 0): ?>
+        						<tr>
+        							<th colspan="0" rowspan="8" valign="top">提出先</th>
+    							    <?php if (!empty($this->issue->send_postal_code)):?>
+        								<td class="tableintable">郵便番号</td>
+        								<td colspan="2" class="tableintable"><?php echo $this->escape($this->issue->send_postal_code);?></td>
+        						    <?php endif;?>
+        						</tr>
+        						<?php if (!empty($this->issue->send_address)):?>
+        						<tr>
+        							<td class="tableintable">住所</td>
+        							<td colspan="2" class="tableintable"><?php echo $this->escape($this->issue->send_address);?></td>
+        						</tr>
+        						<?php endif;?>
+    						<?php elseif (strcmp($this->issue->publish_type, $this->pdf) === 0):?>
+    						    <tr style="width: 0px;">
+        							<th colspan="0" rowspan="8" valign="top">提出先</th>        							    
+        								<td style="display: none" class="tableintable"></td>
+        								<td style="display: none" colspan="2" class="tableintable"></td>
+        						</tr>
+        						<tr style="width: 0px; display: none">        						    
+        							<td style="display: none" class="tableintable"></td>
+        							<td style="display: none" colspan="2" class="tableintable"></td>
+        						</tr>       						 
+    						<?php endif;?>
+    						<?php if (!empty($this->issue->send_customer_name)):?>
+        						<tr>
+        							<td class="tableintable">会社名</td>
+        							<td colspan="2" class="tableintable"><?php echo $this->escape($this->issue->send_customer_name);?></td>
+        						</tr>
+    						<?php endif;?>
+    						<?php if (!empty($this->issue->send_unit_name)):?>
+        						<tr>
+        							<td class="tableintable">部署名</td>
+        							<td colspan="2" class="tableintable"><?php echo $this->escape($this->issue->send_unit_name);?></td>
+        						</tr>
+    						<?php endif;?>
+    						<?php if (!empty($this->issue->send_user_name)):?>
+        						<tr>
+        							<td class="tableintable">氏名</td>
+        							<td colspan="2" class="tableintable"><?php echo $this->escape($this->issue->send_user_name);?></td>
+        						</tr>
+    						<?php endif;?>
+    						<?php if (!empty($this->issue->send_tel)):?>
+        						<tr>
+        							<td class="tableintable">お電話番号</td>
+        							<td colspan="2" class="tableintable"><?php echo $this->escape($this->issue->send_tel);?></td>
+        						</tr>
+    						<?php endif;?>
+    						<?php if (!empty($this->issue->send_mail)):?>
+        						<tr>
+        							<td class="tableintable">E-mailアドレス</td>
+        							<td colspan="2" class="tableintable"><?php echo $this->escape($this->issue->send_mail);?></td>
+        						</tr>						
+    						<?php endif;?>
+    						<?php if (!empty($this->issue->send_cc_mail1) || !empty($this->issue->send_cc_mail2) || !empty($this->issue->send_cc_mail3)):?>
+        						<tr>
+        							<td class="tableintable">CCに含める<br>
+        							アドレス</td>
+        							<td colspan="2" class="tableintable">                                        
+        							<?php
+                                        if (strcmp($this->issue->send_cc_mail1, null) !== 0 && strcmp($this->issue->send_cc_mail2, null) !== 0 && strcmp($this->issue->send_cc_mail3, null) !== 0) {
+                                            echo $this->issue->send_cc_mail1 . ', ' . $this->issue->send_cc_mail2 . ', ' . $this->issue->send_cc_mail3;
+                                        } elseif (strcmp($this->issue->send_cc_mail1, null) === 0 && strcmp($this->issue->send_cc_mail2, null) === 0 && strcmp($this->issue->send_cc_mail3, null) === 0) {
+                                            echo '';
+                                        }
+                                        if (strcmp($this->issue->send_cc_mail1, null) === 0 && strcmp($this->issue->send_cc_mail2, null) === 0 && strcmp($this->issue->send_cc_mail3, null) !== 0) {
+                                            echo $this->issue->send_cc_mail3;
+                                        } elseif (strcmp($this->issue->send_cc_mail1, null) !== 0 && strcmp($this->issue->send_cc_mail2, null) !== 0 && strcmp($this->issue->send_cc_mail3, null) === 0) {
+                                            echo $this->issue->send_cc_mail1 . ', ' . $this->issue->send_cc_mail2;
+                                        }
+                                        if (strcmp($this->issue->send_cc_mail1, null) === 0 && strcmp($this->issue->send_cc_mail2, null) !== 0 && strcmp($this->issue->send_cc_mail3, null) === 0) {
+                                            echo $this->issue->send_cc_mail2;
+                                        } elseif (strcmp($this->issue->send_cc_mail1, null) !== 0 && strcmp($this->issue->send_cc_mail2, null) === 0 && strcmp($this->issue->send_cc_mail3, null) !== 0) {
+                                            echo $this->issue->send_cc_mail1 . ', ' . $this->issue->send_cc_mail3;
+                                        }
+                                        if (strcmp($this->issue->send_cc_mail1, null) === 0 && strcmp($this->issue->send_cc_mail2, null) !== 0 && strcmp($this->issue->send_cc_mail3, null) !== 0) {
+                                            echo $this->issue->send_cc_mail2 . ', ' . $this->issue->send_cc_mail3;
+                                        } elseif (strcmp($this->issue->send_cc_mail1, null) !== 0 && strcmp($this->issue->send_cc_mail2, null) === 0 && strcmp($this->issue->send_cc_mail3, null) === 0) {
+                                            echo $this->issue->send_cc_mail1;
+                                        }
+        							?>
+        							</td>
+        						</tr>    	
+    						<?php endif;?>				
+						<?php endif;?>
+						<?php if (strcmp($this->issue->publish_type, $this->paper) === 0 && (strcmp($this->m_user->user_type, $this->disco_user) === 0 || strcmp($this->m_user->user_type, $this->disco_admin) === 0)): ?>
+    						<?php if (!empty($this->issue->send_office_user_name)):?>
+        						<tr>
+        						    <?php if (!empty($this->issue->send_office_user_name) || !empty($this->issue->send_office_unit_name)):?>
+        						    <th rowspan = "2" class="">提出先</th>
+        						    <?php endif;?>
+        						    <td class="faqdetailtablebb tableintable">社内便送付先部署</td>
+        						    <td class="faqdetailtablebb tableintable" colspan="2"><?php echo $this->escape($this->issue->send_office_user_name);?></td>
+        						</tr>
+    						<?php endif;?>
+    						<?php if (!empty($this->issue->send_office_unit_name)):?>
+        						<tr>    						    
+        						    <td class="tableintable">社内便送付先氏名</td>
+        						    <td class="tableintable" colspan="2"><?php echo $this->escape($this->issue->send_office_unit_name);?></td>
+        						</tr>
+    						<?php endif;?>
+						<?php endif;?>				
+						</tbody>
+				</table>
+			</div>
+			<div class="formdludbtns">
+				<ul>
+					<li class="cancell"><a href="/admin-unissue-hist/list">戻る</a></li>
+					<li><?php echo $this->formButton(null, '登録', array('class' => 'zbtn_short', 'onClick' => 'return onSubmit()'));?></li>					
+				</ul>
+			</div>			
+			<?php echo $this->formHidden('id', $this->issue->id);?>
+			<?php echo $this->formHidden('result', '');?>			
+			<?php //echo $this->formHidden('status', '');?>
+			</form> <!-- end form -->
+		</div>
+		
+        <!-- yes/no dialog -->
+        <div class="modal" id="yesno" title="確認">
+            <p>保存します。よろしいですか？</p>
+        </div>	
+        
+<style>
+#tablecontent td {
+    text-align: left !important;
+}
+
+#file_upload {
+    margin: 0 0 0 -22px !important;
+}
+
+#clearmyfile {
+    margin: 0 14px 0 19px !important;
+}
+</style>
+<script type="text/javascript">
+$('#chooser').click(function() {
+    $('#referencefiles').show();
+});
+
+//Clear selected file
+function clearMyFile() {
+	$('#file_upload').replaceWith( $('#file_upload').val('').clone( true ));
+	$('#referencefiles').hide();
+}
+
+$(document).ready(function(){
+    var triggers = $(".modalInput").overlay({
+        mask: {
+            color: '#000',
+            loadSpeed: 200,
+            opacity: 0.5
+        },
+        closeOnClick: false
+    });
+    var buttons = $("#yesno button").click(function(e) {
+        var yes = buttons.index(this) === 0;
+        if (yes==true) {
+            $("#formuldl").submit();
+        }
+    });
+   
+});
+
+function onSubmit() {
+    $("#yesno" ).dialog({
+     resizable: false,
+     height:140,
+     modal: true,
+     buttons: {
+         "はい": function() {
+           $("#formuldl").submit();
+         },
+         "キャンセル": function() {
+             $( this ).dialog( "close" );
+             
+         }
+     }
+ });
+}
+
+//check status of all checkboxes, if its is checked all, return 1, otherwise return 0
+$(document).ready(function() {
+	var display = 0;
+	var check = 0;
+    var ck_do_op = $('#ck_do_option');
+    var ck_do_cust_des = $('#ck_do_customer_designation');	
+    var ck_do_cust_form = $('#ck_do_customer_format');	
+    var ck_do_base_paper = $('#ck_do_base_paper');
+    
+    if (isDisplay(ck_do_op)) {display++;}
+    if (isDisplay(ck_do_cust_des)) {display++;}
+    if (isDisplay(ck_do_cust_form)) {display++;}
+    if (isDisplay(ck_do_base_paper)) {display++;}
+    if (isCheck(ck_do_op)) {check++;}
+    if (isCheck(ck_do_cust_des)) {check++;}
+    if (isCheck(ck_do_cust_form)) {check++;}
+    if (isCheck(ck_do_base_paper)) {check++;}
+    
+    $('#ck_do_option').change(function() {
+		if ($('#ck_do_option').is(':checked')) {
+			check++;
+			if (display==check) {
+				$('#result').val('1');
+			} else {
+				$('#result').val('0');
+			}
+		} else {
+			check--;
+			if (display==check) {
+				$('#result').val('1');
+			} else {
+				$('#result').val('0');
+			}
+		}
+	});
+
+    $('#ck_do_customer_designation').change(function() {
+		if ($('#ck_do_customer_designation').is(':checked')) {
+			check++;
+			if (display==check) {
+				$('#result').val('1');
+			} else {
+				$('#result').val('0');
+			}
+		} else {
+			check--;
+			if (display==check) {
+				$('#result').val('1');
+			} else {
+				$('#result').val('0');
+			}
+		}
+	});
+
+    $('#ck_do_customer_format').change(function() {
+		if ($('#ck_do_customer_format').is(':checked')) {
+			check++;
+			if (display==check) {
+				$('#result').val('1');
+			} else {
+				$('#result').val('0');
+			}
+		} else {
+			check--;
+			if (display==check) {
+				$('#result').val('1');
+			} else {
+				$('#result').val('0');
+			}
+		}
+	});
+    
+    $('#ck_do_base_paper').change(function() {
+		if ($('#ck_do_base_paper').is(':checked')) {
+			check++;
+			if (display==check) {
+				$('#result').val('1');
+			} else {
+				$('#result').val('0');
+			}
+		} else {
+			check--;
+			if (display==check) {
+				$('#result').val('1');
+			} else {
+				$('#result').val('0');
+			}
+		}
+	});    
+    
+    if (display == check) {
+		$('#result').val('1');
+	} else {
+		$('#result').val('0');
+	}
+
+});
+
+//Check checkbox is display or not
+function isDisplay(id) {	
+	if (id.css('display') != 'none') {
+		return true;
+	} else {
+	    return false;
+	}
+}
+
+//Check checkbox is checked or not
+function isCheck(id) {	
+	if (id.is(':checked')) {	
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function isChangeStatus(id, check) {
+	id.change(function () {
+		if (id.is(':checked')) {
+			check++;
+		} else {
+			check--;
+		}
+	});	
+	return check;
+}
+
+</script>

@@ -1,0 +1,63 @@
+<title><?php echo $this->pageTitle='TOP ｜ 該非判定WEBシステム ｜ 株式会社ディスコ' ?></title>
+<div id="z_layout_box_main" align="center">
+	<div style="color: red;">
+	<?php echo $this->dumpFlashMessages(); ?>
+	</div>
+	<div id="contents" class="top text03m">
+		<!-- Informations list -->
+		<div class="topcontents">
+		<h2>
+		<?php if ( !empty($this->infListMore) && $this->infListMore == true ) : ?>
+		<img src="/resources/image/top_info_ttl.gif" width="640" height="30" alt="インフォメーション"><a><img src="/resources/image/btn_more.gif" width="74" height="18" alt="もっと見る" onclick="listInfo()"></a>
+        <?php else: ?>
+          <img src="/resources/image/top_info_ttl.gif" width="640" height="30" alt="インフォメーション" align="left">
+        <?php endif;?>
+		</h2>
+			<div class="newsbox">
+			<?php foreach ($this->infList as $itemInf): ?>
+				<p>
+				<?php echo $this->dateFormat($this->escape($itemInf['create_date']),'Y/m/d'); ?>
+					<a
+						href="/information/detail?id=<?php echo $this->escape($itemInf['id']) ?>"
+						target="_blank"><?php echo $this->escape($itemInf['title']) ; ?> </a>
+				</p>
+				<?php endforeach; ?>
+			</div>
+		</div>
+		<!-- End informations list -->
+		<!-- FAQ list -->
+		<div class="topcontents">
+		<h2>
+		<?php if ( !empty($this->faqListMore) && $this->faqListMore == true ) : ?>
+		  <img src="/resources/image/top_faq_ttl.gif" width="640" height="30" alt="新着FAQ"><a><img src="/resources/image/btn_more.gif" width="74" height="18" alt="もっと見る" onclick="listFaq()"></a>
+		<?php else: ?>
+		  <img src="/resources/image/top_faq_ttl.gif" width="640" height="30" alt="新着FAQ" align="left">
+		<?php endif;?>
+		</h2>
+			<div class="newsbox">
+			<?php foreach ($this->faqList as $itemFaq): ?>
+				<p>
+				<?php echo $this->dateFormat($this->escape($itemFaq['create_date']),'Y/m/d'); ?>
+					<a
+						href="/faq/detail?id=<?php echo $this->escape($itemFaq['id']) ?> "
+						target="_blank"> <?php echo $this->escape($itemFaq['title']) ; ?>
+					</a>
+				</p>
+				<?php endforeach; ?>
+			</div>
+		</div>
+		<!-- End FAQ list -->
+		<p class="gouserregist">
+			<img src="/resources/image/icon_arrow01.gif" width="8" height="8"
+				alt=""><a href="<?php echo Zynas_Registry::getConfig()->constant->disco_url;?>">利用者ページ</a>
+		</p>
+	</div>
+</div>
+<script type="text/javascript">
+    function listInfo(){
+        window.location = "/information/list";
+    }
+    function listFaq(){
+        window.location = "/faq/list";
+    }
+</script>

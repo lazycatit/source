@@ -1,0 +1,111 @@
+<title><?php echo $this->pageTitle = '顧客検索 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ';?>
+</title>
+<div id="contents" class="customer text03m">
+	<div class="customercontents">
+		<h2>顧客検索</h2>
+		<div class="inputbox">
+			<form action="/admin-search-customer/list" method="post">
+			    <?php echo $this->formText('target', $this->request->target, array('class' => 'hidden'));?>
+				<div class="codeinput">
+					<p>
+						顧客コード・顧客名<br> （部分一致）
+					</p>
+					<p>
+					<?php echo $this->formText('keysearch', $this->request->keysearch, array('class' => 'w370'));?>					
+					</p>
+				</div>
+				<div style="color: red; text-align: left; padding-left: 200px;">
+    				<?php echo $this->formError('keysearch'); ?>
+				</div>
+				<p>
+				<?php echo $this->formSubmit('search', '検索', array('class' => 'zbtn_short')); ?>
+				</p>
+			</form>
+		</div>
+		<form id="form_submit" method="post">
+			<?php echo $this->formHidden('customer_name', '')?>
+		<div class="customertableset">
+			<div class="pager">
+			<?php echo $this->paginator; ?>
+			</div>
+			<table border="0" cellpadding="0" cellspacing="0"
+				class="customertable" id="tablecontent">
+				<tbody>
+					<tr>
+						<th class="thleft">選択</th>
+						<th class="thcenter">顧客コード</th>
+						<th>顧客名</th>
+					</tr>
+					<?php foreach ($this->paginator as $item): ?>
+					<tr>
+						<td><?php echo $this->formRadio('rbt_arr[]', null, array('class' => ''), array($this->escape($item->customer_code) => null)); ?>
+						</td>
+						<td style="text-align: left"><?php echo $this->escape($item->customer_code); ?>
+						</td>
+						<td style="text-align: left"><?php echo $this->escape($item->customer_name); ?>
+						</td>
+					</tr>
+					<?php endforeach;?>
+				</tbody>
+			</table>
+			<div class="pager">
+			<?php echo $this->paginator; ?>
+			</div>
+		</div>
+
+		<ul>
+			<li><?php echo $this->formButton('btSelect', '選択', array('class' => 'zbtn_short', 'onclick'=> 'onClickSubmitCode();')); ?>
+			</li>
+		</ul>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	  // 偶数行にのみクラスを指定
+	  $('#tablecontent tr:even').addClass('bglightgray');
+	});
+
+function onClickSubmitCode() {
+    checkSelectItem();
+    var radios = document.getElementsByName('rbt_arr[]');
+    var name = document.getElementById('customer_name');
+    for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            var customer_code = radios[i].value;
+            if (checkSelectItem()) {
+                ajaxSubmit(customer_code);
+            }
+        }
+    }
+}
+
+function checkSelectItem() {
+    var flashMsg = "<?php echo E045V;?>";
+    var rdo = document.getElementsByName('rbt_arr[]');
+    var status;
+    for (var i = 0; i < rdo.length; i++) {
+        if (rdo[i].checked) {
+            status = true;
+        }
+    }
+    if(!status){
+        status = false;
+        alert(flashMsg);
+    }
+    return status;
+}
+
+function ajaxSubmit(customer_code) {
+    var url = $("#target").val();
+        $.ajax({
+            type : "POST",
+            data : "customer_code="+customer_code,
+            url : url,
+            success : function(response) {
+                window.close();
+            }
+        });
+    }
+
+</script>

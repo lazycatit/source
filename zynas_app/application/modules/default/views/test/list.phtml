@@ -1,0 +1,125 @@
+<title><?php echo $this->pageTitle = '繧､繝ｳ繝輔か繝｡繝ｼ繧ｷ繝ｧ繝ｳ荳�ｦｧ'; // 繝壹�繧ｸ繧ｿ繧､繝医Ν ?></title>
+<div id="z_layout_box_main" align="center">
+	<div style="color: red;">
+	<?php echo $this->dumpFlashMessages(); ?>
+	</div>
+	<div id="contents" class="info text03m">
+		<div class="infocontents">
+			<h2>繧､繝ｳ繝輔か繝｡繝ｼ繧ｷ繝ｧ繝ｳ荳�ｦｧ</h2>
+			
+			<div class="inputbox">
+				<form action="/test/list" method="post">
+					<p class="freetext">
+						繧ｿ繧､繝医Ν(驛ｨ蛻�ｸ��)
+						<?php echo $this->formText('name', $this->request->name, array('class' => 'w400'));?>
+						<div style="color: red; text-align: left; padding-left: 200px;"><?php echo $this->formError('name'); ?></div>
+					</p>
+					<?php echo $this->formSubmit('search', '讀懃ｴ｢', array('class' => 'zbtn_short')); ?>
+				</form>
+				<!-- end form search -->
+			</div>
+			
+			<!-- Form data info -->
+			<form action="/test/list" method="post">
+				<div class="infotableset">
+				
+					<div class="pager">
+					<p>
+					<a href="/test/add">譁ｰ隕丈ｽ懈�</a>
+					</p>
+					<?php echo $this->paginator; ?>
+					</div>
+					<table border="0" cellpadding="0" cellspacing="0"
+						class="infotable02" id="tablecontent">
+						<tbody>
+							<tr>
+								<th class="thleft">Name</th>
+								<th class="thcenter" width="120px !important;">Create Date</th>
+								<th width="30px;">邱ｨ髮�/th>
+								<th width=30px;">蜑企勁</th>				
+							</tr>
+							<?php  foreach ($this->paginator as $item): ?>
+							<tr>
+								<td style="text-align: left">
+									<a href="/test/detail?id=<?php echo $this->escape($item->id) ?>">
+										<?php echo StringUtil::getViewSubString($this->escape($item->name),$this->max_display_char); ?> 
+									</a>
+								</td>
+								<td style="text-align: left"><?php echo $this->dateFormat($this->escape($item->create_date),'Y/m/d'); ?>
+								</td>
+								<td>
+									<?php echo $this->formButtonTo('edit','邱ｨ髮�','/test/edit?id', array( 'class' => 'button'));?>
+								</td>
+								<td>
+									<?php echo $this->formButton(null, 'Delete', array('class' => 'modalInput', 'onclick' =>'onClickDelete($item->id)' , 'rel' =>'#yesno'));?>
+								</td>
+								
+							</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+					<!-- padding -->
+					<div class="pager">
+					<?php echo $this->paginator; ?>
+					</div>
+					<!-- end padding -->
+				</div>
+			</form>
+			<!-- End form data info -->
+		</div>
+	</div>
+</div>
+
+<!-- yes/no dialog -->
+<div class="modal" id="yesno" title="遒ｺ隱�>
+	<p>蜑企勁縺励∪縺吶�繧医ｍ縺励＞縺ｧ縺吶°��/p>
+</div>
+
+<form id="deleteForm" name="deleteForm"
+	action="/test/delete" method="post">
+	<input type="hidden" name="id" value="" />
+</form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    
+    var buttons = $("#yesno button").click(function(e) {
+        var yes = buttons.index(this) === 0;
+        if (yes==true) {
+            $("#deleteForm").submit();
+        }
+    });
+   
+});
+
+
+function onClickDelete(id) {
+    $("#yesno" ).dialog({
+     resizable: false,
+     height:140,
+     modal: true,
+     buttons: {
+         "縺ｯ縺�: function() {        
+           document.deleteForm.id.value = id;
+           $("#deleteForm").submit();              
+         },
+         "繧ｭ繝｣繝ｳ繧ｻ繝ｫ": function() {
+             $( this ).dialog( "close" );
+         }
+     }
+ });
+    
+}
+
+function deleteInfo(){
+	alert(document.deleteForm.id.value);	
+	document.deleteForm.submit();
+}
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	  // 蛛ｶ謨ｰ陦後↓縺ｮ縺ｿ繧ｯ繝ｩ繧ｹ繧呈欠螳�
+	  $('#tablecontent tr:even').addClass('bglightgray');
+	});
+</script>

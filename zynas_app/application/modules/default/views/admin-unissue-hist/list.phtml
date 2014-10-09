@@ -1,0 +1,167 @@
+<?php $this->pageTitle = '未対応一覧 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ';?>
+<div id="contents" class="uncorrespondedlist text03m">
+	<div class="uncorrespondedlistcontents">
+		<h2>未対応一覧</h2>
+		<div class="inputbox">
+			<form name="frm_unissue" action="/admin-unissue-hist/list" method="post">
+				<div class="codeinput">
+					<p class="codeinputitem">管理番号</p>
+					<p>
+					<?php echo $this->formText('control_number', $this->request->control_number, array('class' => 'w300')); ?>
+					<div style="color: red; padding-left: 62px;">
+					<?php echo $this->formError('control_number');?>
+					</div>
+					</p>
+				</div>
+				<div class="codeinput02">
+					<p class="codeinputitem">モード</p>
+					<?php
+    					$checked = '1';
+    					if(!empty($this->request->rbt_mode)):
+    					    $checked = $this->request->rbt_mode; 
+    					endif;
+					?>
+					<?php
+    					echo '<ul><li>';    					
+    					echo $this->FormRadioForDesign('rbt_mode',$checked,array('name'=>'rbt_mode','id'=>'rbt_mode'),array('1'=>'未対応'));
+    					echo $this->FormRadioForDesign('rbt_mode',$checked,array('name'=>'rbt_mode','id'=>'rbt_mode'),array('2'=>'対応済'));
+    					echo '</li></ul>';				
+        			?>					
+    				</div>
+    				<?php echo $this->formSubmit('search', '検索', array('class' => 'zbtn_short','onclick' => 'setCookie();')); ?>    				
+				</form>
+			</div>			
+			<div class="uncorrespondedlisttableset">
+				<div class="pager">
+					<?php echo $this->paginator; ?>
+				</div>							
+    				<table border="0" cellpadding="0" cellspacing="0" class="uncorrespondedlisttable02" id="tablecontent">
+    					<tbody>
+    						<tr>
+    							<th class="thleft">管理番号</th>
+    							<th>依頼日時</th>
+    							<th class="thleft03">顧客名</th>
+    							<th class="thleft04">製品</th>
+    							<th class="thleft07">発行方法</th>
+    							<th class="thleft08">ステータス</th>
+    							<th class="thleft09">対応項目</th>
+    						</tr>
+    						<?php $itemIndex=0?>
+    						<?php foreach($this->paginator as $item): ?>
+    						<?php $itemIndex++?>
+    						    <tr style="text-align: left" class="<?php echo $itemIndex%2?>">
+                                <?php $same = false;?>
+                                <?php $index = 0?>
+    						    <?php foreach($item->getProducts() as $product):?>
+    						    <?php if(!$same):?> 
+    						        <td valign="top" rowspan="<?php echo $this->escape($item->number_of_col);?>"><a id="click_submit" href="/up-down/request?id=<?php echo $this->escape($item->id);?>"><?php echo $this->escape($item->control_number); ?></a></td>
+    						        <td valign="top" rowspan="<?php echo $this->escape($item->number_of_col);?>"><?php echo $this->dateFormat($this->escape($item->create_date), 'Y/m/d');
+    						            echo "&nbsp;" . $this->dateFormat($this->escape($item->create_date), 'H:i');
+    						            ?></td>
+    						        <td valign="top" rowspan="<?php echo $this->escape($item->number_of_col);?>"><?php echo $this->escape($item->customer_name); ?></td>
+    						    <?php endif;?> 
+    						    <?php if(!$same):?>
+    						        <td align="left" class="pdv<?php echo $itemIndex?>">   						            
+        						        <?php echo $this->escape($product->product_name_view); ?>   
+        						        <?php if ($item->number_of_col <= $this->max_display):?>
+        						            <a href="#" class="view_more" id="view_more" style="display: none">もっと見る</a>
+        						        <?php endif;?>  						                					                						            				           					       
+    						        </td>
+    						    <?php elseif($same && $index == $this->max_display):?>
+    						        <tr class="<?php echo $itemIndex%2?>">
+        						        <td align="left" class="pdv<?php echo $itemIndex?>">   						            
+        						            <a href="#" class="view_more" id="view_more">もっと見る</a><div class="hidden<?php echo $itemIndex?>" style="display:none"><?php echo $this->escape($product->product_name_view);?></div>						                						            				           					       
+        						        </td>
+    						        </tr>
+    						    <?php elseif($same && $index < $this->max_display):?>
+    						        <tr class="<?php echo $itemIndex%2?>">
+        						        <td align="left" class="pdv<?php echo $itemIndex?>">   						            
+        						            <?php echo $this->escape($product->product_name_view);?>  						                
+        						        </td>
+    						        </tr>
+    						    <?php elseif($same && $index > $this->max_display):?>    
+    						        <tr class="<?php echo $itemIndex%2?>">						        
+     						            <td align="left" style="display:none" class="hidden<?php echo $itemIndex?>" class="pdv<?php echo $itemIndex?>">   						            
+        						            <?php echo $this->escape($item->product_name_view);?><?php echo $index;?>			                						            				           					       
+        						        </td>
+    						        </tr>
+    						    
+    						    <?php endif;?>
+  		                        <?php if(!$same):?> 
+    						        <td valign="top" rowspan="<?php echo $this->escape($item->number_of_col);?>"><?php if (strcmp($this->escape($item->publish_type), $this->paper) === 0) { echo '原紙';} elseif (strcmp($this->escape($item->publish_type), $this->pdf) === 0) {echo 'PDF';} ?></td>
+    						        <td valign="top" rowspan="<?php echo $this->escape($item->number_of_col);?>"><?php if (strcmp($this->escape($item->status), 1) === 0) {echo '発行中';} elseif (strcmp($this->escape($item->status), 2) === 0) {echo '完了';} ?></td>
+    						        <td valign="top" rowspan="<?php echo $this->escape($item->number_of_col);?>">
+    						        <?php if ((strcmp($this->escape($item->do_option), '0') === 0 && strcmp($checked, '1') === 0) || (strcmp($this->escape($item->do_option), '1') === 0 && strcmp($checked, '2') === 0)): ?>
+    						            <label class="">未判定対応</label><br><?php endif;?>
+						            <?php if ((strcmp($this->escape($item->do_coustomer_designation), '0') === 0 && strcmp($checked, '1') === 0) || (strcmp($this->escape($item->do_coustomer_designation), '1') === 0 && strcmp($checked, '2') === 0)): ?>
+    						            <label class="">客先指示事項対応</label><br><?php endif;?>
+						            <?php if ((strcmp($this->escape($item->do_coustomer_format), '0') === 0 && strcmp($checked, '1') === 0) || (strcmp($this->escape($item->do_coustomer_format), '1') === 0 && strcmp($checked, '2') === 0)): ?>
+    						            <label class="">客先フォーマット対応</label><br><?php endif;?>
+						            <?php if ((strcmp($this->escape($item->do_base_paper), '0') === 0 && strcmp($checked, '1') === 0) || (strcmp($this->escape($item->do_base_paper), '1') === 0 && strcmp($checked, '2') === 0)): ?>
+    						            <label class="">原紙対応</label><br><?php endif;?>
+    						        </td>
+    						    </tr>
+    						    <?php endif;?> 
+    						    <?php $same=true;?>
+    						    <?php $index++;?>
+    						    <?php endforeach;?>
+    						<?php endforeach;?>
+    					</tbody>
+    				</table>				
+				<div class="pager">
+					<?php echo $this->paginator; ?>
+				</div>				
+			</form>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+getCookie();
+$(document).ready(function(){
+	  // 偶数行にのみクラスを指定	   
+	  $('tr.0').addClass('bglightgray');
+	  
+	});
+
+$(document).ready(function(){
+    $("#view_more").live("click", function(){
+        var ind = $("a.view_more").index(this)+1;        
+        	$('.hidden'+ind).show();
+        	$('a.view_more:eq('+(parseInt(ind)-1)+')').hide();
+    });  
+  });
+
+$('#click_submit').click(function() {
+	  $('#submit_content').submit();
+	});
+function setCookie() {
+	var rd1 = document.getElementById('rbt_mode-1');
+	var rd2 = document.getElementById('rbt_mode-2');
+	if (rd1.checked) {
+		document.cookie = "cookie-rdo=" + rd1.value + "; path=/";
+	}
+	if (rd2.checked) {
+		document.cookie = "cookie-rdo=" + rd2.value + "; path=/";
+	}
+}
+function getCookie() {
+    var cname = "cookie-rdo=";
+    var ca = document.cookie.split(';');
+    for (var i=0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(cname) == 0) {       
+            if (c.substring(cname.length, c.length) == '1') {
+				document.getElementById('rbt_mode-1').checked = true;
+            } else {
+            	document.getElementById('rbt_mode-2').checked = true;
+            }
+            document.cookie = cname +';path=/;expires=Thu, 01-Jan-70 00:00:01 GMT;';
+            return c.substring(cname.length, c.length);
+        }
+    }
+    return null;
+}
+
+</script>

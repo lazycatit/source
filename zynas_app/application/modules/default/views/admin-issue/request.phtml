@@ -1,0 +1,487 @@
+    <title><?php echo $this->pageTitle = '発行依頼 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ';?></title>
+    <div id="contents" class="judgstep01 judgstep01_2 text03m">
+    <div style="color: red;">
+    <?php echo $this->dumpFlashMessages(); ?>
+    </div>
+    <?php
+        $is_customer_designation = 0;
+        $customer_code = 'zynas1';
+        if(strcmp($customer_code,'zynas')===0):
+            $export_person = 1;
+        else:
+            $export_person = 2;
+        endif;
+    ?>
+    <form action="/admin-issue/next" method="post" enctype="multipart/form-data" onsubmit="return checkValidate();">
+        <div class="judgstep01contents judgstep01_2contents">
+            <h2>該非判定書発行依頼</h2>
+            <ul class="stepnum">
+                <li><img src="/resources/image/judg_step01on_02off.gif" width="238" height="33" alt="依頼内容の入力"></li>
+                <li><img src="/resources/image/judg_step02off_03off.gif" width="238" height="33" alt="入力内容の確認"></li>
+                <li><img src="/resources/image/judg_step03off.gif" width="238" height="33" alt="判定書作成"></li>
+            </ul>
+            <p class="outline"><span class="formabsolute">必須</span>のついている項目は必ずご入力ください。</p>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <th><a href="/admin-search-customer/list" target="_blank">お客様名</a></th>
+                            <td><?php 
+                                    if(!empty($this->customer->customer_name)):
+                                        echo $this->escape($this->customer->customer_name);
+                                    else:
+                                        echo "株式会社ディスコ";
+                                    endif;
+                                ?>
+                             </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="judgstep01box01">
+                <h2 class="ttl_bg02"><span class="formabsolute">必須</span><span class="h2_text">ご希望の提出方法を選択ください。（両方選択可）</span></h2>
+                <p>
+                <?php echo $this->formCheckbox('pdf',null,array('checked' => false),array('1', '0'));?>
+                    PDF
+                </p>
+                <p>
+                <?php echo $this->formCheckbox('paper',null,array('checked' => false),array('1', '0'));?>
+                                                    原紙
+                </p>
+                <div class="stencilpaper" id="stencilpaper" style="display:none">
+                    <p>社内便郵送先部署<?php echo $this->formText('txtDivisionName',$this->user->unit_name, array('class' => 'w300'));?></p>
+                    <p>社内便郵送先氏名<?php echo $this->formText('txtStaffName',$this->user->name_jp, array('class' => 'w300'));?></p>
+                </div>
+            </div>
+            <div class="judgstep01_2box01">
+                <h2 class="ttl_bg02"><span class="formabsolute">必須</span><span class="h2_text">お客様指示内容</span></h2>
+                <ul class="judgstep01_2box02radio">
+                    <li>
+                        <?php echo $this->FormRadioForDesign('is_customer_designation',$is_customer_designation,array('name'=>'is_customer_designation','id'=>'rdYes'),array('1'=>'有り'));?>
+                    </li>
+                    <li>
+                        <?php echo $this->FormRadioForDesign('is_customer_designation',$is_customer_designation,array('name'=>'is_customer_designation','id'=>'rdNo'),array('0'=>'無し'));?>
+                    </li>
+                </ul>
+                <div class="userdirections">
+                    <p><input type="text" name="txtCustomerDesignation" id="txtCustomerDesignation" value="" class="w600"></p>
+                </div>
+            </div>
+            <div class="judgstep01box02 judgstep01_2box02">
+                <h2 class="ttl_bg02"><span class="formabsolute">必須</span><span class="h2_text">輸出者を選択してください</span></h2>
+                <ul class="judgstep01_2box02radio">
+                    <li>
+                        <?php echo $this->FormRadioForDesign('export_person',$export_person,array('name'=>'export_person','id'=>'rdDisco'),array('1'=>'ディスコ'));?>
+                    </li>
+                    <li>
+                        <?php echo $this->FormRadioForDesign('export_person',$export_person,array('name'=>'export_person','id'=>'rdCustomer'),array('2'=>'お客様'));?>
+                    </li>
+                </ul>
+                <p class="btnfilechoose"><a id="btnChooseFile">ファイルを選択</a></p>
+                <div id="spacechoosefiles"></div>
+            </div>
+            <div class="judgstep01box03">
+                <h2 class="ttl_bg02"><span class="formabsolute">必須</span><span class="h2_text">発行する型式を入力してください</span><span class="chooseorder"><a href="/disco-order-hist/list?customer_code=C0001" target="_blank">発注履歴から選択する</a></span></h2>
+                <p class="outlines">複数発行する場合は「型式の追加」ボタンをクリックし、追加してください。</p>
+                <div class="judgstep01chooses">
+                    <div class="productchoose">
+                        <ul>
+                            <li>製品種目</li>
+                            <li>
+                                <div class="spacepaddingtop">
+                                    <select class="w160" id="sl1" name="product_category[]">
+                                    <?php echo ($this->slProductCategory); ?>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul id="txtChooseProductNumber1" style="display: none">
+                            <li>製品番号</li>
+                            <li><input type="text" value="" name="txtProductNumber[]"
+                                class="w200"></li>
+                        </ul>
+                        <ul id="chooseProductNumber1" style="display: none">
+                            <li>機種</li>
+                            <li>
+                                <div class="spacepaddingtop">
+                                    <select class="w100" name="slModel[]">
+                                    <?php echo ($this->slProductNumber); ?>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul id="chooseTypePwp1" style="display: none">
+                            <li>発行形態</li>
+                            <li>
+                                <div class="spacepaddingtop">
+                                    <select class="w75" id="selectTypePwp1" name="selectTypePwp[]">
+                                    <?php echo ($this->slIssueBy)?>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul id="choosePwpProductNumber1" style="display: none">
+                            <li>製品コード</li>
+                            <li><input type="text" value="" name="txt_m_product_number[]"
+                                class="w125"></li>
+                        </ul>
+                        <ul id="choosePwpSeries1" style="display: none">
+                            <li>シリーズ</li>
+                            <li>
+                                <div class="spacepaddingtop">
+                                    <select class="w100" name="select_category[]">
+                                        <?php echo $this->slSeries?>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <ul id="txtSerialNumber1" style="display: none">
+                            <li>製番</li>
+                            <li><input type="text" value="" name="bf_opi_serial_number[]"
+                                class="w75"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="judgstep01box04">
+                <p><a id="add_product_issue">型式の追加</a></p>
+                <ul>
+                    <li class="btn_short">
+                        <?php echo $this->formSubmit(null, '確認画面へ', array('class' => 'zbtn_short')); ?>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <?php
+        echo $this->formHidden('maxFileUpload', Zynas_Registry::getConfig()->constants->MAX_FILE_UPLOAD);
+        echo $this->formHidden('maxItemRequest', Zynas_Registry::getConfig()->constants->MAX_ITEM_ISSUE_REQUEST);
+        ?>
+    </form>
+    </div>
+    
+<script type="text/javascript">
+/**
+ * Append more upload file
+ */
+ 
+ var i = 0;
+ $(document).ready(function(){       
+   $("#btnChooseFile").click(function(){
+       var maxFileUpload =  parseInt($("#maxFileUpload").val());
+       i++;        
+     if(i<(maxFileUpload+1)){
+         $("div#spacechoosefiles").append("<div class=\"choosefiles\">"
+                 +"<ul>"
+                 +"<li class=\"filename\"><input type=\"file\" name=\"file_upload[]\"></li>"
+                 +"<li class=\"filedelet\"><a class=\"deletefileupload\" onclick=\"\">削除</a></li>"
+                 +"</ul>"
+                 +"</div>"); 
+     }else{
+         alert("You can not upload more over "+ maxFileUpload +" files.");
+         if(i> maxFileUpload) i = maxFileUpload;
+     }
+     
+   });
+ });
+
+
+ $(document).ready(function(){
+     $("a.deletefileupload").live("click", function(){
+    	 --i;
+         var ind = $("a.deletefileupload").index(this);
+         $('div#spacechoosefiles div.choosefiles:eq('+ind+')').remove();
+     });
+   });
+
+
+ /**
+  * Append form to issue
+  */  
+  var jj=1;
+  $(document).ready(function(){       
+    $("#add_product_issue").click(function(){
+        var maxItemRequest =  parseInt($("#maxItemRequest").val());
+        jj++;
+      if(jj<(maxItemRequest+1)){
+
+           $(".judgstep01chooses").append("<div class=\"productchoose\">"
+                   +"<ul>"
+                   +"<li>製品種目</li>"
+                   +"<li>"
+                   +    "<div class=\"spacepaddingtop\">"
+                   +       "<select class=\"w160\" id='sl"+jj+"' name=\"product_category[]\">"
+                   +           "<?php echo ($this->slProductCategory); ?>"
+                   +       "</select>"
+                   +    "</div>"
+                   +"</li>"
+                   +"</ul>"
+                   +"<ul id='txtChooseProductNumber"+jj+"' style=\"display:none\">"
+                   +   "<li>製品番号</li>"
+                   +   "<li><input type=\"text\" value=\"\" name=\"txtProductNumber[]\" class=\"w200\"></li>"
+                   +"</ul>"                        
+                   +"<ul id='chooseProductNumber"+jj+"' style=\"display:none\">"
+                   +   "<li>機種</li>"
+                   +   "<li>"
+                   +   "<div class=\"spacepaddingtop\">"
+                   +       "<select class=\"w100\"  name=\"slModel[]\">"                                   
+                   +           "<?php echo ($this ->slProductNumber); ?>"                                      
+                   +       "</select>"
+                   +   "</div>"
+                   +   "</li>"
+                   +"</ul>"
+                   +"<ul id='chooseTypePwp"+jj+"' style=\"display:none\">"
+                   +   "<li>発行形態</li>"
+                   +   "<li>"
+                   +   "<div class=\"spacepaddingtop\">"
+                   +       "<select class=\"w75\" id='selectTypePwp"+jj+"' name=\"selectTypePwp[]\" >"
+                   +           "<?php echo ($this->slIssueBy)?>"
+                   +       "</select>"
+                   +   "</div>"
+                   +   "</li>"
+                   +"</ul>"
+                   +"<ul id='choosePwpProductNumber"+jj+"' style=\"display:none\">"
+                   +   "<li>製品コード</li>"
+                   +   "<li><input type=\"text\" value=\"\" name=\"txt_m_product_number[]\" class=\"w125\"></li>"
+                   +"</ul>"
+                   +"<ul id='choosePwpSeries"+jj+"' style=\"display:none\">"                       
+                   +   "<li>シリーズ</li>"
+                   +   "<li>"
+                   +   "<div class=\"spacepaddingtop\">"
+                   +       "<select class=\"w100\" name=\"select_category[]\" >"
+                   +           "<?php echo $this->slSeries?>"
+                   +       "</select>"
+                   +   "</div>"
+                   +   "</li>"                     
+                   +"</ul>"                                
+                   +"<ul id='txtSerialNumber"+jj+"' style=\"display:none\">"
+                   +   "<li>製番</li>"
+                   +   "<li><input type=\"text\" value=\"\" name=\"bf_opi_serial_number[]\" class=\"w75\"></li>"
+                   +"</ul>"
+                   +"<p><a class=\"zissue\">削除</a></p>"
+                   +"</div>");
+      }else{
+          alert('You can not add more over '+ maxItemRequest);
+          if(jj> maxItemRequest ) jj = maxItemRequest;
+      }
+    });
+  });
+
+
+  $(document).ready(function(){
+      $("a.zissue").live("click", function(){
+          --jj;
+          var ind = $("a.zissue").index(this)+1;
+          $('div.productchoose:eq('+ind+')').remove();
+      });
+    });
+
+
+  $('select.w160').live('change', function(){
+      var id = $(this).attr('id');
+      var id=id.substr(2);
+      if($(this).val()=='00'){
+          document.getElementById('chooseProductNumber'+id).style.display='none';
+          document.getElementById('txtChooseProductNumber'+id).style.display='none';              
+          document.getElementById('txtSerialNumber'+id).style.display='none';
+          document.getElementById('chooseTypePwp'+id).style.display='none';
+          document.getElementById('choosePwpProductNumber'+id).style.display='none';
+          document.getElementById('choosePwpSeries'+id).style.display='none';             
+      }else if($(this).val()=='01'){
+          document.getElementById('chooseProductNumber'+id).style.display='';
+          document.getElementById('txtChooseProductNumber'+id).style.display='none';              
+          document.getElementById('txtSerialNumber'+id).style.display='';
+          document.getElementById('chooseTypePwp'+id).style.display='none';
+          document.getElementById('choosePwpProductNumber'+id).style.display='none';
+          document.getElementById('choosePwpSeries'+id).style.display='none';
+      }
+      else if($(this).val()=='02'){
+          document.getElementById('chooseProductNumber'+id).style.display='none';
+          document.getElementById('txtChooseProductNumber'+id).style.display='';              
+          document.getElementById('txtSerialNumber'+id).style.display='none';
+          document.getElementById('chooseTypePwp'+id).style.display='none';
+          document.getElementById('choosePwpProductNumber'+id).style.display='none';
+          document.getElementById('choosePwpSeries'+id).style.display='none';             
+      }else if($(this).val()=='03'){
+          document.getElementById('chooseProductNumber'+id).style.display='none';
+          document.getElementById('txtChooseProductNumber'+id).style.display='none';              
+          document.getElementById('txtSerialNumber'+id).style.display='none';
+          document.getElementById('chooseTypePwp'+id).style.display='';
+          document.getElementById('choosePwpProductNumber'+id).style.display='none';
+          document.getElementById('choosePwpSeries'+id).style.display='none';
+          /**
+          *   Process choose issue PLATE/WHEEL/PAD
+          *     if choose "modelnumber" type -> display text product code
+          *     if choose "serial" type -> display combobox serials
+          */ 
+          $('#selectTypePwp'+id).change(function() {
+              if($(this).val()=='1'){
+                  document.getElementById('choosePwpProductNumber'+id).style.display='';
+                  document.getElementById('choosePwpSeries'+id).style.display='none';                     
+              }else if($(this).val()=='2'){
+                  document.getElementById('choosePwpProductNumber'+id).style.display='none';
+                  document.getElementById('choosePwpSeries'+id).style.display='';
+              }else {
+                  document.getElementById('choosePwpProductNumber'+id).style.display='none';
+                  document.getElementById('choosePwpSeries'+id).style.display='none';
+              }                   
+          });
+          
+      }
+  });  
+
+
+  $(document).ready(function(){
+	    $("#paper").change(function() {
+	        if(this.checked) {
+	        	$("#stencilpaper").show();
+	        }else{
+	        	$("#stencilpaper").hide();
+		    }
+	    });
+    });
+
+  $(document).ready(function(){
+    if($('input:radio[name=is_customer_designation]:checked').val()==0){
+    	$("#txtCustomerDesignation").attr("disabled", "disabled");
+    }	  
+    
+	$("input:radio[name=is_customer_designation]").click(function() {
+		    var value = $(this).val();
+		    if(parseInt(value)==0){
+		    	$("#txtCustomerDesignation").attr("disabled", "disabled");
+	            $("#txtCustomerDesignation").val('');
+			}else if(parseInt(value)==1){
+				$("#txtCustomerDesignation").removeAttr("disabled");
+			}
+	});
+
+  });
+
+
+  $(document).ready(function(){
+	   if($("input[name=export_person]:checked").val()==2){
+		    $('#btnChooseFile').show();
+	   }else{
+		   $('#btnChooseFile').hide();
+	   }
+  });
+
+
+  function checkValidate(){
+      var re = /\s/g; //Match any white space including space, tab, form-feed, etc.
+      RegExp.multiline = true; // IE support
+      var valid_extensions = /(.doc|.docx|.xlsx|.xls)$/i;
+      
+            
+      if(document.getElementById("pdf").checked ||document.getElementById("paper").checked){
+          var product_category = document.getElementsByName("product_category[]");
+          var slModel = document.getElementsByName("slModel[]");
+          var bf_opi_serial_number = document.getElementsByName("bf_opi_serial_number[]");
+          var txtProductNumber = document.getElementsByName("txtProductNumber[]");
+          var selectTypePwp = document.getElementsByName("selectTypePwp[]");
+          var txt_m_product_number = document.getElementsByName("txt_m_product_number[]");
+          var select_category = document.getElementsByName("select_category[]");
+          var file_upload = document.getElementsByName("file_upload[]");
+
+          var txtDivisionName = document.getElementById("txtDivisionName").value.replace(re, "");
+          var txtStaffName = document.getElementById("txtStaffName").value.replace(re, "");
+          var txtCustomerDesignation = document.getElementById("txtCustomerDesignation").value.replace(re, "");
+
+          if(document.getElementById("paper").checked){
+              if(txtDivisionName.length==0){
+                  alert('Please input Division name');
+                  return false;
+              }else if(txtStaffName.length==0){
+            	  alert('Please input Staff name');
+            	  return false;
+              }
+          }
+
+
+          var inputs = document.getElementsByName("is_customer_designation");
+          for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].checked) {
+              if(inputs[i].value==1){
+                  if(txtCustomerDesignation.length==0){
+                      alert('Please input Customer Designation');
+                      return false;
+                  }
+              }
+            }
+          }
+
+
+
+          var checkPrCag = true;
+          if(file_upload.length >0){
+              for(var j=0;j<file_upload.length;j++){
+                  if(file_upload[j].value !=''){
+                      if(!valid_extensions.test(file_upload[j].value)){
+                       alert('Upload file must be Excel or Word file. Please select again.');
+                       return false;
+                      }
+                  }
+                  
+              }
+          }
+          
+          for (var i=0; i < product_category.length; i++) {
+              if (product_category[i].value == '00') {
+                  alert("Please select product category "+(i+1));
+                  checkPrCag = false;
+                  return false;
+              }
+          }
+
+          
+          
+          if(checkPrCag){
+              
+              for (var ii=0; ii < product_category.length; ii++) {
+                  if(product_category[ii].value=='01'){  // Validate request issue type Device
+                      if(slModel[ii].value == '00' && product_category[ii].value != '00'){
+                          alert("Please select Model of Device " + (ii+1));
+                          return false;
+                      }else if(slModel[ii].value != '00' && product_category[ii].value != '00' && bf_opi_serial_number[ii].value.replace(re, "").length <= 0){
+                          alert('Please enter Serial Number ' + (ii+1));
+                          return false;
+                      }else if(bf_opi_serial_number[ii].value.length > 6){
+                          alert('Serial Number on row ' +(ii+1)+ ' must be shorter than 6 characters');
+                          return false;
+                      }
+                  }else if(product_category[ii].value=='02'){  //Validate request issue type SubDevice
+                      if(txtProductNumber[ii].value.replace(re, "").length <= 0){
+                          alert("Please enter Product Number " + (ii+1));
+                          return false;
+                      }else if(txtProductNumber[ii].value.length > 25){
+                          alert("Product Number must be shorter than 25 characters");
+                          return false;
+                      }
+                  }else if(product_category[ii].value=='03'){  //Validate request issue type LATE/WHEEL/PAD
+                      if(selectTypePwp[ii].value == '00'){
+                          alert("Please select form of issue " + (ii+1));
+                          return false;
+                      }else if(selectTypePwp[ii].value == '1' && txt_m_product_number[ii].value.replace(re, "").length <=0){//check type choose model number
+                          alert("Please enter Product Code " + (ii+1));
+                          return false;
+                      }else if(selectTypePwp[ii].value == '1' && txt_m_product_number[ii].value.length > 25){
+                          alert("Product Coder "+(ii+1)+" must be shorter than 25 characters");
+                          return false;
+                      }else if(selectTypePwp[ii].value == '2' && select_category[ii].value == '00'){
+                          alert("Please select Series of product on "+(ii+1));
+                          return false;
+                      }
+                      
+                  }
+                  
+              }//-----end for-----//
+              
+          }else{
+              return false;
+          }
+      }else{
+          alert("Please select at least a method to issue.");
+          return false;
+      }
+  }
+</script>

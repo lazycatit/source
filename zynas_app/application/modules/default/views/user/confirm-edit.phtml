@@ -1,0 +1,60 @@
+<title><?php echo $this->pageTitle = 'ユーザーマスタ確認画面'; // ページタイトル ?></title>
+<div id="z_layout_box_main">
+	<div style="color: red;">
+	<?php echo $this->dumpFlashMessages(); ?>
+	</div>
+	<h2>変更確認画面</h2>
+	<div id="top_left_container">
+		<form action="/user/do-edit" method="post">
+		<?php echo $this->arrayToHtmlInputHidden($this->request->getPost()); ?>
+			<div id="user">
+				<table id="user_table" border="1"
+					style="margin-left: auto; margin-right: auto; text-align: left;">
+					<tbody>
+						<tr>
+							<th class="user_id">ユーザーID</th>
+							<td><?php echo $this->escape($this->request->mail_adress); ?></td>
+						</tr>
+						<tr>
+							<th class="password">パスワード</th>
+							<td><?php echo $this->escape($this->request->password); ?></td>
+						</tr>
+						<tr>
+							<th class="unit">部署</th>
+							<td><?php echo $this->escape(MUnits::getInstance()->getEntryById($this->request->unit_id)->unit_name); ?>
+							</td>
+						</tr>
+						<tr>
+							<th class="name">名前</th>
+							<td><?php echo $this->escape($this->request->first_name); ?> <?php echo $this->escape($this->request->last_name); ?>
+							</td>
+						</tr>
+						<tr>
+							<th class="name_kana">名前(カナ)</th>
+							<td><?php echo $this->escape($this->request->first_kana); ?> <?php echo $this->escape($this->request->last_kana); ?>
+							</td>
+						</tr>
+						<tr>
+							<th class="gender">性別</th>
+							<td><?php echo $this->escape(MUsers::setGenderSelect($this->request->gender, array())); ?>
+							</td>
+						</tr>
+						<tr>
+							<th class="birth_day">生年月日</th>
+							<td><?php echo $this->escape($this->request->birth); ?></td>
+						</tr>
+					</tbody>
+				</table>
+				<br>
+			</div>
+			<div class="button"
+				style="margin-left: auto; margin-right: auto; text-align: center">
+				<input type="button" value="戻る" onclick="history.back();">
+				<?php echo $this->formSubmit(null, '完了', array('class' => 'button', 'onclick' => "javascript:this.form.action='/user/do-edit'")); ?>
+			</div>
+		</form>
+		<?php echo $this->formHidden('token', $this->token);?>
+	</div>
+	<!-- #top_left_container -->
+</div>
+<!-- #z_layout_box_main -->

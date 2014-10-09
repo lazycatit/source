@@ -1,0 +1,6 @@
+<div id="deletecc<?php echo $this->id_cc ?>"><p class="deletecc" >
+    <?php echo $this->formHidden('mailcc[]', $this->id_cc)?>
+    <?php echo $this->formText('text_email_cc'.$this->id_cc, '', array('class'=> 'w250')) ?>
+    <a onclick="onClickDeleteCc(<?php echo $this->id_cc?>)">削除</a>
+</p></div>
+<p><div style="color: red;"><?php echo $this->formError('text_email_cc'.$this->id_cc)?></div></p> 

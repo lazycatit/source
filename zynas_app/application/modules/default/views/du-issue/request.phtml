@@ -1,0 +1,486 @@
+<div id="contents" class="judgstep01 judgstep01_2 text03m">
+    <div class="judgstep01contents judgstep01_2contents">
+        <h2>該非判定書発行依頼</h2>
+        <ul class="stepnum">
+            <li><img src="/resources/image/judg_step01on_02off.gif" width="238" height="33" alt="依頼内容の入力">
+            </li>
+            <li><img src="/resources/image/judg_step02off_03off.gif" width="238" height="33" alt="入力内容の確認">
+            </li>
+            <li><img src="/resources/image/judg_step03off.gif" width="238" height="33" alt="判定書作成">
+            </li>
+        </ul>
+        <form id="frm_request_issue" action="/du-issue/confirm-request" method="post" enctype="multipart/form-data">
+        <p class="outline"><span class="formabsolute">必須</span>のついている項目は必ずご入力ください。</p>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <?php echo $this->formHidden('customer_code', $this->issue_request->customer['customer_code'])?>
+                <?php echo $this->formHidden('customer_name', $this->issue_request->customer['customer_name'])?>
+                <tr>
+                    <th style="width: 30%;" align="left"><a onclick="onClickSearchCustomer();" align="left">お客様名</a></th>
+                            <td id="lbl_customer_name"> <?php echo $this->issue_request->customer['customer_name']?></td>
+                </tr>
+            </tbody>
+        </table>
+            <?php if(!empty($this->issue_request->arrayIssueProducts)):?>
+            <?php echo $this->formHidden('index',$this->issue_request->arrayIssueProducts[count($this->issue_request->arrayIssueProducts) -1]->index +1)?>
+            <?php else: ?>
+            <?php echo $this->formHidden('index', 1)?>
+            <?php endif; ?>
+            <?php echo $this->formHidden('no_product_issue', count($this->issue_request->arrayIssueProducts))?>
+            <?php echo $this->formHidden('id_next_file', 1)?>
+            <?php echo $this->formHidden('no_file', 1)?>
+            <div class="judgstep01box01">
+                <h2 class="ttl_bg02"><span class="formabsolute">必須</span><span class="h2_text">ご希望の提出方法を選択ください。（両方選択可）</span></h2>
+                <p>
+                    <?php echo $this->formCheckboxes('publish_type', $this->issue_request->publishType, array(), array(TPublishInfos::PUBLISH_TYPE_PDF => 'PDF', TPublishInfos::PUBLISH_TYPE_PAPER => '原紙'), '<br><br>')?>
+                </p>
+                <?php if(strcmp($this->issue_request->ckPaper, TPublishInfos::PUBLISH_TYPE_PAPER) === 0):?>
+                <div class="stencilpaper" id="postal_info">
+                    <p>社内便郵送先部署 <?php echo $this->formText('postal_unit', isset($this->issue_request->postalInfo)?$this->issue_request->postalInfo['postal_unit']:'', array('class'=> 'w300'))?></p>
+                    <p>社内便郵送先氏名 <?php echo $this->formText('postal_name', isset($this->issue_request->postalInfo)?$this->issue_request->postalInfo['postal_name']:'', array('class'=> 'w300'))?></p>
+                </div>
+                <?php else:?>
+                <div class="stencilpaper" id="postal_info" style="display: none;">
+                    <p>社内便郵送先部署 <?php echo $this->formText('postal_unit', isset($this->issue_request->postalInfo)?$this->issue_request->postalInfo['postal_unit']:'', array('class'=> 'w300 '))?></p>
+                    <p>社内便郵送先氏名 <?php echo $this->formText('postal_name', isset($this->issue_request->postalInfo)?$this->issue_request->postalInfo['postal_name']:'', array('class'=> 'w300 '))?></p>
+                </div>
+                <?php endif;?>
+            </div>
+            <div class="judgstep01_2box01">
+                <h2 class="ttl_bg02"><span class="formabsolute">必須</span><span class="h2_text">お客様指示内容</span></h2>
+                <ul class="judgstep01_2box02radio" >
+                    <?php if(strcmp($this->issue_request->customer['customer_code'], Zynas_Registry::getConfig() -> customer -> disco_customer_code) !== 0):?>
+                    <?php echo $this->formRadioForDesign('rd_customer_designation', $this->issue_request->customerDesignation, array(), array(1 => '有り', 0 => '無し'))?>
+                    <?php else:?>
+                    <?php echo $this->formRadioForDesign('rd_customer_designation', $this->issue_request->customerDesignation, array('disabled' => true), array(1 => '有り', 0 => '無し'))?>
+                    <?php endif;?>
+                </ul>
+                <?php if($this->issue_request->isCustomerDesignation()):?>
+                <div class="userdirections">
+                    <p><?php echo $this->formText('txt_customer_designation', $this->issue_request->customerDesignationText, array('class'=> 'w600'))?></p>
+                </div>
+                <?php else:?>
+                <div class="userdirections">
+                    <p><?php echo $this->formText('txt_customer_designation', '', array('class'=> 'w600', 'disabled' => true))?></p>
+                </div>
+                <?php endif;?>
+            </div>
+            <div class="judgstep01box02 judgstep01_2box02">
+                <h2 class="ttl_bg02"><span class="formabsolute">必須</span><span class="h2_text">輸出者を選択してください</span></h2>
+                <ul class="judgstep01_2box02radio" style="text-align: left;">
+                    <?php if(strcmp($this->issue_request->customer['customer_code'], Zynas_Registry::getConfig() -> customer -> disco_customer_code) !== 0):?>
+                    <?php echo $this->formRadioForDesign('rd_customer_format', $this->issue_request->customerFormat, array(), array(0 => 'ディスコ', 1 => 'お客様'))?>
+                    <?php else:?>
+                    <?php echo $this->formRadioForDesign('rd_customer_format', $this->issue_request->customerFormat, array('disabled' => true), array(0 => 'ディスコ', 1 => 'お客様'))?>
+                    <?php endif;?>
+                </ul>
+                <?php if($this->issue_request->isCustomerFormat()):?>
+                <p class="btnfilechoose" id="bt_choose_file">
+                    <a >ファイルを選択</a>
+                </p>
+                <?php else:?>
+                <p class="btnfilechoose" id="bt_choose_file" style="display: none;">
+                    <a >ファイルを選択</a>
+                </p>
+                <?php endif;?>
+                <div id="anchor_file"></div>
+            </div>
+            <div class="judgstep01box03">
+                <h2 class="ttl_bg02"><span class="formabsolute">必須</span><span class="h2_text">発行する型式を入力してください</span><span class="chooseorder"><a onclick="onClickToOrderHist();" target="_blank">発注履歴から選択する</a></span></h2>
+                <p class="outlines">
+                    複数発行する場合は「型式の追加」ボタンをクリックし、追加してください。
+                </p>
+                <?php if(isset($this->issue_request)):?>
+                <div class="judgstep01chooses" >
+                    <?php foreach ($this->issue_request->arrayIssueProducts as $issueProduct):                    ?>
+                    <div class="productchoose" id="productchoose_<?php echo $issueProduct->index ?>">
+                        <?php echo $this->formHidden('products[]', $issueProduct->index)?>
+                        <?php echo $this->formHidden('index_issue_product_' . $issueProduct->index, $issueProduct->index)?>
+                        <ul>
+                            <li>
+                                製品種目
+                            </li>
+                            <li>
+                                <?php echo $this->formSelectMainCategory('select_main_product_category_' . $issueProduct->index, $issueProduct->mainProductCategory, array('onChange' => 'onChangeMainProductCategory(this,' . $issueProduct->index . ')', 'class' => 'w160', 'multiple' => false)); ?>
+                            </li>
+                        </ul>
+                        <ul class="product_<?php echo $issueProduct->index?>" >
+                            <li>
+                                機種
+                            </li>
+                            <li>
+                                <?php echo $this->formSelectProductNumber('select_product_number_' . $issueProduct->index, $issueProduct->productNumber, array('class' => 'w100', 'multiple' => false)); ?>
+                            </li>
+                        </ul>
+                        <ul class="product_<?php echo $issueProduct->index?>" >
+                            <li>
+                                製番
+                            </li>
+                            <li>
+                                <?php echo $this->formText('text_serial_number_' . $issueProduct->index, $issueProduct->serialNumber, array('class' => 'w75')); ?>
+                            </li>
+                        </ul>
+                        <ul class="sub_product_<?php echo $issueProduct->index?>" >
+                            <li>
+                                製品番号
+                            </li>
+                            <li>
+                                <?php echo $this->formText('text_product_number_view_' . $issueProduct->index, $issueProduct->productNumberView, array('class' => 'w200')); ?>
+                            </li>
+                        </ul>
+                        <ul class="pwp_main_<?php echo $issueProduct->index?>"  >
+                            <li>
+                                発行形態
+                            </li>
+                            <li>
+                                <?php echo $this->formSelect('select_model_serial_' . $issueProduct->index, $issueProduct->modelSerial, array('onChange' => 'onChangeModelSerial(this,' . $issueProduct->index . ')', 'class' => 'w75', 'multiple' => false), array('00' => '選択してください', '01' => '型番発行', '02' => 'シリーズ発行')); ?>
+                            </li>
+                        </ul>
+                        <ul class="pwp_1_<?php echo $issueProduct->index?>"  >
+                            <li>
+                                製品コード
+                            </li>
+                            <li>
+                                <?php echo $this->formText('text_product_number_' . $issueProduct->index, $issueProduct->productNumberTxt, array('class' => 'w125')); ?>
+                            </li>
+                        </ul>
+                        <ul class="pwp_2_<?php echo $issueProduct->index?>" >
+                            <li>
+                                シリーズ
+                            </li>
+                            <li>
+                                <?php echo $this->formSelectCategoryName2('select_category_name2_' . $issueProduct->index, $issueProduct->categoryName2, array('class' => 'w100', 'multiple' => false)); ?>
+                            </li>
+                        </ul>
+                        <p>
+                            <a onClick="onClickRemoveIssueProduct(<?php echo $issueProduct->index?>)">削除</a>
+                        </p>
+                    </div>
+                    <?php endforeach ?>
+                    <?php endif;?><div id="anchor_product"></div>
+                </div>
+            </div>
+            <div class="judgstep01box04">
+                <p>
+                    <a id="add_product_issue">型式の追加</a>
+                </p>
+                <ul>
+                    <li class="btn_short">
+                        <a id="bt_submit_issue" onclick="submitIssueRequest();">確認画面へ</a>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        rearrangeScreen();
+        var searchString = '[id^=index_issue_product_]';
+        $(searchString).each(function( index ) {
+            var id= $(this).val();
+            var select = document.getElementById('select_main_product_category_'+id);
+            changeMainProductCategory(select,id);
+        });
+
+        $("#add_product_issue").click(function() {
+            var noProductIssue = $("#no_product_issue").val();
+            if(noProductIssue >= <?php echo Zynas_Registry::getConfig()->constants->max_item_issue_request?>){
+                alert('You can not add more over <?php echo Zynas_Registry::getConfig()->constants->max_item_issue_request?>');
+            }else {
+                $("#no_product_issue").val(++noProductIssue);
+                ajaxAddField();
+            }
+        });
+
+        $("#bt_choose_file").click(function() {
+            var noFile = $('#no_file').val();
+            var idNextFile = $('#id_next_file').val();
+            if(noFile >= <?php echo Zynas_Registry::getConfig()->constants->max_file_upload?>){
+                $("#bt_choose_file").hide();
+            }
+            ajaxAddFile();
+        });
+
+        $("[name=rd_customer_designation]").click(function() {
+         if (this.checked && $(this).val() != <?php echo TPublishInfos::IS_CUSTOMER_DESIGNATION?>){
+            $("#txt_customer_designation").attr("disabled", "disabled");
+            $("#txt_customer_designation").val("");
+         }else
+            $("#txt_customer_designation").removeAttr("disabled");
+        });
+
+        $("[name=rd_customer_format]").click(function() {
+            var noFile = $('#no_file').val();
+            if (this.checked && $(this).val() == <?php echo TPublishInfos::IS_CUSTOMER_FORMAT ?>){
+                if(noFile <= <?php echo Zynas_Registry::getConfig()->constants->max_file_upload?>){
+                    $("#bt_choose_file").show();
+                }
+                $("[class=choosefiles]").show();
+            } else {
+                $("#bt_choose_file").hide();
+                $("[class=choosefiles]").remove();
+                $('#no_file').val(1);
+            }
+        });
+
+        $("#publish_type-2").click(function() {
+            if ($(this).is(':checked')) {
+                $("#postal_info").show();
+            }else {
+                $("#postal_info").hide();
+            }
+        });
+
+    });
+
+    function rearrangeScreen() {
+        if ( $("#publish_type-2").is(':checked')) {
+            $("#postal_info").show();
+        }else {
+            $("#postal_info").hide();
+        }
+    }
+
+    function submitIssueRequest() {
+        var noProductIssue = $("#no_product_issue").val();
+        if(noProductIssue == 0) {
+            alert('You must choose at least one product');
+        }
+        else if(noProductIssue > <?php echo Zynas_Registry::getConfig()->constants->max_item_issue_request?>) {
+            alert('You can not add more over <?php echo Zynas_Registry::getConfig()->constants->max_item_issue_request?>');
+        } else {
+            document.forms["frm_request_issue"].submit();
+        }
+    }
+
+    function onChangeMainProductCategory(select, id) {
+        searchString = '[class=product_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=sub_product_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_main_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_1_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_2_' + id + ']';
+        $(searchString).hide();
+        if (select.value == "01") {
+            searchString = '[class=product_' + id + ']';
+            $(searchString).show();
+            $('#select_product_number_'+id).val('00');
+            $('#text_serial_number_'+id).val('');
+        } else if (select.value == "02") {
+            searchString = '[class=sub_product_' + id + ']';
+            $('#text_product_number_view_'+id).val('');
+            $(searchString).show();
+        } else if (select.value == "03") {
+            searchString = '[class=pwp_main_' + id + ']';
+            $(searchString).show();
+            $('#select_model_serial_'+id).val('00');
+            var selectModelSerial = document.getElementById('select_model_serial_'+id);
+            onChangeModelSerial(selectModelSerial,id)
+        }
+    }
+
+    function onChangeModelSerial(select, id) {
+        searchString = '[class=pwp_1_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_2_' + id + ']';
+        $(searchString).hide();
+        if (select.value == "01") {
+            searchString = '[class=pwp_1_' + id + ']';
+            $(searchString).show();
+            $('#text_product_number_'+id).val('');
+        } else if (select.value == "02") {
+            searchString = '[class=pwp_2_' + id + ']';
+            $(searchString).show();
+            $('#select_category_name2_'+id).val('00');
+        }
+    }
+
+    function changeMainProductCategory(select, id) {
+        var searchString = '[class=product_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=sub_product_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_main_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_1_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_2_' + id + ']';
+        $(searchString).hide();
+        if (select.value == "01") {
+            searchString = '[class=product_' + id + ']';
+            $(searchString).show();
+        } else if (select.value == "02") {
+            searchString = '[class=sub_product_' + id + ']';
+            $(searchString).show();
+        } else if (select.value == "03") {
+            searchString = '[class=pwp_main_' + id + ']';
+            $(searchString).show();
+            //$('#select_model_serial'+id).val('00');
+            var selectModelSerial = document.getElementById('select_model_serial_'+id);
+            changeModelSerial(selectModelSerial,id)
+        }
+    }
+
+    function changeModelSerial(select, id) {
+        var searchString = '[class=pwp_1_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_2_' + id + ']';
+        $(searchString).hide();
+        if (select.value == "01") {
+            searchString = '[class=pwp_1_' + id + ']';
+            $(searchString).show();
+        } else if (select.value == "02") {
+            searchString = '[class=pwp_2_' + id + ']';
+            $(searchString).show();
+        }
+    }
+
+
+    function onClickRemoveIssueProduct(index) {
+        var noProductIssue = $("#no_product_issue").val();
+        $('#productchoose_'+index).remove();
+        $('#no_product_issue').val(--noProductIssue);
+    }
+
+    function onClickDeleteFile(index) {
+        var noFile = $('#no_file').val();
+        searchString = '[id=choosefiles_' + index + ']';
+            // Remove the elements that match the search string.
+        $(searchString).remove();
+        $('#no_file').val(--noFile);
+        $("#bt_choose_file").show();
+    }
+
+    function ajaxAddFile() {
+        var noFile = $('#no_file').val();
+        var idNextFile = $('#id_next_file').val();
+        $.ajax({
+            type: "POST",
+            url: "<?php echo $this->url(array('action' => 'newfile', 'format' => 'html')); ?>",
+            data: "index=" + idNextFile ,
+            beforeSend: function (xhr) {
+                $("#id_next_file").val(++idNextFile);
+                $("#no_file").val(++noFile);
+            },
+            success: function(newElement) {
+                $.trim(newElement);
+                // Insert new element before the Add button
+                $("#anchor_file").before(newElement);
+            }
+        });
+    }
+
+    function ajaxAddField() {
+        index = $("#index").val();
+        $.ajax({
+            type: "POST",
+            url: "<?php echo $this->url(array('action' => 'newproduct', 'format' => 'html')); ?>",
+            data: "index=" + index ,
+            beforeSend: function (xhr) {
+                $("#index").val(++index);
+                $("#add_product_issue").hide();
+            },
+            success: function(newElement) {
+                $.trim(newElement);
+                    // Insert new element before the Add button
+                $("#anchor_product").before(newElement);
+                var id = parseInt(index)-1;
+                var select = document.getElementById('select_main_product_category_'+id)
+                onChangeMainProductCategory(select,id );
+                $("#add_product_issue").show();
+            }
+        });
+    }
+
+    var intervalAddOrderedProduct;
+    function onClickToOrderHist() {
+        var customerCode = $("#customer_code").val();
+        if(customerCode == ''){
+            alert("You did not choose customer")
+        } else {
+            window.clearInterval(intervalAddOrderedProduct);
+            intervalAddOrderedProduct = setInterval(ajaxGetOrderedProduct, 2000);
+            window.open("/du-issue-order-hist/list?customer_code="+customerCode);
+        }
+    }
+
+    function ajaxGetOrderedProduct() {
+        var index = $("#index").val();
+        noProductIssue = $("#no_product_issue").val();
+        $.ajax({
+        type: "POST",
+        url: "<?php echo $this->url(array('action' => 'addorderproduct', 'format' => 'html')); ?>",
+            data: "index=" + index ,
+            beforeSend: function (xhr) {
+            },
+            success: function(newElement) {
+            // Insert new element before the Add button
+                if(newElement != '') {
+                    window.clearInterval(intervalAddOrderedProduct);
+                    $.trim(newElement);
+                    $("#anchor_product").before(newElement);
+                    var newNoProduct = document.getElementById('newNoOrderProduct_'+index).value;
+                    var noProduct = document.getElementById('no_product_issue').value;
+                    var currentIndex = document.getElementById('index').value;
+                    $("#no_product_issue").val(parseInt(noProduct)+parseInt(newNoProduct));
+                    $("#index").val(parseInt(currentIndex)+parseInt(newNoProduct));
+                    for(var i = 0; i < newNoProduct; i++){
+                        var id = parseInt(index) +parseInt(i);
+                        var selectMain = document.getElementById('select_main_product_category_'+id);
+                        changeMainProductCategory(selectMain, id);
+                    }
+                }
+            }
+        });
+    }
+
+    var intervalSearchCustomer;
+    function onClickSearchCustomer() {
+        window.clearInterval(intervalSearchCustomer);
+        intervalSearchCustomer = setInterval(ajaxGetCustomer, 1000);
+        window.open("/disco-search-customer/list?target=4");
+    }
+
+    function ajaxGetCustomer() {
+        $.ajax({
+        type: "POST",
+        url: "<?php echo $this->url(array('action' => 'getcustomer')); ?>",
+            beforeSend: function (xhr) {
+            },
+            success: function(newElement) {
+                if(newElement != '') {
+                    var obj = jQuery.parseJSON(newElement);
+                    document.getElementById('customer_code').setAttribute('value', obj.customer_code);
+                    document.getElementById('customer_name').setAttribute('value', obj.customer_name);
+                    $("#lbl_customer_name").text(obj.customer_name);
+                    window.clearInterval(intervalSearchCustomer);
+                    refreshCustomer();
+                }
+            }
+        });
+    }
+
+    function refreshCustomer() {
+        if($("#customer_code").val() != "<?php echo Zynas_Registry::getConfig() -> customer -> disco_customer_code?>") {
+            $("[name=rd_customer_format]").removeAttr("disabled");
+            $("[name=rd_customer_designation]").removeAttr("disabled");
+        } else {
+            $("[name=rd_customer_format]").attr("disabled", "disabled");
+            $("[name=rd_customer_designation]").attr("disabled", "disabled");
+            $("#txt_customer_designation").attr("disabled", "disabled");
+            $("#txt_customer_designation").val("");
+            $("#bt_choose_file").hide();
+            $("[class=choosefiles]").remove();
+            $('#no_file').val(1);
+            $("#rd_customer_format-1").attr("checked", true);
+            $("#rd_customer_designation-2").attr("checked", true);
+        }
+    }
+
+</script>

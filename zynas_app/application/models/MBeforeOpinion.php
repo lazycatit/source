@@ -1,0 +1,5 @@
+<?php
+class MBeforeOpinion extends Zynas_Db_Table_Row {
+
+}
+?>

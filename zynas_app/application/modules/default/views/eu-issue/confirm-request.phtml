@@ -1,0 +1,360 @@
+<?php print_r($this->request->params)?>
+<div id="contents" class="judgstep01 judgstep01_2 text03m">
+    <div class="judgstep01contents judgstep01_2contents">
+        <h2>該非判定書発行依頼</h2>
+        <ul class="stepnum">
+            <li><img src="/resources/image/judg_step01on_02off.gif" width="238" height="33" alt="依頼内容の入力">
+            </li>
+            <li><img src="/resources/image/judg_step02off_03off.gif" width="238" height="33" alt="入力内容の確認">
+            </li>
+            <li><img src="/resources/image/judg_step03off.gif" width="238" height="33" alt="判定書作成">
+            </li>
+        </ul>
+        <p class="outline">
+            <span class="formabsolute">必須</span>のついている項目は必ずご入力ください。
+        </p>
+        <form id="frm_request_issue" action="/eu-issue/confirm-request" method="post" enctype="multipart/form-data">
+            <?php if(!empty($this->request->products)):?>
+            <?php echo $this->formHidden('index',$this->request->products[count($this->request->products) -1] +1)?>
+            <?php else: ?>
+            <?php echo $this->formHidden('index', 1)?>
+            <?php endif; ?>
+            <?php echo $this->formHidden('no_product_issue', count($this->request->products))?>
+            <?php echo $this->formHidden('id_next_file', 1)?>
+            <?php echo $this->formHidden('no_file', 1)?>
+            <div class="judgstep01box01">
+                <h2 class="ttl_bg02"><span class="formabsolute">必須</span><span class="h2_text">ご希望の提出方法を選択ください。（両方選択可）</span></h2>
+                <p>
+                    <?php echo $this->formCheckboxes('publish_type', $this->request->publish_type, array(), array(TPublishInfos::PUBLISH_TYPE_PDF => 'PDF', TPublishInfos::PUBLISH_TYPE_PAPER => '原紙'), '<br><br>')?>
+                </p>
+                <div style="color: red;"><?php echo $this ->formError('publish_type') ?></div>
+            </div>
+            <div class="judgstep01box02">
+                <h2 class="ttl_bg02">貴社指定フォームでの提出は必要ですか？</h2>
+                <p class="outlines">
+                    必要な場合はファイルを指定してください。<span>※フォーマットは最大3つまで指定できます。</span>
+                </p>
+                <p class="btnfilechoose" id="bt_choose_file">
+                    <a >ファイルを選択</a><div id="error_customer_file" style="color: red; text-align: left; padding-left: 150px;"> <?php echo $this->formError('customer_file')?></div>
+                </p>
+                <div id="anchor_file"></div>
+            </div>
+            <div class="judgstep01box03">
+                <h2 class="ttl_bg02"><span class="formabsolute">必須</span><span class="h2_text">発行する型式を入力してください</span><span class="chooseorder"><a onclick="onClickToOrderHist();" target="_blank">発注履歴から選択する</a></span></h2>
+                <p class="outlines">
+                    複数発行する場合は「型式の追加」ボタンをクリックし、追加してください。
+                </p>
+                <p>
+                <div style="color: red;" id="error_customer_file"><?php echo $this->formError('product_error')?></div>
+                </p>
+                <div class="judgstep01chooses">
+                    <?php if(!empty($this->request->products)):?>
+                    <?php foreach ($this->request->products as $key=>$productIndex):?>
+                    <div class="productchoose" id="productchoose_<?php echo $productIndex ?>">
+                        <?php echo $this->formHidden('products[]', $productIndex)?>
+                        <?php echo $this->formHidden('index_issue_product_' . $productIndex, $productIndex)?>
+                        <ul>
+                            <li>
+                                製品種目
+                            </li>
+                            <li>
+                                <?php echo $this->formSelectMainCategory('select_main_product_category_' . $productIndex, $this->request->getParam('select_main_product_category_'.$productIndex), array('onChange' => 'onChangeMainProductCategory(this,' . $productIndex . ')', 'class' => 'w160', 'multiple' => false)); ?>
+                            </li>
+                            <div style="color: red;"><?php echo $this ->formError('select_main_product_category_'. $productIndex) ?></div>
+                        </ul>
+                        <ul class="product_<?php echo $productIndex?>" >
+                            <li>
+                                機種
+                            </li>
+                            <li>
+                                <?php echo $this->formSelectProductNumber('select_product_number_' . $productIndex, $this->request->getParam('select_product_number_'.$productIndex), array('class' => 'w100', 'multiple' => false)); ?>
+                            </li>
+                            <div style="color: red;"><?php echo $this ->formError('select_product_number_'. $productIndex) ?></div>
+                        </ul>
+                        <ul class="product_<?php echo $productIndex?>" >
+                            <li>
+                                製番
+                            </li>
+                            <li>
+                                <?php echo $this->formText('text_serial_number_' . $productIndex, $this->request->getParam('text_serial_number_'.$productIndex), array('class' => 'w75')); ?>
+                            </li>
+                            <div style="color: red;"><?php echo $this ->formError('text_serial_number_'. $productIndex) ?></div>
+                        </ul>
+                        <ul class="sub_product_<?php echo $productIndex?>" >
+                            <li>
+                                製品番号
+                            </li>
+                            <li>
+                                <?php echo $this->formText('text_product_number_view_' . $productIndex, $this->request->getParam('text_product_number_view_'.$productIndex), array('class' => 'w200')); ?>
+                            </li>
+                            <div style="color: red;"><?php echo $this ->formError('text_product_number_view_'. $productIndex) ?></div>
+                        </ul>
+                        <ul class="pwp_main_<?php echo $productIndex?>"  >
+                            <li>
+                                発行形態
+                            </li>
+                            <li>
+                                <?php echo $this->formSelect('select_model_serial_' . $productIndex, $this->request->getParam('select_model_serial_'.$productIndex), array('onChange' => 'onChangeModelSerial(this,' . $productIndex. ')', 'class' => 'w75', 'multiple' => false), array('00' => '選択してください', '01' => '型番発行', '02' => 'シリーズ発行')); ?>
+                            </li>
+                            <div style="color: red;"><?php echo $this ->formError('select_model_serial_'. $productIndex) ?></div>
+                        </ul>
+                        <ul class="pwp_1_<?php echo $productIndex?>"  >
+                            <li>
+                                製品コード
+                            </li>
+                            <li>
+                                <?php echo $this->formText('text_product_number_' . $productIndex, $this->request->getParam('text_product_number_'.$productIndex), array('class' => 'w125')); ?>
+                            </li>
+                            <div style="color: red;"><?php echo $this ->formError('text_product_number_'. $productIndex) ?></div>
+                        </ul>
+                        <ul class="pwp_2_<?php echo $productIndex?>"  >
+                            <li>
+                                シリーズ
+                            </li>
+                            <li>
+                                <?php echo $this->formSelectCategoryName2('select_category_name2_' . $productIndex, $this->request->getParam('select_category_name2_'.$productIndex), array('class' => 'w100', 'multiple' => false)); ?>
+                            </li>
+                            <div style="color: red;"><?php echo $this ->formError('select_category_name2_'. $productIndex) ?></div>
+                        </ul>
+                        <p>
+                            <a onClick="onClickRemoveIssueProduct(<?php echo $productIndex?>)">削除</a>
+                        </p>
+                    </div>
+                    <?php endforeach ?>
+                    <?php endif;?>
+                    <div id="anchor_product"></div>
+                </div>
+            </div>
+            <div class="judgstep01box04">
+                <p>
+                    <a id="add_product_issue">型式の追加</a>
+                </p>
+                <ul>
+                    <li class="btn_short">
+                        <a id="bt_submit_issue" onclick="submitIssueRequest();">確認画面へ</a>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var intervalAddOrderedProduct;
+    $(document).ready(function() {
+        var searchString = '[id^=index_issue_product_]';
+        $(searchString).each(function( index ) {
+            var id= $(this).val();
+            var select = document.getElementById('select_main_product_category_'+id);
+            changeMainProductCategory(select,id);
+        });
+
+        $("#add_product_issue").click(function() {
+            var noProductIssue = $("#no_product_issue").val();
+            if(noProductIssue >= <?php echo Zynas_Registry::getConfig()->constants->max_item_issue_request?>){
+                alert('You can not add more over <?php echo Zynas_Registry::getConfig()->constants->max_item_issue_request?>');
+            }else {
+                $("#no_product_issue").val(++noProductIssue);
+                ajaxAddField();
+            }
+        });
+
+        $("#bt_choose_file").click(function() {
+            var noFile = $('#no_file').val();
+            var idNextFile = $('#id_next_file').val();
+            if(noFile >= <?php echo Zynas_Registry::getConfig()->constants->max_file_upload?>){
+                $("#bt_choose_file").hide();
+            }
+            ajaxAddFile();
+        });
+    });
+
+    function submitIssueRequest() {
+        var noProductIssue = $("#no_product_issue").val();
+        if(noProductIssue == 0) {
+            alert('You must choose at least one product');
+        }
+        else if(noProductIssue > <?php echo Zynas_Registry::getConfig()->constants->max_item_issue_request?>) {
+            alert('<?php echo $this->error_max_item?>');
+        } else {
+            document.forms["frm_request_issue"].submit();
+        }
+    }
+
+    function onChangeMainProductCategory(select, id) {
+        $('#error_select_main_product_category_'+id).text('');
+        searchString = '[class=product_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=sub_product_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_main_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_1_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_2_' + id + ']';
+        $(searchString).hide();
+        if (select.value == "01") {
+            searchString = '[class=product_' + id + ']';
+            $(searchString).show();
+            $('#select_product_number_'+id).val('00');
+            $('#text_serial_number_'+id).val('');
+        } else if (select.value == "02") {
+            searchString = '[class=sub_product_' + id + ']';
+            $('#text_product_number_view_'+id).val('');
+            $(searchString).show();
+        } else if (select.value == "03") {
+            searchString = '[class=pwp_main_' + id + ']';
+            $(searchString).show();
+            $('#select_model_serial_'+id).val('00');
+            var selectModelSerial = document.getElementById('select_model_serial_'+id);
+            onChangeModelSerial(selectModelSerial,id)
+        }
+    }
+
+    function changeMainProductCategory(select, id) {
+        var searchString = '[class=product_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=sub_product_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_main_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_1_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_2_' + id + ']';
+        $(searchString).hide();
+        if (select.value == "01") {
+            searchString = '[class=product_' + id + ']';
+            $(searchString).show();
+        } else if (select.value == "02") {
+            searchString = '[class=sub_product_' + id + ']';
+            $(searchString).show();
+        } else if (select.value == "03") {
+            searchString = '[class=pwp_main_' + id + ']';
+            $(searchString).show();
+            //$('#select_model_serial'+id).val('00');
+            var selectModelSerial = document.getElementById('select_model_serial_'+id);
+            changeModelSerial(selectModelSerial,id)
+        }
+    }
+
+    function changeModelSerial(select, id) {
+        var searchString = '[class=pwp_1_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_2_' + id + ']';
+        $(searchString).hide();
+        if (select.value == "01") {
+            searchString = '[class=pwp_1_' + id + ']';
+            $(searchString).show();
+        } else if (select.value == "02") {
+            searchString = '[class=pwp_2_' + id + ']';
+            $(searchString).show();
+        }
+    }
+
+    function onChangeModelSerial(select, id) {
+        var searchString = '[class=pwp_1_' + id + ']';
+        $(searchString).hide();
+        searchString = '[class=pwp_2_' + id + ']';
+        $(searchString).hide();
+        if (select.value == "01") {
+            searchString = '[class=pwp_1_' + id + ']';
+            $(searchString).show();
+            $('#text_product_number'+id).val('');
+        } else if (select.value == "02") {
+            searchString = '[class=pwp_2_' + id + ']';
+            $(searchString).show();
+            $('#select_category_name2_'+id).val('00');
+        }
+    }
+
+    function onClickRemoveIssueProduct(index) {
+        var noProductIssue = $("#no_product_issue").val();
+        $('#productchoose_'+index).remove();
+        $('#no_product_issue').val(--noProductIssue);
+    }
+
+    function onClickToOrderHist() {
+        window.clearInterval(intervalAddOrderedProduct);
+        intervalAddOrderedProduct = setInterval(ajaxGetOrderedProduct, 2000);
+        window.open("/order-hist/list");
+    }
+
+    function ajaxAddFile() {
+        var noFile = $('#no_file').val();
+        var idNextFile = $('#id_next_file').val();
+        $.ajax({
+            type: "POST",
+            url: "<?php echo $this->url(array('action' => 'newfile', 'format' => 'html')); ?>",
+            data: "index=" + idNextFile ,
+            beforeSend: function (xhr) {
+                $("#id_next_file").val(++idNextFile);
+                $("#no_file").val(++noFile);
+            },
+            success: function(newElement) {
+                // Insert new element before the Add button
+                $("#anchor_file").before(newElement);
+            }
+        });
+    }
+
+    function ajaxAddField() {
+        index = $("#index").val();
+        $.ajax({
+            type: "POST",
+            url: "<?php echo $this->url(array('action' => 'newproduct', 'format' => 'html')); ?>",
+            data: "index=" + index ,
+            beforeSend: function (xhr) {
+                $("#index").val(++index);
+                $("#add_product_issue").hide();
+            },
+            success: function(newElement) {
+                $.trim(newElement);
+                    // Insert new element before the Add button
+                $("#anchor_product").before(newElement);
+                var id = parseInt(index)-1;
+                var select = document.getElementById('select_main_product_category_'+id)
+                onChangeMainProductCategory(select,id );
+                $("#add_product_issue").show();
+            }
+        });
+    }
+
+    function ajaxGetOrderedProduct() {
+        index = $("#index").val();
+        noProductIssue = $("#no_product_issue").val();
+        $.ajax({
+        type: "POST",
+        url: "<?php echo $this->url(array('action' => 'addorderproduct', 'format' => 'html')); ?>",
+            data: "index=" + index ,
+            beforeSend: function (xhr) {
+            },
+            success: function(newElement) {
+            // Insert new element before the Add button
+                if(newElement != '') {
+                    window.clearInterval(intervalAddOrderedProduct);
+                    $.trim(newElement);
+                    $("#anchor_product").before(newElement);
+                    var newNoProduct = document.getElementById('newNoOrderProduct_'+index).value;
+                    var noProduct = document.getElementById('no_product_issue').value;
+                    var currentIndex = document.getElementById('index').value;
+                    $("#no_product_issue").val(parseInt(noProduct)+parseInt(newNoProduct));
+                    $("#index").val(parseInt(currentIndex)+parseInt(newNoProduct));
+                    for(var i = 0; i < newNoProduct; i++){
+                        var id = parseInt(index) +parseInt(i);
+                        var selectMain = document.getElementById('select_main_product_category_'+id);
+                        changeMainProductCategory(selectMain, id);
+                    }
+                }
+            }
+        });
+    }
+
+    function onClickDeleteFile(index) {
+        var noFile = $('#no_file').val();
+        searchString = '[id=choosefiles_' + index + ']';
+            // Remove the elements that match the search string.
+        $(searchString).remove();
+        $('#no_file').val(--noFile);
+        $("#bt_choose_file").show();
+    }
+</script>

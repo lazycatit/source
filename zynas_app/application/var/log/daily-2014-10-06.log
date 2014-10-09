@@ -1,0 +1,45 @@
+2014-10-06 19:53:00,733 [4196] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-06 19:53:00,749 [4196] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-06 19:53:35,167 [4196] INFO default method=confirmLoginAction;user_id=;control_number;Start action 
+2014-10-06 19:53:35,221 [4196] INFO default method=confirmLoginAction;user_id=;control_number;End action 
+2014-10-06 19:53:35,444 [4196] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-06 19:53:35,455 [4196] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-06 19:53:35,488 [4196] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-06 19:53:35,496 [4196] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-06 19:53:35,498 [4196] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-06 19:53:35,499 [4196] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor5;End action 
+2014-10-06 19:53:40,520 [4196] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-06 19:53:40,522 [4196] INFO default method=requestAction;user_id=admin@trithucmoi.co;control_number=;Start action 
+2014-10-06 19:53:40,535 [4196] DEBUG default method=getEntryByCode;user_id=;control_number=;SELECT `msc`.* FROM `m_customer` AS `msc` WHERE (msc.customer_code = ?) AND (msc.delete_flg <> 'D' OR msc.delete_flg IS NULL) 
+2014-10-06 19:53:40,557 [4196] ERROR default [default/da-issue/request] SQLSTATE[HY093]: Invalid parameter number: no parameters were bound 
+2014-10-06 19:53:44,110 [4196] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-06 19:53:44,112 [4196] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-06 19:53:44,120 [4196] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-06 19:53:44,127 [4196] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-06 19:53:44,129 [4196] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-06 19:53:44,129 [4196] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor5;End action 
+2014-10-06 19:53:46,199 [4196] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-06 19:53:46,202 [4196] INFO default method=detailAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-06 19:53:46,212 [4196] INFO default method=detailAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-06 19:53:56,459 [4196] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-06 19:53:56,462 [4196] INFO default method=requestAction;user_id=admin@trithucmoi.co;control_number=;Start action 
+2014-10-06 19:53:56,474 [4196] DEBUG default method=getEntryByCode;user_id=;control_number=;SELECT `msc`.* FROM `m_customer` AS `msc` WHERE (msc.customer_code = ?) AND (msc.delete_flg <> 'D' OR msc.delete_flg IS NULL) 
+2014-10-06 19:53:56,477 [4196] ERROR default [default/da-issue/request] SQLSTATE[HY093]: Invalid parameter number: no parameters were bound 
+2014-10-06 19:53:59,538 [4196] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-06 19:53:59,540 [4196] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-06 19:53:59,548 [4196] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-06 19:53:59,554 [4196] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-06 19:53:59,556 [4196] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-06 19:53:59,556 [4196] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor5;End action 
+2014-10-06 19:54:01,584 [4196] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-06 19:54:01,586 [4196] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-06 19:54:01,608 [4196] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-06 19:54:05,901 [4196] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-06 19:54:05,903 [4196] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-06 19:54:05,924 [4196] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-06 19:54:09,047 [4196] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-06 19:54:09,049 [4196] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-06 19:54:09,056 [4196] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-06 19:54:09,063 [4196] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-06 19:54:09,065 [4196] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-06 19:54:09,065 [4196] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor5;End action 

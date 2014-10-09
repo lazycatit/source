@@ -1,0 +1,1160 @@
+2014-10-09 10:20:57,234 [5020] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-09 10:20:57,253 [5020] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-09 10:21:03,207 [5020] INFO default method=confirmLoginAction;user_id=;control_number;Start action 
+2014-10-09 10:21:03,284 [5020] INFO default method=confirmLoginAction;user_id=;control_number;End action 
+2014-10-09 10:21:03,549 [5020] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 10:21:03,558 [5020] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 10:21:03,614 [5020] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 10:21:03,676 [5020] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 10:21:03,683 [5020] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 10:21:03,685 [5020] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 10:25:19,200 [5020] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 10:25:19,204 [5020] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 10:25:19,205 [5020] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 10:25:19,208 [5020] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 10:25:19,335 [5020] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 10:25:21,516 [5020] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 10:25:21,520 [5020] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 10:25:21,534 [5020] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 10:25:23,418 [5020] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 10:25:23,422 [5020] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 10:25:23,423 [5020] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 10:25:23,427 [5020] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 10:25:23,448 [5020] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 10:25:25,118 [5020] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 10:25:25,122 [5020] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 10:25:25,133 [5020] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 10:25:28,392 [5020] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 10:25:28,396 [5020] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 10:25:28,741 [5020] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 10:25:28,745 [5020] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 10:25:28,754 [5020] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 10:25:31,385 [5020] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 10:25:31,389 [5020] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 10:25:31,390 [5020] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 10:25:31,393 [5020] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 10:25:31,416 [5020] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:39:32,239 [412] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-09 11:39:32,243 [412] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-09 11:39:34,659 [412] INFO default method=confirmLoginAction;user_id=;control_number;Start action 
+2014-10-09 11:39:34,677 [412] INFO default method=confirmLoginAction;user_id=;control_number;End action 
+2014-10-09 11:39:35,072 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:39:35,076 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:39:35,088 [412] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 11:39:35,100 [412] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 11:39:35,104 [412] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 11:39:35,105 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 11:39:44,750 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:39:44,754 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:39:44,779 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:39:51,399 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:39:51,403 [412] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:40:30,402 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:40:30,406 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:40:30,407 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:40:30,411 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:40:30,434 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:40:32,523 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:40:32,527 [412] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:40:51,226 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:40:51,230 [412] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:40:51,267 [412] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:40:53,441 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:40:53,444 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:40:53,445 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:40:53,449 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:40:53,471 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:41:30,468 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:41:30,471 [412] INFO default method=deleteAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:41:30,864 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:41:30,869 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:41:30,891 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:41:36,252 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:41:36,256 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:41:36,280 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:45:36,566 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:45:36,569 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:45:36,570 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:45:36,574 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:45:36,609 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:45:41,263 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:45:41,267 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:45:41,319 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:51:53,926 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:51:53,931 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:51:53,966 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:54:10,504 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:54:10,512 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:54:10,540 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:54:14,495 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:54:16,553 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:54:16,557 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:54:16,580 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:54:37,300 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:54:37,304 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:54:37,327 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:58:42,447 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:58:42,452 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:58:42,481 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:58:45,381 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:58:45,385 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:58:45,407 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:58:49,639 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:58:49,643 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:58:49,666 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:59:01,269 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:59:01,273 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:59:01,297 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:59:03,688 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:59:03,691 [412] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:59:08,573 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:59:08,577 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:59:08,599 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:59:53,566 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 11:59:53,570 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 11:59:53,593 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 11:59:56,037 [412] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 11:59:56,071 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:00:01,686 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:00:01,709 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:00:01,780 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:00:03,594 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:00:03,597 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:00:03,622 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:00:36,224 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:00:36,228 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:00:36,251 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:00:37,868 [412] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 12:00:37,896 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:00:41,116 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:00:41,120 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:00:41,164 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:00:42,762 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:00:42,766 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:00:42,788 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:00:45,035 [412] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 12:00:45,076 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:00:48,050 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:00:48,056 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:00:48,079 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:00:56,291 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:00:56,295 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:00:56,317 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:01:37,832 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:01:37,836 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:01:37,859 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:01:40,486 [412] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 12:01:40,506 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:01:42,781 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:01:42,787 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:01:42,819 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:01:55,731 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:01:55,734 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:01:55,771 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:04:09,780 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:04:09,784 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:04:09,815 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:04:11,936 [412] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 12:04:11,955 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:04:13,902 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:04:13,906 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:04:13,935 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:04:28,942 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:04:28,946 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:04:28,970 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:04:51,983 [412] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-09 12:04:51,986 [412] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-09 12:04:53,119 [412] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-09 12:04:53,122 [412] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-09 12:04:53,318 [412] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-09 12:04:53,321 [412] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-09 12:04:56,143 [412] INFO default method=confirmLoginAction;user_id=;control_number;Start action 
+2014-10-09 12:04:56,178 [412] INFO default method=confirmLoginAction;user_id=;control_number;End action 
+2014-10-09 12:04:56,438 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:04:56,443 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:04:56,489 [412] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 12:04:56,515 [412] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 12:04:56,537 [412] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 12:04:56,540 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 12:05:00,231 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:05:00,235 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:05:00,266 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:05:04,820 [412] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 12:05:04,839 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:05:08,771 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:05:08,776 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:05:08,806 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:05:22,067 [412] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 12:05:22,086 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:07:45,695 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:07:45,700 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:07:45,724 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:07:50,406 [412] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 12:07:50,444 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:11:52,154 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:11:52,159 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:11:52,182 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:11:55,500 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:11:55,504 [412] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:17:11,773 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:17:19,293 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:32:51,990 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:32:51,994 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:32:52,018 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:32:54,106 [412] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 12:32:54,121 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:33:14,534 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:33:14,538 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:33:14,562 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:40:09,124 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:40:09,128 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:40:09,152 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:40:11,396 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:40:11,400 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:40:11,422 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:43:27,373 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:43:27,379 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:43:27,406 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:43:32,584 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:43:32,588 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:43:32,609 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:43:39,919 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:43:39,923 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:43:39,946 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:43:45,053 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:43:45,057 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:43:45,090 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:43:53,104 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:43:53,109 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:43:53,139 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:43:56,424 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:43:56,427 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:43:56,448 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:44:17,555 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 12:44:17,559 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:44:17,559 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 12:44:17,563 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 12:44:17,586 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:34:06,147 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:34:06,169 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:34:06,170 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:34:06,174 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:34:06,232 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:34:45,448 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:34:45,452 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:34:45,474 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:35:06,809 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:35:06,813 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:35:06,813 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:35:06,817 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:35:06,840 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:35:14,739 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:35:14,743 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:35:14,765 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:35:20,283 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:36:36,583 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:36:36,587 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:36:36,588 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:36:36,592 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:36:36,615 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:36:42,747 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:36:42,751 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:36:42,773 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:36:47,843 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:36:47,848 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:36:47,849 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:36:47,853 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:36:47,876 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:36:55,295 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:36:55,299 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:36:55,320 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:37:05,275 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:37:05,279 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:37:05,280 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:37:05,284 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:37:05,307 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:37:22,049 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:37:22,053 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numberStart action 
+2014-10-09 15:37:22,589 [412] DEBUG default method=getUnissueList;user_id;;control_number;;Select=SELECT `tpi`.*, count(tpi.control_number) AS `number_of_col`, `tppi`.`product_name_view` FROM `t_publish_info` AS `tpi`
+ LEFT JOIN `t_publish_product_info` AS `tppi` ON tpi.control_number = tppi.control_number WHERE (tpi.delete_flg <> 'D' OR tpi.delete_flg  IS NULL) AND (tppi.delete_flg <> 'D' OR tppi.delete_flg  IS NULL) AND (tpi.status = 1) GROUP BY `tpi`.`id` ORDER BY `tpi`.`control_number` DESC 
+2014-10-09 15:37:22,636 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numberStart action 
+2014-10-09 15:37:26,201 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:37:26,209 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numberStart action 
+2014-10-09 15:37:26,230 [412] DEBUG default method=getUnissueList;user_id;;control_number;;Select=SELECT `tpi`.*, count(tpi.control_number) AS `number_of_col`, `tppi`.`product_name_view` FROM `t_publish_info` AS `tpi`
+ LEFT JOIN `t_publish_product_info` AS `tppi` ON tpi.control_number = tppi.control_number WHERE (tpi.delete_flg <> 'D' OR tpi.delete_flg  IS NULL) AND (tppi.delete_flg <> 'D' OR tppi.delete_flg  IS NULL) AND (tpi.status = 1) GROUP BY `tpi`.`id` ORDER BY `tpi`.`control_number` DESC 
+2014-10-09 15:37:26,241 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numberStart action 
+2014-10-09 15:37:37,002 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:37:37,006 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:37:37,086 [412] DEBUG default method=getListOpeartionLogSelect;user_id;;control_number;;Select=SELECT `tph`.* FROM `t_publish_hist` AS `tph` WHERE (tph.delete_flg <> 'D' OR tph.delete_flg IS NULL) ORDER BY `tph`.`create_date` DESC 
+2014-10-09 15:37:37,099 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:37:41,015 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:37:41,019 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:37:41,035 [412] DEBUG default method=getListSelect;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 15:37:41,042 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:37:43,178 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:37:43,182 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:37:43,302 [412] DEBUG default method=getDAIssuedList;user_id;;control_number;;Select=SELECT `tpi`.*, count(tpi.control_number) AS `number_of_col`, `mcus`.`customer_type`, `tppi`.`product_name_view` FROM `t_publish_info` AS `tpi`
+ INNER JOIN `m_customer` AS `mcus` ON tpi.customer_code = mcus.customer_code
+ LEFT JOIN `t_publish_product_info` AS `tppi` ON tpi.control_number = tppi.control_number WHERE (tpi.delete_flg <> 'D' OR tpi.delete_flg  IS NULL) AND (tppi.delete_flg <> 'D' OR tppi.delete_flg  IS NULL) AND (mcus.delete_flg <> 'D' OR mcus.delete_flg  IS NULL) GROUP BY `tpi`.`control_number`,
+	`tpi`.`publish_type` ORDER BY `tpi`.`control_number` DESC 
+2014-10-09 15:37:43,362 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:37:45,479 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:37:45,483 [412] INFO default method=inquiryAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:37:45,484 [412] INFO default method=inquiryAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:37:47,076 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:37:47,080 [412] INFO default method=formAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:37:47,081 [412] INFO default method=formAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:37:49,545 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:37:49,549 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:37:49,560 [412] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 15:37:49,591 [412] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 15:37:49,598 [412] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 15:37:49,600 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 15:37:54,196 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:37:54,201 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numberStart action 
+2014-10-09 15:37:54,219 [412] DEBUG default method=getUnissueList;user_id;;control_number;;Select=SELECT `tpi`.*, count(tpi.control_number) AS `number_of_col`, `tppi`.`product_name_view` FROM `t_publish_info` AS `tpi`
+ LEFT JOIN `t_publish_product_info` AS `tppi` ON tpi.control_number = tppi.control_number WHERE (tpi.delete_flg <> 'D' OR tpi.delete_flg  IS NULL) AND (tppi.delete_flg <> 'D' OR tppi.delete_flg  IS NULL) AND (tpi.status = 1) GROUP BY `tpi`.`id` ORDER BY `tpi`.`control_number` DESC 
+2014-10-09 15:37:54,231 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numberStart action 
+2014-10-09 15:37:56,835 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:37:56,840 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:37:56,850 [412] DEBUG default method=getListOpeartionLogSelect;user_id;;control_number;;Select=SELECT `tph`.* FROM `t_publish_hist` AS `tph` WHERE (tph.delete_flg <> 'D' OR tph.delete_flg IS NULL) ORDER BY `tph`.`create_date` DESC 
+2014-10-09 15:37:56,857 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:37:59,114 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:37:59,118 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:37:59,128 [412] INFO default method=getListSelect;user_id;control_number;;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL ) ORDER BY `create_date` DESC 
+2014-10-09 15:37:59,134 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:38:00,989 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:38:00,993 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numberStart action 
+2014-10-09 15:38:01,012 [412] DEBUG default method=getUnissueList;user_id;;control_number;;Select=SELECT `tpi`.*, count(tpi.control_number) AS `number_of_col`, `tppi`.`product_name_view` FROM `t_publish_info` AS `tpi`
+ LEFT JOIN `t_publish_product_info` AS `tppi` ON tpi.control_number = tppi.control_number WHERE (tpi.delete_flg <> 'D' OR tpi.delete_flg  IS NULL) AND (tppi.delete_flg <> 'D' OR tppi.delete_flg  IS NULL) AND (tpi.status = 1) GROUP BY `tpi`.`id` ORDER BY `tpi`.`control_number` DESC 
+2014-10-09 15:38:01,024 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numberStart action 
+2014-10-09 15:54:56,086 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:54:56,090 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:54:56,091 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:54:56,095 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:54:56,118 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:54:59,392 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:54:59,396 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:54:59,417 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:55:10,146 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:55:10,149 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:55:10,161 [412] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 15:55:10,172 [412] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 15:55:10,175 [412] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 15:55:10,177 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 15:55:16,121 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:55:16,124 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:55:16,136 [412] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 15:55:16,147 [412] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 15:55:16,150 [412] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 15:55:16,152 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 15:55:23,918 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:55:23,922 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:55:23,946 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:55:31,318 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:55:31,322 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:55:31,343 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:55:54,295 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:55:54,299 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:55:54,311 [412] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 15:55:54,322 [412] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 15:55:54,325 [412] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 15:55:54,327 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 15:55:59,418 [412] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:55:59,423 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:55:59,423 [412] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:55:59,427 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:55:59,450 [412] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:57:29,804 [4116] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-09 15:57:29,830 [4116] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-09 15:57:32,895 [4116] INFO default method=confirmLoginAction;user_id=;control_number;Start action 
+2014-10-09 15:57:32,953 [4116] INFO default method=confirmLoginAction;user_id=;control_number;End action 
+2014-10-09 15:57:33,223 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:57:33,227 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:57:33,267 [4116] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 15:57:33,297 [4116] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 15:57:33,301 [4116] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 15:57:33,303 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 15:57:51,278 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:57:51,282 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:57:51,364 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:57:56,864 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:57:56,867 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:57:56,889 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:58:16,145 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:58:16,149 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:58:16,173 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 15:58:20,862 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 15:58:20,866 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 15:58:20,887 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:01:33,329 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:01:33,333 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:01:33,357 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:01:36,464 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:01:36,468 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:01:36,490 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:04:50,373 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:04:50,377 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:04:50,410 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:04:53,783 [4116] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 16:04:53,798 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:05:04,471 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:05:04,475 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:05:04,499 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:05:06,759 [4116] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 16:05:06,774 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:06:00,763 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:06:00,767 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:06:00,790 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:06:03,043 [4116] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 16:06:03,064 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:06:15,634 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:06:15,638 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:06:15,650 [4116] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 16:06:15,660 [4116] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 16:06:15,664 [4116] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 16:06:15,666 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 16:06:26,344 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:06:26,348 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:06:26,371 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:06:28,139 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:06:28,143 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:06:28,167 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:06:31,103 [4116] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 16:06:31,118 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:06:53,524 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:06:53,528 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:06:53,551 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:06:56,463 [4116] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 16:06:56,478 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:10:06,229 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:10:06,233 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:10:06,256 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:10:08,807 [4116] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 16:10:08,822 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:12:45,725 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:12:45,729 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:12:45,752 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:12:48,338 [4116] ERROR default [default/testing/search] script 'testing/search.phtml' not found in path (C:\xampp\htdocs\source\zynas_app\application/modules/default/views/) 
+2014-10-09 16:12:48,352 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:13:58,940 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:13:58,944 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:13:58,968 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:14:02,738 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:14:02,742 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:14:02,757 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:14:06,027 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:14:06,030 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:14:06,031 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:14:06,035 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:14:06,058 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:14:11,941 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:14:11,945 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:14:13,271 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:14:13,275 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:14:13,276 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:14:13,281 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:14:13,312 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:19:34,188 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:19:34,192 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:19:34,193 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:19:34,197 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:19:34,221 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:21:31,777 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:21:31,782 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:21:31,782 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:21:31,788 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:21:31,816 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:21:45,884 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:21:45,887 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:21:45,888 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:21:45,893 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:21:45,916 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:22:06,304 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:22:06,308 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:22:06,309 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:22:06,312 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:22:06,337 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:22:28,596 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:22:28,599 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:22:28,600 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:22:28,605 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:22:28,628 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:22:34,958 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:22:34,962 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:22:34,963 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:22:34,967 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:22:34,990 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:24:26,306 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:24:26,310 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:24:26,311 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:24:26,315 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:24:26,338 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:26:37,159 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:26:37,163 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:26:37,164 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:26:37,168 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:26:37,192 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:26:39,985 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:26:39,989 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:26:39,990 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:26:39,993 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:26:40,025 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:26:46,600 [4116] ERROR default [default/testing/search] no view script directory set; unable to determine location for view script 
+2014-10-09 16:26:46,615 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:28:47,160 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:28:47,164 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:28:47,165 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:28:47,169 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:28:47,197 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:28:49,529 [4116] ERROR default [default/testing/search] no view script directory set; unable to determine location for view script 
+2014-10-09 16:28:49,544 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:33:23,050 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:33:23,055 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:33:23,055 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:33:23,059 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:33:23,083 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:33:25,776 [4116] ERROR default [default/testing/search] no view script directory set; unable to determine location for view script 
+2014-10-09 16:33:25,791 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:36:39,926 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:36:39,930 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:36:39,931 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:36:39,935 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:36:39,963 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:37:33,038 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:37:33,042 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:37:33,043 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:37:33,047 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:37:33,070 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:38:30,257 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:38:30,261 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:38:30,261 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:38:30,266 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:38:30,289 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:38:41,125 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:38:41,129 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:38:41,129 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:38:41,133 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:38:41,157 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:39:12,240 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:39:12,245 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:39:12,245 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:39:12,249 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:39:12,272 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:40:10,864 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:40:10,868 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:40:10,869 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:40:10,873 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:40:10,896 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:40:29,277 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:40:29,281 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:40:29,281 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:40:29,285 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:40:29,307 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:41:48,258 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:41:48,263 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:41:48,264 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:41:48,267 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:41:48,291 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:42:17,336 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:42:17,340 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:42:17,341 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:42:17,345 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:42:17,368 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:42:22,824 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:42:22,827 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:42:22,828 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:42:22,832 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:42:22,856 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:42:28,243 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:42:28,246 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:42:28,248 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:42:28,252 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:42:28,275 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:43:42,599 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:43:42,603 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:43:42,604 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:43:42,607 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:43:42,631 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:43:47,813 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:43:47,817 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:43:47,818 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:43:47,821 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:43:47,845 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:44:50,823 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:44:50,826 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:44:50,827 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:44:50,831 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:44:50,854 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:45:39,009 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:45:39,013 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:45:39,024 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:45:40,902 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:45:40,906 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:45:40,906 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:45:40,910 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:45:40,950 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:46:03,227 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:46:03,232 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:46:25,226 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:46:25,230 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:46:25,287 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:46:27,034 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:46:27,038 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:46:27,039 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:46:27,043 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:46:27,066 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:49:00,352 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:49:00,356 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:49:00,357 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:49:00,361 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:49:00,385 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:49:30,515 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:49:30,519 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:49:30,520 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:49:30,523 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:49:30,552 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:50:22,544 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:50:22,548 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:50:22,549 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:50:22,552 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:50:22,576 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:52:48,926 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:52:48,930 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:52:48,931 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:52:48,935 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:52:48,960 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:52:58,819 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:52:58,823 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:52:58,824 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:52:58,827 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:52:58,850 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:53:37,623 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:53:37,627 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:53:37,628 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:53:37,632 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:53:37,656 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:54:01,583 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:54:01,587 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:54:01,588 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:54:01,592 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:54:01,615 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:54:27,727 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:54:27,730 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:54:27,731 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:54:27,736 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:54:27,761 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:56:22,078 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:56:22,081 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:56:22,082 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:56:22,087 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:56:22,110 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 16:56:43,149 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 16:56:43,153 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 16:56:43,165 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:00:02,115 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:00:02,119 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:00:02,120 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:00:02,124 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:00:02,147 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:00:04,043 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:00:04,047 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:00:04,048 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:00:04,052 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:00:04,077 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:00:17,004 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:00:17,009 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:00:17,023 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:00:18,987 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:00:18,991 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:00:19,002 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:03:57,480 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:03:57,484 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:03:57,522 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:03:59,545 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:03:59,548 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:03:59,586 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:05:51,322 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:05:51,326 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:05:51,344 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:06:40,529 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:06:40,533 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:06:40,551 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:08:23,134 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:08:23,137 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:08:23,182 [4116] ERROR default [default/testing/edit] Unrecognized method 'toArray()' 
+2014-10-09 17:14:45,941 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:14:45,944 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:14:45,945 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:14:45,949 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:14:45,972 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:14:49,766 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:14:49,770 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:14:49,820 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:16:57,302 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:16:57,306 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:16:57,367 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:17:36,824 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:17:36,828 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:17:36,845 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:23:31,338 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:23:31,342 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:23:31,366 [4116] ERROR default [default/testing/edit] Unrecognized method 'toString()' 
+2014-10-09 17:23:41,635 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:23:41,639 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:23:41,640 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:23:41,644 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:23:41,675 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:23:43,329 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:23:43,333 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:23:43,358 [4116] ERROR default [default/testing/edit] Unrecognized method 'toString()' 
+2014-10-09 17:30:50,913 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:30:50,917 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:30:50,943 [4116] ERROR default [default/testing/edit] Unrecognized method 'fetchAll()' 
+2014-10-09 17:30:52,445 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:30:52,449 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:30:52,473 [4116] ERROR default [default/testing/edit] Unrecognized method 'fetchAll()' 
+2014-10-09 17:31:03,522 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:31:03,526 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:31:03,551 [4116] ERROR default [default/testing/edit] Unrecognized method 'fetchRow()' 
+2014-10-09 17:36:19,553 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:36:19,557 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:36:19,586 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:38:46,393 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:38:46,397 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:38:46,414 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:38:47,866 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:38:47,873 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:38:47,893 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:38:49,241 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:38:49,246 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:38:49,268 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:38:49,587 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:38:49,594 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:38:49,613 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:38:51,604 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:38:51,609 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:38:51,631 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:39:08,883 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:39:08,887 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:39:08,921 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:39:09,958 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:39:09,966 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:39:10,013 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:39:40,338 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:39:40,342 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:39:40,376 [4116] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 17:39:40,388 [4116] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 17:39:40,402 [4116] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 17:39:40,405 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 17:39:41,548 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:39:41,552 [4116] INFO default method=requestAction;user_id=admin@trithucmoi.co;control_number=;Start action 
+2014-10-09 17:39:41,601 [4116] DEBUG default method=getEntryByCode;user_id=;control_number=;SELECT `msc`.* FROM `m_customer` AS `msc` WHERE (msc.customer_code = ?) AND (msc.delete_flg <> 'D' OR msc.delete_flg IS NULL) 
+2014-10-09 17:39:41,609 [4116] ERROR default [default/da-issue/request] SQLSTATE[HY093]: Invalid parameter number: no parameters were bound 
+2014-10-09 17:39:43,320 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:39:43,324 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:39:43,335 [4116] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 17:39:43,346 [4116] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 17:39:43,349 [4116] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 17:39:43,351 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 17:39:45,053 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:39:45,058 [4116] INFO default method=inquiryAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:39:45,058 [4116] INFO default method=inquiryAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:39:46,318 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:39:46,322 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:39:46,352 [4116] DEBUG default method=getDAIssuedList;user_id;;control_number;;Select=SELECT `tpi`.*, count(tpi.control_number) AS `number_of_col`, `mcus`.`customer_type`, `tppi`.`product_name_view` FROM `t_publish_info` AS `tpi`
+ INNER JOIN `m_customer` AS `mcus` ON tpi.customer_code = mcus.customer_code
+ LEFT JOIN `t_publish_product_info` AS `tppi` ON tpi.control_number = tppi.control_number WHERE (tpi.delete_flg <> 'D' OR tpi.delete_flg  IS NULL) AND (tppi.delete_flg <> 'D' OR tppi.delete_flg  IS NULL) AND (mcus.delete_flg <> 'D' OR mcus.delete_flg  IS NULL) GROUP BY `tpi`.`control_number`,
+	`tpi`.`publish_type` ORDER BY `tpi`.`control_number` DESC 
+2014-10-09 17:39:46,366 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:39:56,776 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:39:56,780 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numberStart action 
+2014-10-09 17:39:56,798 [4116] DEBUG default method=getUnissueList;user_id;;control_number;;Select=SELECT `tpi`.*, count(tpi.control_number) AS `number_of_col`, `tppi`.`product_name_view` FROM `t_publish_info` AS `tpi`
+ LEFT JOIN `t_publish_product_info` AS `tppi` ON tpi.control_number = tppi.control_number WHERE (tpi.delete_flg <> 'D' OR tpi.delete_flg  IS NULL) AND (tppi.delete_flg <> 'D' OR tppi.delete_flg  IS NULL) AND (tpi.status = 1) GROUP BY `tpi`.`id` ORDER BY `tpi`.`control_number` DESC 
+2014-10-09 17:39:56,810 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numberStart action 
+2014-10-09 17:39:59,042 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:39:59,046 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:39:59,058 [4116] DEBUG default method=getListOpeartionLogSelect;user_id;;control_number;;Select=SELECT `tph`.* FROM `t_publish_hist` AS `tph` WHERE (tph.delete_flg <> 'D' OR tph.delete_flg IS NULL) ORDER BY `tph`.`create_date` DESC 
+2014-10-09 17:39:59,065 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:40:03,140 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:40:03,144 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:40:03,153 [4116] DEBUG default method=getListSelect;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 17:40:03,160 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:40:05,297 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:40:05,301 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:40:05,302 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:40:08,646 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:40:08,649 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:40:08,659 [4116] DEBUG default method=getListSelect;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 17:40:08,665 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:40:23,867 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:40:23,871 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:40:23,883 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:40:29,013 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:40:29,017 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:40:29,027 [4116] DEBUG default method=getListSelect;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 17:40:29,033 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:40:35,274 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:40:35,279 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:40:35,288 [4116] DEBUG default method=getListSelect;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 17:40:35,295 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:40:37,665 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:40:37,669 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:40:37,680 [4116] DEBUG default method=getListOpeartionLogSelect;user_id;;control_number;;Select=SELECT `tph`.* FROM `t_publish_hist` AS `tph` WHERE (tph.delete_flg <> 'D' OR tph.delete_flg IS NULL) ORDER BY `tph`.`create_date` DESC 
+2014-10-09 17:40:37,687 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:40:41,049 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:40:41,053 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:40:41,062 [4116] DEBUG default method=getListSelect;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 17:40:41,068 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:41:58,698 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:41:58,702 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:41:59,890 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:41:59,894 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:41:59,895 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:41:59,899 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:41:59,922 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:42:01,482 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:42:01,486 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:42:01,506 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:45:59,988 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:45:59,992 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:46:00,014 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:46:23,831 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:46:23,834 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:46:23,853 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:46:29,569 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:46:29,572 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:46:29,590 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:47:20,532 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:47:20,537 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:47:20,557 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:47:53,776 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:47:53,780 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:47:53,798 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:48:12,064 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:48:12,068 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:48:12,091 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:50:51,488 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:50:51,492 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:50:51,509 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:50:51,527 [4116] ERROR default [default/testing/edit] Plugin by name 'Common' was not found in the registry; used paths:
+View_Helper_: C:\xampp\htdocs\source\zynas_app\application/library/View/Helper/
+Zynas_View_Helper_: C:\xampp\htdocs\source\zynas_fw/library/Zynas/View/Helper/
+Zend_View_Helper_: Zend/View/Helper/ 
+2014-10-09 17:51:28,185 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:51:28,190 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:51:28,209 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:52:59,315 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:52:59,319 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:52:59,339 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 17:53:09,208 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 17:53:09,212 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 17:53:09,229 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:01:47,774 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:01:47,778 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:01:47,797 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:02:52,525 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:02:52,529 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:02:52,558 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:03:15,763 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:03:15,767 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:03:15,785 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:03:21,688 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:03:21,692 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:03:21,710 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:03:50,363 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:03:50,368 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:03:50,392 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:04:17,185 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:04:17,189 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:04:17,207 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:07:45,871 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:07:45,875 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:08:06,377 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:08:06,381 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:10:34,000 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:10:34,004 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:10:44,115 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:10:44,119 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:11:07,602 [4116] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-09 18:11:07,605 [4116] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-09 18:11:08,723 [4116] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-09 18:11:08,726 [4116] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-09 18:11:08,920 [4116] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-09 18:11:08,923 [4116] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-09 18:11:10,320 [4116] INFO default method=confirmLoginAction;user_id=;control_number;Start action 
+2014-10-09 18:11:10,337 [4116] INFO default method=confirmLoginAction;user_id=;control_number;End action 
+2014-10-09 18:11:10,553 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:11:10,557 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:11:10,570 [4116] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 18:11:10,582 [4116] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 18:11:10,585 [4116] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 18:11:10,587 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 18:11:14,436 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:11:14,440 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:11:44,801 [4116] INFO default method=loginAction;user_id=;control_number;Start action 
+2014-10-09 18:11:44,804 [4116] INFO default method=loginAction;user_id=;control_number;End action 
+2014-10-09 18:11:46,871 [4116] INFO default method=confirmLoginAction;user_id=;control_number;Start action 
+2014-10-09 18:11:46,888 [4116] INFO default method=confirmLoginAction;user_id=;control_number;End action 
+2014-10-09 18:11:47,141 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:11:47,144 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:11:47,157 [4116] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 18:11:47,168 [4116] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 18:11:47,171 [4116] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 18:11:47,173 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 18:11:50,587 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:11:50,591 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:12:11,361 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:13:31,200 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:13:31,206 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:13:32,379 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:13:32,383 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:14:48,940 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:14:48,944 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:14:48,967 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:17:19,016 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:17:19,020 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:20:46,778 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:20:46,782 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:22:32,851 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:22:32,855 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:22:32,877 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:23:46,669 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:23:46,673 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:23:46,694 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:23:50,474 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:23:50,478 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:23:50,544 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:23:50,551 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:24:22,707 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:24:22,711 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:25:24,062 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:25:24,066 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:25:29,179 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:25:29,182 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:25:29,215 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:25:29,418 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:25:29,422 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:25:29,441 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:28:35,675 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:28:35,679 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:28:35,700 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:29:27,871 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:29:27,875 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:29:27,896 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:31:05,384 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:31:05,387 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:31:05,410 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:33:57,138 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:33:57,141 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:33:57,163 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:34:12,871 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:34:12,874 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:34:12,895 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:37:35,199 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:37:35,203 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:37:35,225 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:40:19,113 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:40:19,118 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:40:19,139 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:40:24,929 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:40:24,933 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:40:24,954 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:42:57,495 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:42:57,499 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:42:57,521 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:42:59,593 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:42:59,597 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:42:59,598 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:42:59,602 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:42:59,643 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:43:01,602 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:43:01,606 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:43:01,627 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:43:05,246 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:43:05,250 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:43:05,548 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:43:05,552 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:43:05,570 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:43:07,762 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:43:07,765 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:43:07,766 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:43:07,771 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:43:07,794 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:43:09,213 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:43:09,217 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:43:09,238 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:43:28,330 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:43:28,334 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:43:28,356 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:43:30,107 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:43:30,111 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:43:30,137 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:44:47,712 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:44:47,716 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:44:47,737 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:44:49,002 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:44:49,007 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:44:49,029 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:45:32,354 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:45:32,358 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:45:32,380 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:04,829 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:04,834 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:04,854 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:24,882 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:24,885 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:24,907 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:27,657 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:27,661 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:27,661 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:27,665 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:27,688 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:29,272 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:29,276 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:29,297 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:30,926 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:30,930 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:30,931 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:30,935 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:30,960 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:32,156 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:32,160 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:32,182 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:33,630 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:33,634 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:33,634 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:33,638 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:33,663 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:34,864 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:34,868 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:34,889 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:36,365 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:36,369 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:36,370 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:36,374 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:36,398 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:37,887 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:37,891 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:37,912 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:39,299 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:39,303 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:39,304 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:39,307 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:39,331 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:40,391 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:40,395 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:40,416 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:42,145 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:42,149 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:42,149 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:42,153 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:42,177 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:43,349 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:43,352 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:43,373 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:52,886 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:52,890 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:52,890 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:52,895 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:52,920 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:54,925 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:54,929 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:57,337 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:46:57,341 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:57,342 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:46:57,346 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:46:57,368 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:47:00,633 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:47:00,637 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:47:00,658 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:47:03,187 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:47:03,191 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:47:03,192 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:47:03,195 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:47:03,219 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:47:05,145 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:47:05,149 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:47:33,150 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:47:33,154 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:47:33,216 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:47:35,214 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:47:35,218 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:47:35,219 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:47:35,222 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:47:35,246 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:47:45,211 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:47:45,215 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:47:45,237 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:47:52,284 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:47:52,288 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:47:52,288 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:47:52,292 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:47:52,316 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:56:39,081 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:56:39,085 [4116] INFO default method=deleteAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:56:39,462 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:56:39,466 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:56:39,488 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:59:32,439 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:59:32,443 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:59:32,467 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:59:43,893 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:59:43,897 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:59:43,918 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:59:46,256 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:59:46,260 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:59:46,261 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:59:46,265 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:59:46,289 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:59:49,024 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:59:49,028 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:59:49,063 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:59:55,684 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 18:59:55,688 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:59:55,689 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 18:59:55,693 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 18:59:55,717 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 19:00:27,147 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:00:27,151 [4116] INFO default method=addAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:01:22,859 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:01:22,863 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:01:22,881 [4116] DEBUG default method=getLimitList;user_id=;control_number=;SELECT `minf`.* FROM `m_information` AS `minf` WHERE (minf.delete_flg <> 'D' OR minf.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 19:01:22,894 [4116] INFO default method=count;user_id;control_number;Select=SELECT COUNT(id) AS `num` FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC 
+2014-10-09 19:01:22,915 [4116] INFO default method=getLimitList;user_id;control_number;Select=SELECT `mfaq`.* FROM `m_faq` AS `mfaq` WHERE (mfaq.delete_flg <> 'D' OR mfaq.delete_flg IS NULL) ORDER BY `create_date` DESC LIMIT 6 
+2014-10-09 19:01:22,917 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_numbernumber_record_faq=3number_record_infor3;End action 
+2014-10-09 19:01:30,253 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:01:30,266 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:01:30,290 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 19:01:33,722 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:01:33,726 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:01:33,750 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 19:02:51,734 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:02:51,738 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:02:51,762 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 19:02:57,233 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:02:57,237 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:02:57,258 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 19:03:01,142 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:03:01,147 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:03:01,452 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:03:01,456 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:03:01,474 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 19:03:03,215 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:03:03,219 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:03:03,220 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 19:03:03,225 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:03:03,248 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 19:03:06,405 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:03:06,409 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:03:06,431 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 19:03:12,594 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:03:12,598 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:03:12,917 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:03:12,921 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:03:12,940 [4116] INFO default method=editAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 19:03:14,360 [4116] DEBUG default method=getUserById;user_id=2;control_number=;;Select=SELECT `mur`.* FROM `m_user` AS `mur` WHERE (mur.id = '2') AND (mur.delete_flg <> 'D' OR mur.delete_flg IS NULL) 
+2014-10-09 19:03:14,364 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:03:14,364 [4116] INFO default method=indexAction;user_id=admin@trithucmoi.co;control_number;End action 
+2014-10-09 19:03:14,368 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;Start action 
+2014-10-09 19:03:14,391 [4116] INFO default method=listAction;user_id=admin@trithucmoi.co;control_number;End action 

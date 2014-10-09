@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//application/modules/default/controllers/StaffController.php=UTF-8
+encoding//application/modules/default/controllers/TestController.php=UTF-8
+encoding//application/modules/default/views/staff/add-staff.phtml=UTF-8
+encoding//application/modules/default/views/staff/list.phtml=UTF-8
+encoding//application/modules/default/views/test/add.phtml=UTF-8
+encoding//application/modules/default/views/test/list.phtml=UTF-8
+encoding/<project>=UTF-8

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet"
+	href="/resources/styles/common_jp.css" />
+<link type="text/css" rel="stylesheet"
+	href="/resources/styles/win_nn6.css" />
+<script type="text/javascript" src="/resources/scripts/js/judge_04.js"></script>
+<link type="text/css" rel="stylesheet"
+	href="/resources/styles/modal_overlay.css" />
+<script type="text/javascript" src="/resources/scripts/jquery-1.8.2.js"></script>
+<script type="text/javascript"
+	src="/resources/scripts/jquery-ui-1.9.1.custom.min.js"></script>
+<script type="text/javascript"
+	src="/resources/scripts/jquery.tools.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="/resources/scripts/jquery.ui/redmond/jquery-ui-1.9.1.custom.min.css" />
+<title><?php echo $this->pageTitle ;?></title>
+<?php if ($this->useDatePicker): ?>
+<?php // DatePicker用のCSS,JSを定義 ?>
+<link rel="stylesheet" type="text/css"
+	href="/resources/scripts/jquery.ui/redmond/jquery-ui-1.9.1.custom.min.css" />
+<script type="text/javascript"
+	src="/resources/scripts/jquery.date-picker-select.js"></script>
+<?php endif; ?>
+
+
+
+</head>
+
+
+
+<?php /* TODO 一時退避
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="ja" http-equiv="Content-Language" />
+<?php
+if(isset($this->siteName) && !Zynas_String::isEmpty($this->siteName)) {
+$siteName = $this->siteName;
+} else {
+$siteName = Zend_Registry::get('config')->app_name;
+}
+?>
+<title><?php echo $siteName; ?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript; charset=utf-8">
+
+<link type="text/css" rel="stylesheet" href="/css/common.css" />
+<?php // echo $this->headLink(); ?>
+<script type="text/javascript" src="/js/include.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<?php // echo $this->headScript(); ?>
+
+<?php
+if(isset($this->metaOgp) && is_array($this->metaOgp)){
+foreach ($this->metaOgp as $k => $v) {
+echo '<meta property="' . $k . '" content="' . $v . '" />' . "\n";
+}
+}
+?>
+</head>
+*/ ?>
+<?php
+if(Auth_Info::isLoggedUser())
+$this->role = Auth_Info::getUser()->user_type;
+?>
+
+<body>
+	<div id="z_layout_page">
+	<?php if (!$this->isNotHeader): ?>
+		<div id="z_layout_header">
+			<!-- **** ヘッダー ***** -->
+		<?php echo $this->render('_partial/header.phtml'); ?>
+		</div>
+		<!-- #z_layout_header -->
+		<div id="z_layout_body">
+			<div id="z_layout_box_menu">
+				<!-- **** メニュー ***** -->
+			<?php if(strcmp($this->role,MUsers::DISCO_ADMIN) === 0 ):?>
+			    <?php echo $this->render('_partial/menuadmin.phtml');?>
+			<?php else: ?>			        
+			    <?php echo $this->render('_partial/menu.phtml'); ?>
+			<?php endif;?>    
+	<?php endif; ?>
+			</div>
+			<!-- #z_layout_box_menu -->
+			<div id="z_layout_box_sub"></div>
+			<!-- #z_layout_box_sub -->
+			<div id="z_layout_box_main">
+			<?php echo $this->layout()->content; ?>
+			</div>
+			<!-- #z_layout_box_main -->
+		</div>
+		<!-- #z_layout_body -->
+
+		<div id="z_layout_footer">
+			<!-- **** フッター ***** -->
+		<?php echo $this->render('_partial/footer.phtml'); ?>
+		</div>
+		<!-- #z_layout_footer -->
+	</div>
+	<!-- #z_layout_page -->
+</body>
+</html>

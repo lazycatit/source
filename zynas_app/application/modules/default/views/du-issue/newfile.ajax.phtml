@@ -1,0 +1,10 @@
+<div class="choosefiles" id="choosefiles_<?php echo $this->index?>">
+    <ul>
+        <li class="filename">
+            <?php echo $this->formFile('customer_file'. $this->index)?>
+        </li>
+        <li class="filedelet">
+            <a onclick="onClickDeleteFile(<?php echo $this->index?>)">削除</a>
+        </li>
+    </ul>
+</div>

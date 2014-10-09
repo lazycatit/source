@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link type="text/css" rel="stylesheet"
+	href="/resources/styles/common_jp.css" />
+<script language="JavaScript" src="/resources/scripts/js/judge_04.js"></script>
+
+</head>
+
+<body>
+	<div id="z_layout_page">
+		<div id="z_layout_header">
+			<!-- **** ヘッダー ***** -->
+		<?php echo $this->render('_partial/header.phtml'); ?>
+		</div>
+		<!-- #z_layout_header -->
+		<div id="z_layout_body">
+			<div id="z_layout_box_menu">
+
+				<!-- **** メニュー ***** -->
+			<?php echo $this->render('_partial/menu.phtml'); ?>
+			</div>
+			<!-- #z_layout_box_menu -->
+			<div id="z_layout_box_sub"></div>
+			<!-- #z_layout_box_sub -->
+			<div id="z_layout_box_main">
+			<?php echo $this->layout()->content; ?>
+			</div>
+			<!-- #z_layout_box_main -->
+		</div>
+		<!-- #z_layout_body -->
+		<div id="z_layout_footer">
+			<!-- **** フッター ***** -->
+		<?php echo $this->render('_partial/footer.phtml'); ?>
+		</div>
+		<!-- #z_layout_footer -->
+	</div>
+	<!-- #z_layout_page -->
+</body>
+</html>

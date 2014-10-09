@@ -1,0 +1,133 @@
+<title><?php echo $this->pageTitle = '発行依頼 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'; //?>
+</title>
+<?php $this->useDatePicker = true; // DatePicker使用 ?>
+<?php $this->isNotHeader = true; ?>
+<div id="header">
+	<h1>
+		<a href="http://www.disco.co.jp"><img src="/resources/image/logo.jpg"
+			alt="DISCO" width="205" height="48" border="0"> </a>
+	</h1>
+</div>
+
+<div id="gnavi02"></div>
+
+<div id="contents" class="orderhistory text03m">
+	<div class="orderhistorycontents">
+		<h2>発注履歴</h2>
+		<div class="inputbox">
+			<form action="/disco-order-hist/list" method="post">
+				<div class="receivednumtext">
+					<p class="receivednum">受注番号</p>
+					<div class="freetext">
+						<p>
+						<?php echo $this->formText('order_number', $this->request->order_number, array('class' => 'w300'));?>
+						<div style="color: red"><?php echo $this->formError('order_number');?></div>
+						</p>
+						<p class="textsmall">
+							受注番号が複数存在する場合は、キーワードの間にカンマを挟んで下さい。<br>
+							（例：AYYYYMM_0001,AYYYYMM_0002）
+						</p>
+					</div>
+				</div>
+				<div class="categorytext">
+					<p class="categoryitem">カテゴリ</p>
+					<div class="freetext">
+					    <?php echo $this->formSelectMainCategory('category', 0, $this->request->category, array('multiple' => false), $this->main_category_data); ?>						
+					</div>
+				</div>
+				<div class="pulldowns">
+					<p class="nameitem">品名</p>
+					<div class="selectname">
+						<p>
+						<?php echo $this->formText('product', $this->request->product, array('class' => 'w300'));?>
+						</p>
+					</div>
+					<p class="creattime">発注日</p>
+					<div class="selecttime">
+						<ul>
+							<li><?php echo $this->formDate('create_from', $this->request->create_from); ?>
+							</li>
+							<li><div style="color: red"><?php echo $this->formError('create_from'); ?>
+							</li>
+							<li>〜</li>
+						</ul>
+						<ul>
+							<li><?php echo $this->formDate('create_to', $this->request->create_to); ?>
+							</li>
+							<li><div style="color: red"><?php echo $this->formError('create_to'); ?></div></li>
+						</ul>
+					</div>
+				</div>
+				<?php echo $this->formHidden('code', $this->code);?>
+				<?php echo $this->formSubmit('search', '検索', array('class' => 'zbtn_short')); ?>
+			</form>
+		</div>
+		<form action="/disco-issue/request" method="post">
+			<div class="orderhistorytableset">
+				<div class="pager">
+				<?php echo $this->paginator; ?>
+				</div>
+				<table border="0" cellpadding="0" cellspacing="0"
+					class="orderhistorytable02" id="tablecontent">
+					<tbody>
+						<tr>
+							<th class="thleft"><?php echo $this->formCheckbox('checkall', '', array('class' => 'checkall'));?>
+							</th>
+							<th class="thleft02">受注番号</th>
+							<th class="thleft03">カテゴリー</th>
+							<th class="thleft04">品名</th>
+							<th class="thleft06">型式</th>
+							<th>発注日</th>
+						</tr>
+						<?php foreach ($this->paginator as $item): ?>
+						<tr>
+							<td><?php echo $this->formCheckbox('select[]', '', array('class' => 'select'));?>
+							</td>
+							<td><?php echo $this->escape($item->order_number)?></td>
+							<td><?php echo $this->escape($item->product_category)?></td>
+							<td><?php echo $this->escape($item->product_name1)?></td>
+							<td><?php echo $this->escape($item->product_number_view)?></td>
+							<td><?php echo date('Y-m-d H:i:s', $this->escape($item->order_date))?></td>
+						</tr>
+						<?php endforeach;?>
+					</tbody>
+				</table>
+				<div class="pager">
+				<?php echo $this->paginator; ?>
+				</div>
+			</div>
+			<ul class="orderhistorybtns">
+				<li class="cancell"><a href=""
+					onClick="window.close(); return false;">閉じる</a></li>
+				<li><?php echo $this->formSubmit(null, '選択', array('class' => 'zbtn_short', 'onClick' => 'return onClickSubmit();')); ?>
+				</li>
+			</ul>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+$('.checkall').live('click',function () {
+    $(this).parents('tbody:eq(0)').find(':checkbox').attr('checked', this.checked);
+});
+
+$(document).ready(function(){
+	  // 偶数行にのみクラスを指定
+	  $('#tablecontent tr:even').addClass('bglightgray');  	  
+	});
+function onClickSubmit() {
+	var ck = document.getElementsByName('select[]');
+	var num = ck.length;
+	var status = false;
+	for (var i=0; i<num; i++) {
+	    if (ck[i].checked == true) {
+	        status = true;
+	    }
+	}
+	if (!status) {
+		alert('Please select at least one item');
+		return false;
+	}else {
+		return true;
+	}
+}
+</script>

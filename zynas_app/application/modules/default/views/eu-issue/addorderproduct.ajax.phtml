@@ -1,0 +1,66 @@
+<?php echo $this->formHidden('newNoOrderProduct_'.$this->currentProductIndex, $this->newNoProduct)?>
+<?php foreach( $this->arrOrderProduct as $product):?>
+<div class="productchoose" id="productchoose_<?php echo $product->index ?>">
+    <?php echo $this->formHidden('products[]', $product->index)?>
+    <?php echo $this->formHidden('index_issue_product_' . $product->index, $product->index)?>
+    <ul>
+        <li>
+            製品種目
+        </li>
+        <li>
+            <?php echo $this->formSelectMainCategory('select_main_product_category_' . $product->index, $product->mainProductCategory, array('onChange' => 'onChangeMainProductCategory(this,' . $product->index . ')', 'class' => 'w160', 'multiple' => false)); ?>
+        </li>
+    </ul>
+    <ul class="product_<?php echo $product->index?>" >
+        <li>
+            機種
+        </li>
+        <li>
+            <?php echo $this->formSelectProductNumber('select_product_number_' . $product->index, $product->productNumber, array('class' => 'w100', 'multiple' => false)); ?>
+        </li>
+    </ul>
+    <ul class="product_<?php echo $product->index?>" >
+        <li>
+            製番
+        </li>
+        <li>
+            <?php echo $this->formText('text_serial_number_' . $product->index, $product->serialNumber, array('class' => 'w75')); ?>
+        </li>
+    </ul>
+    <ul class="sub_product_<?php echo $product->index?>" >
+        <li>
+            製品番号
+        </li>
+        <li>
+            <?php echo $this->formText('text_product_number_view_' . $product->index, $product->productNumberView, array('class' => 'w200')); ?>
+        </li>
+    </ul>
+    <ul class="pwp_main_<?php echo $product->index?>"  >
+        <li>
+            発行形態
+        </li>
+        <li>
+            <?php echo $this->formSelect('select_model_serial_' . $product->index, $product->modelSerial, array('onChange' => 'onChangeModelSerial(this,' . $product->index . ')', 'class' => 'w75', 'multiple' => false), array('01' => '型番発行', '02' => 'シリーズ発行')); ?>
+        </li>
+    </ul>
+    <ul class="pwp_1_<?php echo $product ->index?>"  >
+        <li>
+            製品コード
+        </li>
+        <li>
+            <?php echo $this->formText('text_product_number_' . $product->index, $product->productNumberTxt, array('class' => 'w125')); ?>
+        </li>
+    </ul>
+    <ul class="pwp_2_<?php echo $product->index?>"  >
+        <li>
+            シリーズ
+        </li>
+        <li>
+            <?php echo $this->formSelectCategoryName2('select_category_name2_' . $product->index, $product->categoryName2, array('class' => 'w100', 'multiple' => false)); ?>
+        </li>
+    </ul>
+    <p>
+        <a onClick="onClickRemoveIssueProduct(<?php echo $product->index?>)">削除</a>
+    </p>
+</div>
+<?php endforeach; ?>

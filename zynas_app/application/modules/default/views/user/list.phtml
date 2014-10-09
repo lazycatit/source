@@ -1,0 +1,123 @@
+<title><?php echo $this->pageTitle = 'ユーザー一覧'; // ページタイトル ?></title>
+<?php $this->useDatePicker = true; // DatePicker使用 ?>
+<div id="z_layout_box_main" align="center">
+	<div style="color: red;">
+	<?php echo $this->dumpFlashMessages(); ?>
+	</div>
+	<h2>ユーザー一覧</h2>
+	<div id="top_left_container">
+		<form action="/user/list" method="post">
+			<div id="search">
+				<fieldset>
+					<div>
+						<table>
+							<tr>
+								<th class="user_id">ユーザーID</th>
+								<td><?php echo $this->formText('mail_adress', $this->request->mail_adress); ?>
+								</td>
+								<th width="130" class="name">名前（カナ）</th>
+								<td><?php echo $this->formText('first_kana', $this->request->first_kana); ?>
+								</td>
+								<td><?php echo $this->formText('last_kana', $this->request->last_kana); ?>
+								</td>
+							</tr>
+							<tr>
+								<th width="130" class="birth">生年月日</th>
+								<td colspan="5"><?php echo $this->formDatePicker('birth_from', $this->request->birth_from); ?>
+								<?php echo $this->formError('birth_from'); ?> ～ <?php echo $this->formDatePicker('birth_to', $this->request->birth_to); ?>
+								<?php echo $this->formError('birth_to'); ?>
+								</td>
+							</tr>
+						</table>
+						<br>
+					</div>
+				</fieldset>
+			</div>
+			<div style="width: 70px; margin: 0 auto 0 auto;">
+			<?php echo $this->formSubmit(null, '検索', array('class' => 'button')); ?>
+			</div>
+		</form>
+		<!-- .pagination -->
+		<?php echo $this->paginator; ?>
+		<div id="new" style="float: left">
+			<button onclick="location.href='add';">
+				<span class="add"></span>新規登録
+			</button>
+		</div>
+		<br style="clear: both;">
+		<div id="user_table">
+			<form action="/user/list" method="post">
+				<table border="1" id="user_table" align="center">
+					<thead>
+						<tr>
+							<th class="id">ID</th>
+							<th width="200" class="user_id">ユーザーID</th>
+							<th width="200" class="mun_unit_name">部署名</th>
+							<th width="130" class="name">名前</th>
+							<th width="30 " class="gender">性別</th>
+							<th class="birth">生年月日</th>
+							<th width="80" colspan="2">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+					<?php foreach ($this->paginator as $item): ?>
+						<tr>
+							<td><?php echo $this->escape($item->id); ?></td>
+							<td><?php echo $this->escape($item->mail_adress); ?></td>
+							<td><?php echo $this->escape($item->mun_unit_name); ?></td>
+							<td><?php echo $this->escape($item->first_name); ?> <?php echo $this->escape($item->last_name); ?>
+							</td>
+							<td><?php echo $this->escape(MUsers::setGenderSelect($item->gender)); ?>
+							</td>
+							<td><?php echo $this->dateFormat($item->birth, 'Y/m/d'); ?></td>
+							<td><?php echo $this->formButtonTo(null,'編集','/user/edit?id='.$item->id .'&isReturn',array( 'class' => 'button'));?>
+							<?php echo $this->formButton(null,'削除', array('onclick' => 'onClickDelete('. $item->id. ')' ,'class' => 'modalInput','rel' => '#yesno'))?>
+							</td>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</form>
+			<!-- .pagination -->
+			<?php echo $this->paginator; ?>
+			<!-- /.pagination -->
+		</div>
+		<br>
+	</div>
+	<!-- #top_left_container -->
+</div>
+<!-- #z_layout_box_main -->
+
+<!-- yes/no dialog -->
+<div class="modal" id="yesno" title="確認">
+
+	<p>削除します。よろしいですか？</p>
+
+</div>
+<form id="deleteForm" name="deleteForm" action="/user/delete"
+	method="post">
+	<input type="hidden" name="id" value="" />
+</form>
+
+<script type="text/javascript">
+
+
+function onClickDelete(id) {
+       $("#yesno" ).dialog({
+        resizable: false,
+        height:140,
+        modal: true,
+        buttons: {
+            "はい": function() {
+                document.deleteForm.id.value = id;
+              $("#deleteForm").submit();               
+            },
+            "キャンセル": function() {
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+}
+</script>
+
+

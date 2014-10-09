@@ -1,0 +1,104 @@
+<title><?php echo $this->pageTitle = 'ユーザー変更画面'; // ページタイトル ?></title>
+<?php $this->useDatePicker = true; // DatePicker使用 ?>
+<script type="text/JavaScript">
+$(function(){
+    $("#user tbody tr:even").addClass("even");
+    $("#user tbody tr:odd").addClass("odd");
+});
+</script>
+<form action="/user/confirm-edit" method="POST">
+	<div id="z_layout_body">
+		<!-- **** メニュー ***** -->
+		<div id="z_layout_box_main">
+			<h2>ユーザー変更画面</h2>
+			<div style="width: 540px; text-align: right; margin: 0 auto;">
+				<span class="indispensable">*は必須入力項目です。</span>
+			</div>
+			<div id="top_left_container">
+				<div id="user">
+					<table id="user_table" border="1"
+						style="margin-left: auto; margin-right: auto; text-align: left">
+						<tbody style="padding: 0 80px">
+							<tr>
+								<th class="user_id">ユーザーID</th>
+								<td><?php echo $this->escape($this->request->mail_adress); ?> <?php echo $this->formHidden('mail_adress', $this->request->mail_adress);?>
+									<div style="color: red;">
+									<?php echo $this->formError('mail_adress'); ?>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th class="password">パスワード<font color="red">*</font></th>
+								<td><?php echo $this->formPassword('password', $this->request->password, array('maxlength' => '255', 'size' => '30', 'class' => 'alpha_num necessary'));?>
+									<br>
+									<div style="color: red;">
+									<?php echo $this->formError('password'); ?>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th class="unitid">部署<font color="red">*</font></th>
+								<td><?php echo $this->formSelect('unit_id', $this->request->unit_id, null,$this->units); ?>
+									<div style="color: red;">
+									<?php echo $this->formError('unit_id'); ?>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th class="name">名前<font color="red">*</font></th>
+								<td><?php echo $this->formText('first_name', $this->request->first_name, array('maxlength' => '255', 'size' => '30', 'class' => 'alpha_num necessary'));?>
+								<?php echo $this->formText('last_name', $this->request->last_name, array('maxlength' => '255', 'size' => '30', 'class' => 'alpha_num necessary'));?>
+									<br>
+									<div style="color: red;">
+									<?php echo $this->formError('first_name'); ?>
+									<?php echo $this->formError('last_name'); ?>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th class="kana_name">名前(カナ)<font color="red">*</font></th>
+								<td><?php echo $this->formText('first_kana', $this->request->first_kana, array('maxlength' => '255', 'size' => '30', 'class' => 'alpha_num necessary'));?>
+								<?php echo $this->formText('last_kana', $this->request->last_kana, array('maxlength' => '255', 'size' => '30', 'class' => 'alpha_num necessary'));?>
+									<br>
+									<div style="color: red;">
+									<?php echo $this->formError('first_kana'); ?>
+									<?php echo $this->formError('last_kana'); ?>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th class="gender">性別<font color="red">*</font></th>
+								<td><?php echo $this->formSelect('gender', $this->request->gender, array(), MUsers::setGenderSelect()); ?>
+									<div style="color: red;">
+									<?php echo $this->formError('gender'); ?>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th class="birth">生年月日<font color="red">*</font></th>
+								<td><?php echo $this->formDatePicker('birth', $this->request->birth); ?>
+									<br>
+									<div style="color: red;">
+									<?php echo $this->formError('birth'); ?>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<br>
+					<?php echo $this->formHidden('token', $this->token);?>
+					<?php echo $this->formHidden('id', $this->request->id); ?>
+					<div class="button"
+						style="margin-left: auto; margin-right: auto; text-align: center">
+						<?php echo $this->formButtonTo(null, '戻る', '/user/list', array('class' => 'button reset')); ?>
+						<?php echo $this->formSubmit(null, '確認', array('class' => 'submit')); ?>
+					</div>
+				</div>
+			</div>
+			<!-- #top_left_container -->
+		</div>
+		<!-- #z_layout_box_main -->
+	</div>
+	<!-- #z_layout_body -->
+</form>
+

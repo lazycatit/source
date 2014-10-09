@@ -1,0 +1,144 @@
+<?php $this->pageTitle = '操作ログ一覧 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ';?>
+<?php $this->useDatePicker = true; // DatePicker使用 ?>
+<div id="contents" class="operatlog text03m">
+	<div class="operatlogcontents">
+		<div style="color: red;">
+		<?php echo $this->dumpFlashMessages(); ?>
+		</div>
+		<h2>操作ログ一覧</h2>
+		<div class="inputbox">
+			<form action="/admin-log/list" method="post">
+				<div class="pulldowns">
+					<p class="creattime">操作日時</p>
+					<div class="selecttime">
+						<ul>
+							<li><?php echo $this->formDate('create_from', $this->request->create_from, array('dateStyle'=> 'datetime')); ?>
+							</li>
+							<li>
+								<div style="color: red;">
+								<?php echo $this->formError('create_from'); ?>
+								</div>
+							</li>
+							<li>〜</li>
+						</ul>
+						<ul>
+							<li><?php echo $this->formDate('create_to', $this->request->create_to,array('dateStyle'=> 'datetime')); ?>
+							</li>
+							<li><div style="color: red;">
+							<?php echo $this->formError('create_to'); ?>
+								</div></li>
+						</ul>
+					</div>
+				</div>
+				<div class="managenumtext">
+					<p class="managenum">管理番号</p>
+					<div class="freetext">
+						<p>
+						<?php echo $this->formText('control_number', $this->request->control_number, array('class' => 'w200'));?>
+						
+						
+						<div style="color: red;">
+						<?php echo $this->formError('control_number'); ?>
+						</div>
+						</p>
+					</div>
+				</div>
+				<?php echo $this->formSubmit('search', '検索', array('class' => 'zbtn_short')); ?>
+			</form>
+		</div>
+
+		<div class="infotableset">
+			<div class="pager">
+			<?php echo $this->paginator; ?>
+			</div>
+			<table border="0" cellpadding="0" cellspacing="0" class="infotable02"
+				id="tablecontent">
+				<tbody>
+					<tr>
+						<th rowspan="2" class="thleft">操作日時</th>
+						<th rowspan="2" class="thleft02">管理番号</th>
+						<th rowspan="2" class="thleft03">発行<br>方法</th>
+						<th rowspan="2" class="thleft04">顧客名</th>
+						<th rowspan="2" class="thleft05">フォーマット</th>
+						<th rowspan="2" class="thleft06">ステータス</th>
+						<th rowspan="2" class="thleft07">対応済項目</th>
+						<th colspan="2">実施ユーザー</th>
+					</tr>
+					<tr>
+						<th class="thleft08">種別</th>
+						<th>ユーザー名</th>
+					</tr>
+					<?php foreach($this->paginator as $item): ?>
+					<tr>
+						<td style="text-align: left"><?php echo $this->dateFormat($this->escape($item->create_date),'Y/m/d');
+						echo "&nbsp;".$this->dateFormat($this->escape($item->create_date),'H:i'); ?>
+						</td>
+						<td style="text-align: left"><?php echo $this->escape($item->control_number); ?>
+						</td>
+						<td style="text-align: left"><?php 
+						if(strcmp($item->publish_type,1)):
+						echo "PDF";
+						elseif(strcmp($item->publish_type,2)):
+						echo "原紙";
+						elseif(strcmp($item->publish_type,3)):
+						echo "PDF"."<br/>"."原紙";
+						endif;
+						?>
+						</td>
+						<td style="text-align: left"><?php echo $this->escape($item->customer_name); ?>
+						</td>
+						<td style="text-align: left; min-width: 78px;"><?php 
+						if(strcmp($item->export_person,1)===0):{
+						    echo "disco";
+						} elseif (strcmp($item->export_person,2)===0 &&strcmp($item->is_coustomer_format, 0)===0):{
+						    echo "disco顧客";
+						} elseif (strcmp($item->export_person,2)===0 &&strcmp($item->is_coustomer_format, 1)===0):{
+						    echo "お客様フォーマット";
+						}
+						endif;
+						?>
+						</td>
+						<td style="text-align: left"><?php 
+						if(strcmp($item->status, '1')===0):
+						echo "発行中";
+						elseif (strcmp($item->status, '2')===0):
+						echo "完了";
+						endif;
+						?>
+						</td>
+						<td style="text-align: left"><?php 
+						if(strcmp($item->do_option,1)===0):{
+						    echo "未判定対応"."<br/>";
+						}endif;
+						if (strcmp($item->do_coustomer_designation,1)===0):{
+						    echo "客先指示事項対応"."<br/>";
+						}endif;
+						if (strcmp($item->do_coustomer_format,1)===0):{
+						    echo "客先フォーマット対応"."<br/>";
+						}endif;
+						if (strcmp($item->do_base_paper,1)===0):{
+						    echo "原紙対応"."<br/>";
+						}endif;
+						?>
+						</td>
+						<td style="text-align: left"><?php echo $this->escape($item->user_type_name); ?>
+						</td>
+						<td style="text-align: left"><?php echo $this->escape($item->create_user_name); ?>
+						</td>
+					</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
+			<div class="pager">
+			<?php echo $this->paginator; ?>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+      // 偶数行にのみクラスを指定      
+      $('#tablecontent tr:odd').addClass('bglightgray');      
+    });
+
+</script>

@@ -1,0 +1,71 @@
+<title><?php echo $this->pageTitle = 'FAQ一覧 ｜ 該非判定WEBシステム ｜ 株式会社ディスコ'; // ページタイトル ?>
+</title>
+<?php $this->useDatePicker = true; // DatePicker使用 ?>
+<div id="z_layout_box_main" align="center">
+	<div style="color: red;">
+	<?php echo $this->dumpFlashMessages(); ?>
+	</div>
+	<div id="contents" class="faq text03m">
+		<div class="faqcontents">
+			<h2>FAQ一覧</h2>
+			<div class="inputbox">
+				<form action="/faq/list" method="post">
+					<p class="freetext">
+						質問内容検索
+						<?php echo $this->formText('title', $this->request->title, array('class' => 'w490'));?>
+					</p>
+					<p class="outline">
+						検索するキーワードを入力して下さい。<br> キーワードが複数存在する場合は、キーワードの間に半角スペースを挟んで下さい。<br>
+						（例：該非判定書 外為令）
+					</p>
+					<?php echo $this->formSubmit('search', '検索', array('class' => 'zbtn_short')); ?>
+				</form>
+				<!-- end form search -->
+			</div>
+
+			<!-- Form data faq -->
+			<form action="/faq/list" method="post">
+				<div class="faqtableset">
+					<div class="pager">
+
+					<?php echo $this->paginator; ?>
+					</div>
+					<table border="0" cellpadding="0" cellspacing="0"
+						class="faqtable02" id="tablecontent">
+						<tbody>
+							<tr>
+								<th class="thleft">タイトル</th>
+								<th>ご質問内容</th>
+							</tr>
+							<?php foreach ($this->paginator as $item): ?>
+							<tr>
+								<td style="text-align: left"><a
+									href="/faq/detail?id=<?php echo $this->escape($item->id) ?>"
+									target="_blank"><?php echo StringUtil::getViewSubString($item->title,$this->max_display_char); ?> </a>
+								</td>
+								<td style="text-align: left"><?php echo StringUtil::getViewSubString($this->escape($item->question),$this->max_display_char); ?>
+								</td>
+							</tr>
+							<?php  endforeach; ?>
+						</tbody>
+					</table>
+					<!-- padding -->
+					<div class="pager">
+					<?php echo $this->paginator; ?>
+					</div>
+					<!-- end padding -->
+				</div>
+			</form>
+			<!-- End form data faq -->
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    // 偶数行にのみクラスを指定
+    $('#tablecontent tr:even').addClass('bglightgray');
+});
+</script>
+
+
